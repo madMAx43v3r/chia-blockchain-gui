@@ -8,7 +8,7 @@ const path = require('path');
 
 const PY_MAC_DIST_FOLDER = '../../../app.asar.unpacked/daemon';
 const PY_WIN_DIST_FOLDER = '../../../app.asar.unpacked/daemon';
-const PY_DIST_FILE = 'daemon';
+const PY_DIST_FILE = 'chia';
 const PY_FOLDER = '../../../chia/daemon';
 const PY_MODULE = 'server'; // without .py suffix
 
@@ -16,22 +16,22 @@ let pyProc = null;
 let haveCert = null;
 
 const guessPackaged = () => {
-  let packed;
-  if (process.platform === 'win32') {
-    const fullPath = path.join(__dirname, PY_WIN_DIST_FOLDER);
-    packed = fs.existsSync(fullPath);
-    return packed;
-  }
-  const fullPath = path.join(__dirname, PY_MAC_DIST_FOLDER);
-  packed = fs.existsSync(fullPath);
-  return packed;
+//   let packed;
+//   if (process.platform === 'win32') {
+//     const fullPath = path.join(__dirname, PY_WIN_DIST_FOLDER);
+//     packed = fs.existsSync(fullPath);
+//     return packed;
+//   }
+//   const fullPath = path.join(__dirname, PY_MAC_DIST_FOLDER);
+//   packed = fs.existsSync(fullPath);
+  return true;
 };
 
 const getExecutablePath = (dist_file) => {
   if (process.platform === 'win32') {
     return path.join(__dirname, PY_WIN_DIST_FOLDER, `${dist_file}.exe`);
   }
-  return path.join(__dirname, PY_MAC_DIST_FOLDER, dist_file);
+  return path.join(__dirname, PY_MAC_DIST_FOLDER, `${dist_file}.bin`);
 };
 
 const getScriptPath = (dist_file) => {
@@ -77,7 +77,7 @@ const startChiaDaemon = () => {
     try {
       console.info('Running python executable: ');
       const Process = childProcess.spawn;
-      pyProc = new Process(script, ['--wait-for-unlock'], processOptions);
+      pyProc = new Process(script, ['run_daemon', '--wait-for-unlock'], processOptions);
     } catch (e) {
       console.info('Running python executable: Error: ');
       console.info(`Script ${script}`);

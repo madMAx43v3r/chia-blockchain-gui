@@ -75,7 +75,7 @@ const startChiaDaemon = () => {
   pyProc = null;
   if (guessPackaged()) {
     try {
-      console.info('Running python executable: ');
+      console.info('Running python executable: ' + script);
       const Process = childProcess.spawn;
       pyProc = new Process(script, ['run_daemon', '--wait-for-unlock'], processOptions);
     } catch (e) {

@@ -18,22 +18,22 @@ let pyProc = null;
 let haveCert = null;
 
 const guessPackaged = () => {
-  let packed;
-  if (process.platform === 'win32') {
-    const fullPath = path.join(__dirname, PY_WIN_DIST_FOLDER);
-    packed = fs.existsSync(fullPath);
-    return packed;
-  }
-  const fullPath = path.join(__dirname, PY_MAC_DIST_FOLDER);
-  packed = fs.existsSync(fullPath);
-  return packed;
+//   let packed;
+//   if (process.platform === 'win32') {
+//     const fullPath = path.join(__dirname, PY_WIN_DIST_FOLDER);
+//     packed = fs.existsSync(fullPath);
+//     return packed;
+//   }
+//   const fullPath = path.join(__dirname, PY_MAC_DIST_FOLDER);
+//   packed = fs.existsSync(fullPath);
+  return true;
 };
 
 const getExecutablePath = (dist_file) => {
   if (process.platform === 'win32') {
     return path.join(__dirname, PY_WIN_DIST_FOLDER, `${dist_file}.exe`);
   }
-  return path.join(__dirname, PY_MAC_DIST_FOLDER, dist_file);
+  return path.join(__dirname, PY_MAC_DIST_FOLDER, `${dist_file}.bin`);
 };
 
 const getChiaVersion = () => {

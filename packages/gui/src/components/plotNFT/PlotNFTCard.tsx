@@ -180,7 +180,7 @@ export default function PlotNFTCard(props: Props) {
           title={
             <Trans>
               This is the total number of points your farmer has found for this plot NFT. Each k32 plot will get around
-              10 points per day, so if you have 10TiB, should should expect around 1000 points per day, or 41 points per
+              20 points per day, so if you have 10TiB, should should expect around 2000 points per day, or 82 points per
               hour.
             </Trans>
           }
@@ -304,7 +304,7 @@ export default function PlotNFTCard(props: Props) {
             </Typography>
             <Tooltip title={payoutAddress} copyToClipboard>
               <Typography variant="body2" noWrap>
-                {loading ? <Loading size="1rem" /> : payoutAddress ?? <Trans>Not Available</Trans>}
+                {loading ? <Loading size="1rem" /> : (payoutAddress ?? <Trans>Not Available</Trans>)}
               </Typography>
             </Tooltip>
           </Flex>

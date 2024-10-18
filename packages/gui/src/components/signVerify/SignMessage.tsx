@@ -115,7 +115,6 @@ export default function SignMessage(props: SignMessageProps) {
     } else {
       const content = toSnakeCase({ ...result, message: messageToSign, address });
       delete content.success;
-      delete content.latest_coin_id;
 
       const jsonContent = JSON.stringify(content, null, 2);
 
@@ -149,6 +148,13 @@ export default function SignMessage(props: SignMessageProps) {
     await handleSign();
   }
 
+  const preventEnterKeySubmission = (e: React.KeyboardEvent<HTMLFormElement>) => {
+    const { target } = e;
+    if (e.key === 'Enter' && target instanceof HTMLInputElement) {
+      e.preventDefault();
+    }
+  };
+
   const buttons: { type: SignMessageEntityType; label: ReactNode }[] = [
     { type: SignMessageEntityType.WalletAddress, label: <Trans>Wallet Address</Trans> },
     { type: SignMessageEntityType.NFT, label: <Trans>NFT</Trans> },
@@ -156,7 +162,7 @@ export default function SignMessage(props: SignMessageProps) {
   ];
 
   return (
-    <Form methods={methods} onSubmit={handleSubmit}>
+    <Form methods={methods} onSubmit={handleSubmit} onKeyDown={preventEnterKeySubmission}>
       <Flex flexDirection="column" gap={3}>
         <Card>
           <Flex flexDirection="column" gap={1}>

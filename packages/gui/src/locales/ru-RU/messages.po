@@ -8,7 +8,7 @@ msgstr ""
 "Language: ru_RU\n"
 "Project-Id-Version: 1263bc1f20e1271bda78e84d2f4a6562\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-06-09 00:04\n"
+"PO-Revision-Date: 2024-09-29 00:05\n"
 "Last-Translator: \n"
 "Language-Team: Russian\n"
 "Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
@@ -44,78 +44,78 @@ msgid "Would you like to transfer {count} NFTs to a new owner?"
 msgstr "Вы хотите передать {count} NFT новому владельцу?"
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:510
+#: src/electron/main.tsx:521
 msgid "No"
 msgstr "Нет"
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:510
+#: src/electron/main.tsx:521
 msgid "Yes"
 msgstr "Да"
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:511
+#: src/electron/main.tsx:522
 msgid "Confirm"
 msgstr "Подтвердить"
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:513
+#: src/electron/main.tsx:524
 msgid "Are you sure you want to quit?"
 msgstr "Вы уверены, что хотите выйти?"
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:518
+#: src/electron/main.tsx:529
 msgid "Keep service running in the background"
 msgstr "Продолжать работу службы в фоновом режиме"
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:636
-#: src/electron/main.tsx:844
+#: src/electron/main.tsx:647
+#: src/electron/main.tsx:855
 msgid "File"
 msgstr "Файл"
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:644
+#: src/electron/main.tsx:655
 msgid "Edit"
 msgstr "Правка"
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:676
+#: src/electron/main.tsx:687
 msgid "View"
 msgstr "Вид"
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:685
+#: src/electron/main.tsx:696
 msgid "Developer"
 msgstr "Разработчик"
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:688
+#: src/electron/main.tsx:699
 msgid "Developer Tools"
 msgstr "Инструменты разработчика"
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:696
+#: src/electron/main.tsx:707
 msgid "Trigger Desktop Notification"
 msgstr "Запуск уведомления на рабочем столе"
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:725
+#: src/electron/main.tsx:736
 msgid "Full Screen"
 msgstr "Полный экран"
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:732
+#: src/electron/main.tsx:743
 msgid "Window"
 msgstr "Окно"
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:746
+#: src/electron/main.tsx:757
 msgid "Help"
 msgstr "Помощь"
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:750
+#: src/electron/main.tsx:761
 msgid "Chia Blockchain Wiki"
 msgstr ""
 "Блокчейн Chia на Wiki                           Chia coin\n"
@@ -292,58 +292,58 @@ msgstr ""
 "Приведенная выше команда создает одио поле (указывается -n 1), для параллельного построения вам нужно повторить команду (не закрывая первую). Увеличьте значение -n для последовательного построения, то есть после завершения первого участка запускается следующий."
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:756
+#: src/electron/main.tsx:767
 msgid "Frequently Asked Questions"
 msgstr "Часто задаваемые вопросы"
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:762
+#: src/electron/main.tsx:773
 msgid "Release Notes"
 msgstr "Примечания к релизу"
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:768
+#: src/electron/main.tsx:779
 msgid "Contribute on GitHub"
 msgstr "Сотрудничать на GitHub"
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:777
+#: src/electron/main.tsx:788
 msgid "Report an Issue..."
 msgstr "Сообщить о проблеме..."
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:783
+#: src/electron/main.tsx:794
 msgid "Chat on Discord"
 msgstr "Чат в Discord"
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:789
+#: src/electron/main.tsx:800
 msgid "Follow on Twitter"
 msgstr "Следить в Twitter"
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:801
+#: src/electron/main.tsx:812
 msgid "Chia"
 msgstr "Чиа"
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:804
-#: src/electron/main.tsx:897
+#: src/electron/main.tsx:815
+#: src/electron/main.tsx:908
 msgid "About Chia Blockchain"
 msgstr "О программе Chia Blockchain"
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:810
+#: src/electron/main.tsx:821
 msgid "Check for Updates..."
 msgstr "Проверить наличие обновлений..."
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:858
+#: src/electron/main.tsx:869
 msgid "Speech"
 msgstr "Речь"
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:903
+#: src/electron/main.tsx:914
 msgid "Check for updates..."
 msgstr "Проверить наличие обновлений..."
 
@@ -450,7 +450,7 @@ msgstr ""
 #~ msgid "{title}"
 #~ msgstr ""
 
-#: src/components/offers2/OfferBuilderValue.tsx:185
+#: src/components/offers2/OfferBuilderValue.tsx:195
 msgid "{type} is not supported"
 msgstr ""
 
@@ -472,6 +472,10 @@ msgstr ""
 
 #: src/components/settings/SettingsHarvester.tsx:344
 msgid "*Usually it takes seconds to complete restarting."
+msgstr ""
+
+#: src/components/notification/NotificationAnnouncementDialog.tsx:39
+msgid "##### Redacted for security reason #####"
 msgstr ""
 
 #: src/components/plot/overview/PlotOverviewPlots.tsx:42
@@ -536,7 +540,7 @@ msgstr "Действие"
 #: src/components/farm/FarmFullNodeConnections.tsx:54
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:54
 #: src/components/fullNode/FullNodeConnections.tsx:65
-#: src/components/nfts/NFTContextualActions.tsx:587
+#: src/components/nfts/NFTContextualActions.tsx:590
 #: src/components/offers2/OfferIncomingTable.tsx:111
 msgid "Actions"
 msgstr "Действия"
@@ -645,7 +649,7 @@ msgstr "После того как ваши ключи будут успешно
 msgid "All NFTs"
 msgstr "Все NFT"
 
-#: src/components/did/DIDProfileDropdown.tsx:23
+#: src/components/did/DIDProfileDropdown.tsx:25
 msgid "All Profiles"
 msgstr "Все профили"
 
@@ -725,7 +729,7 @@ msgstr ""
 msgid "An NFT's provenance is a complete record of its ownership history. It provides a direct lineage that connects everyone who has owned the NFT, all the way back to the original artist. This helps to verify that the NFT is authentic."
 msgstr "Происхождение NFT - это полная история его владения. Происхождение обеспечивает прямую родословную, которая связывает всех, кто владел NFT, вплоть до оригинального художника. Это помогает проверить подлинность NFT."
 
-#: src/components/notification/NotificationAnnouncementDialog.tsx:35
+#: src/components/notification/NotificationAnnouncementDialog.tsx:49
 msgid "Announcement"
 msgstr ""
 
@@ -733,7 +737,7 @@ msgstr ""
 msgid "App Permissions"
 msgstr "Разрешения приложения"
 
-#: src/components/walletConnect/WalletConnectConfirmDialog.tsx:122
+#: src/components/walletConnect/WalletConnectConfirmDialog.tsx:203
 #: src/components/walletConnect/WalletConnectPairInfoDialog.tsx:92
 msgid "Application"
 msgstr "Приложение"
@@ -951,7 +955,7 @@ msgstr "Обзор"
 
 #: src/components/nfts/NFTBurnDialog.tsx:90
 #: src/components/nfts/NFTBurnDialog.tsx:185
-#: src/components/nfts/NFTContextualActions.tsx:525
+#: src/components/nfts/NFTContextualActions.tsx:528
 msgid "Burn"
 msgstr "Сжечь"
 
@@ -995,18 +999,18 @@ msgstr "Размер кэша (ГБ)"
 #: src/components/offers/OfferShareDialog.tsx:769
 #: src/components/offers2/CancelOfferList.tsx:146
 #: src/components/offers2/OfferEditorCancelConflictingOffersDialog.tsx:362
-#: src/components/plotNFT/PlotNFTPayoutInstructionsDialog.tsx:110
+#: src/components/plotNFT/PlotNFTPayoutInstructionsDialog.tsx:111
 #: src/components/plotNFT/select/PlotNFTSelectBase.tsx:78
 #: src/components/plotNFT/select/PlotNFTSelectFaucet.tsx:34
 #: src/components/settings/ChangePassphrasePrompt.tsx:287
 #: src/components/settings/RemovePassphrasePrompt.tsx:169
 #: src/components/settings/ResyncPrompt.tsx:49
 #: src/components/settings/SetPassphrasePrompt.tsx:262
-#: src/components/signVerify/SignMessage.tsx:205
+#: src/components/signVerify/SignMessage.tsx:211
 #: src/components/signVerify/VerifyMessage.tsx:271
 #: src/components/vcs/VCEditTitle.tsx:76
 #: src/components/vcs/VCRevokeDialog.tsx:28
-#: src/hooks/useOpenUnsafeLink.tsx:33
+#: src/hooks/useOpenUnsafeLink.tsx:62
 msgid "Cancel"
 msgstr "Отмена"
 
@@ -1168,7 +1172,7 @@ msgstr ""
 #: src/components/nfts/MultipleDownloadDialog.tsx:116
 #: src/components/nfts/NFTMoveToProfileDialog.tsx:328
 #: src/components/nfts/NFTTransferAction.tsx:166
-#: src/components/notification/NotificationAnnouncementDialog.tsx:75
+#: src/components/notification/NotificationAnnouncementDialog.tsx:87
 #: src/components/notification/NotificationSendDialog.tsx:308
 #: src/components/offers/ConfirmOfferCancellation.tsx:126
 #: src/components/offers/OfferShareDialog.tsx:373
@@ -1224,7 +1228,7 @@ msgstr ""
 
 #: src/components/plotNFT/PlotNFTAbsorbRewards.tsx:167
 #: src/components/vcs/VCRevokeDialog.tsx:27
-#: src/components/walletConnect/WalletConnectConfirmDialog.tsx:71
+#: src/components/walletConnect/WalletConnectConfirmDialog.tsx:172
 msgid "Confirm"
 msgstr ""
 
@@ -1254,7 +1258,7 @@ msgstr "Подтверждение пароля"
 msgid "Confirmation"
 msgstr "Подтверждение"
 
-#: src/components/walletConnect/WalletConnectConfirmDialog.tsx:69
+#: src/components/walletConnect/WalletConnectConfirmDialog.tsx:170
 msgid "Confirmation Request"
 msgstr "Запрос подтверждения"
 
@@ -1660,8 +1664,8 @@ msgstr "URL-адрес Dexie"
 
 #: src/components/addressbook/ContactAdd.tsx:116
 #: src/components/addressbook/ContactEdit.tsx:119
-#: src/components/signVerify/SigningEntityDID.tsx:77
-#: src/components/signVerify/SignMessage.tsx:155
+#: src/components/signVerify/SigningEntityDID.tsx:83
+#: src/components/signVerify/SignMessage.tsx:161
 #: src/constants/WalletConnectCommands.tsx:827
 msgid "DID"
 msgstr ""
@@ -1741,7 +1745,7 @@ msgid "Display sharing options after creating a new offer"
 msgstr ""
 
 #: src/components/offers/OfferShareDialog.tsx:945
-#: src/hooks/useOpenUnsafeLink.tsx:64
+#: src/hooks/useOpenUnsafeLink.tsx:93
 msgid "Do not show this dialog again"
 msgstr "Больше не показывать этот диалог"
 
@@ -1859,7 +1863,7 @@ msgstr ""
 
 #: src/components/plotNFT/PlotExternalNFTCard.tsx:223
 #: src/components/plotNFT/PlotNFTCard.tsx:252
-#: src/components/plotNFT/PlotNFTPayoutInstructionsDialog.tsx:65
+#: src/components/plotNFT/PlotNFTPayoutInstructionsDialog.tsx:66
 msgid "Edit Payout Instructions"
 msgstr "Редактировать инструкции выплат"
 
@@ -1994,6 +1998,7 @@ msgid "Error posting offer: {0}"
 msgstr ""
 
 #: src/components/signVerify/VerifyMessage.tsx:146
+#: src/components/walletConnect/WalletConnectConfirmDialog.tsx:159
 msgid "Error:"
 msgstr ""
 
@@ -2283,7 +2288,7 @@ msgstr ""
 #~ msgid "Frequently Asked Questions"
 #~ msgstr "Frequently Asked Questions"
 
-#: src/components/notification/NotificationAnnouncementDialog.tsx:44
+#: src/components/notification/NotificationAnnouncementDialog.tsx:58
 msgid "From"
 msgstr ""
 
@@ -2514,7 +2519,7 @@ msgstr ""
 #~ msgid "Hidden ({0})"
 #~ msgstr ""
 
-#: src/components/nfts/NFTContextualActions.tsx:493
+#: src/components/nfts/NFTContextualActions.tsx:496
 msgid "Hide"
 msgstr "Скрыть"
 
@@ -2694,6 +2699,10 @@ msgstr "Неверный NFT идентификатор"
 msgid "Invalid state"
 msgstr "Некорректное состояние"
 
+#: src/components/walletConnect/WalletConnectConfirmDialog.tsx:155
+msgid "Invalid WalletConnect data"
+msgstr ""
+
 #: src/components/fullNode/FullNodeConnections.tsx:33
 msgid "IP address"
 msgstr "IP адрес"
@@ -2758,7 +2767,7 @@ msgstr ""
 msgid "K-Size"
 msgstr "K-размер"
 
-#: src/components/walletConnect/WalletConnectConfirmDialog.tsx:105
+#: src/components/walletConnect/WalletConnectConfirmDialog.tsx:186
 msgid "Key"
 msgstr ""
 
@@ -2851,7 +2860,7 @@ msgid "Learn more"
 msgstr ""
 
 #: src/components/plotNFT/PlotNFTGetPoolLoginLinkDialog.tsx:75
-#: src/components/plotNFT/PlotNFTPayoutInstructionsDialog.tsx:101
+#: src/components/plotNFT/PlotNFTPayoutInstructionsDialog.tsx:102
 msgid "Learn More"
 msgstr "Подробнее"
 
@@ -2929,7 +2938,7 @@ msgstr ""
 msgid "Loading preview..."
 msgstr ""
 
-#: src/components/did/DIDProfileDropdown.tsx:48
+#: src/components/did/DIDProfileDropdown.tsx:51
 #: src/components/helpers/HeightToTimestamp.tsx:16
 #: src/components/nfts/NFTMetadata.tsx:21
 #: src/components/offers/NFTOfferTokenSelector.tsx:97
@@ -3001,8 +3010,8 @@ msgstr ""
 msgid "Memos"
 msgstr ""
 
-#: src/components/notification/NotificationAnnouncementDialog.tsx:53
-#: src/components/signVerify/SignMessage.tsx:194
+#: src/components/notification/NotificationAnnouncementDialog.tsx:67
+#: src/components/signVerify/SignMessage.tsx:200
 #: src/components/signVerify/VerifyMessage.tsx:207
 #: src/constants/WalletConnectCommands.tsx:184
 #: src/constants/WalletConnectCommands.tsx:207
@@ -3223,7 +3232,7 @@ msgstr "Далее"
 #: src/components/offers2/OfferBuilderNFTSection.tsx:44
 #: src/components/settings/Settings.tsx:38
 #: src/components/settings/SettingsNFT.tsx:81
-#: src/components/signVerify/SignMessage.tsx:154
+#: src/components/signVerify/SignMessage.tsx:160
 msgid "NFT"
 msgstr "NFT"
 
@@ -3390,7 +3399,7 @@ msgstr "Идентификатор узла"
 msgid "Non Observer Derivation"
 msgstr ""
 
-#: src/components/did/DIDProfileDropdown.tsx:88
+#: src/components/did/DIDProfileDropdown.tsx:98
 #: src/components/farm/FarmHealth.tsx:362
 #: src/components/farm/FarmHealth.tsx:390
 #: src/components/farm/FarmHealth.tsx:408
@@ -3429,7 +3438,7 @@ msgstr ""
 #: src/components/offers2/OfferBuilderValue.tsx:73
 #: src/components/plot/PlotStatus.tsx:20
 #: src/components/plotNFT/PlotNFTCard.tsx:307
-#: src/components/walletConnect/WalletConnectConfirmDialog.tsx:94
+#: src/components/walletConnect/WalletConnectConfirmDialog.tsx:143
 msgid "Not Available"
 msgstr "Не определено"
 
@@ -3552,7 +3561,7 @@ msgid "Offer Builder"
 msgstr ""
 
 #: src/components/offers/NFTOfferViewer.tsx:173
-#: src/components/offers2/OfferBuilderValue.tsx:206
+#: src/components/offers2/OfferBuilderValue.tsx:216
 #: src/components/offers2/OfferBuilderViewer.tsx:283
 msgid "Offer cannot be accepted because you don't possess the requested assets"
 msgstr "Предложение не может быть принято, поскольку вы не обладаете запрашиваемыми активами"
@@ -3696,7 +3705,7 @@ msgstr ""
 msgid "Open in Browser"
 msgstr "Открыть в браузере"
 
-#: src/hooks/useOpenUnsafeLink.tsx:31
+#: src/hooks/useOpenUnsafeLink.tsx:60
 msgid "Open Link"
 msgstr "Открыть ссылку"
 
@@ -3887,7 +3896,7 @@ msgstr "В ожидании подтверждения"
 msgid "Pending removal"
 msgstr ""
 
-#: src/hooks/useOpenUnsafeLink.tsx:38
+#: src/hooks/useOpenUnsafeLink.tsx:67
 msgid "Please check the following link to verify the site you are going to visit. Proceed at your own risk."
 msgstr "Пожалуйста, проверьте следующую ссылку, чтобы проверить сайт, который вы собираетесь посетить. Продолжить на свой страх и риск."
 
@@ -4160,7 +4169,7 @@ msgstr "Ключ пула"
 msgid "Pool Login Link"
 msgstr "Ссылка для входа на пул"
 
-#: src/components/plotNFT/PlotNFTPayoutInstructionsDialog.tsx:76
+#: src/components/plotNFT/PlotNFTPayoutInstructionsDialog.tsx:77
 msgid "Pool Payout Instructions"
 msgstr "Инструкции по выплате пула"
 
@@ -4378,7 +4387,7 @@ msgstr "Рекомендуется"
 msgid "Recursive Plot Scan"
 msgstr ""
 
-#: src/components/nfts/NFTContextualActions.tsx:566
+#: src/components/nfts/NFTContextualActions.tsx:569
 msgid "Refresh NFT data"
 msgstr ""
 
@@ -4388,7 +4397,7 @@ msgid "Refresh Plots"
 msgstr "Обновить участки"
 
 #: src/components/walletConnect/WalletConnectAddConnectionDialog.tsx:270
-#: src/components/walletConnect/WalletConnectConfirmDialog.tsx:72
+#: src/components/walletConnect/WalletConnectConfirmDialog.tsx:173
 msgid "Reject"
 msgstr ""
 
@@ -4613,7 +4622,7 @@ msgstr "Запуск полного узла"
 #: src/components/addressbook/ContactAdd.tsx:283
 #: src/components/addressbook/ContactEdit.tsx:297
 #: src/components/farm/FarmManageFarmingRewards.tsx:166
-#: src/components/plotNFT/PlotNFTPayoutInstructionsDialog.tsx:113
+#: src/components/plotNFT/PlotNFTPayoutInstructionsDialog.tsx:114
 #: src/components/settings/SettingsCustodyAutoClaim.tsx:75
 #: src/components/settings/SettingsCustodyClawbackOutgoing.tsx:63
 #: src/components/settings/SettingsDerivationIndex.tsx:85
@@ -4641,7 +4650,7 @@ msgid "Search block by header hash"
 msgstr "Поиск блока по хешу заголовка"
 
 #: src/components/offers/OfferSummaryRow.tsx:180
-#: src/components/offers2/OfferBuilderValue.tsx:104
+#: src/components/offers2/OfferBuilderValue.tsx:101
 msgid "Search on Tail Database"
 msgstr "Искать в Tail Database"
 
@@ -4705,7 +4714,7 @@ msgid "Select Offer File"
 msgstr "Выберите файл предложения"
 
 #: src/components/nfts/NFTMoveToProfileDialog.tsx:245
-#: src/components/signVerify/SigningEntityDID.tsx:70
+#: src/components/signVerify/SigningEntityDID.tsx:75
 msgid "Select Profile"
 msgstr "Выбор профиля"
 
@@ -4852,7 +4861,7 @@ msgstr ""
 #~ msgid "Share Privately"
 #~ msgstr "Share Privately"
 
-#: src/components/nfts/NFTContextualActions.tsx:493
+#: src/components/nfts/NFTContextualActions.tsx:496
 msgid "Show"
 msgstr "Показать"
 
@@ -4881,7 +4890,7 @@ msgstr ""
 msgid "Shut down"
 msgstr ""
 
-#: src/components/signVerify/SignMessage.tsx:208
+#: src/components/signVerify/SignMessage.tsx:214
 msgid "Sign"
 msgstr ""
 
@@ -4934,7 +4943,7 @@ msgstr ""
 msgid "Signing Address (Optional)"
 msgstr ""
 
-#: src/components/signVerify/SignMessage.tsx:164
+#: src/components/signVerify/SignMessage.tsx:170
 msgid "Signing Entity"
 msgstr ""
 
@@ -5275,7 +5284,7 @@ msgstr ""
 msgid "There was a network issue and your Full Node or Farmer could not receive SPs."
 msgstr ""
 
-#: src/components/plotNFT/PlotNFTPayoutInstructionsDialog.tsx:91
+#: src/components/plotNFT/PlotNFTPayoutInstructionsDialog.tsx:92
 msgid "These are the instructions for how the farmer wants to get paid. By default this will be an XCH address, but it can be set to any string with a size of less than 1024 characters, so it can represent another blockchain or payment system identifier."
 msgstr "Это инструкции по поводу того, как фермер хочет заплатить. По умолчанию это будет XCH адрес, но он может быть установлен в любую строку размером менее 1024 символов,, чтобы он мог представить другой идентификатор блокчейна или платежной системы."
 
@@ -5335,8 +5344,13 @@ msgstr "Это общее количество баллов, которое ес
 
 #: src/components/plotNFT/PlotExternalNFTCard.tsx:147
 #: src/components/plotNFT/PlotNFTCard.tsx:181
-msgid "This is the total number of points your farmer has found for this plot NFT. Each k32 plot will get around 10 points per day, so if you have 10TiB, should should expect around 1000 points per day, or 41 points per hour."
-msgstr "Это общее количество баллов, которые ваш фермер набрал для этого участка NFT. Каждый участок k32 будет получать около 10 очков в день, так что если у вас есть 10TiB, следует ожидать около 1000 баллов в день, или 41 баллов в час."
+#~ msgid "This is the total number of points your farmer has found for this plot NFT. Each k32 plot will get around 10 points per day, so if you have 10TiB, should should expect around 1000 points per day, or 41 points per hour."
+#~ msgstr "This is the total number of points your farmer has found for this plot NFT. Each k32 plot will get around 10 points per day, so if you have 10TiB, you should expect around 1000 points per day, or 41 points per hour."
+
+#: src/components/plotNFT/PlotExternalNFTCard.tsx:147
+#: src/components/plotNFT/PlotNFTCard.tsx:181
+msgid "This is the total number of points your farmer has found for this plot NFT. Each k32 plot will get around 20 points per day, so if you have 10TiB, should should expect around 2000 points per day, or 82 points per hour."
+msgstr ""
 
 #: src/components/fullNode/card/FullNodeCardStatus.tsx:52
 msgid "This node is fully caught up and validating the network"
@@ -5365,7 +5379,7 @@ msgstr ""
 #: src/components/offers/OfferHeader.tsx:46
 #: src/components/offers2/OfferBuilderViewer.tsx:262
 #~ msgid "This offer is no longer valid. To understand why, click <0>here</0> to learn more."
-#~ msgstr ""
+#~ msgstr "This offer is no longer valid. To understand why, click <0>here</0> to learn more."
 
 #: src/components/offers2/OfferBuilderViewer.tsx:279
 msgid "This offer was cancelled"
@@ -5390,6 +5404,14 @@ msgstr "Этот участок NFT привязан к другому ключ�
 #: src/components/farm/FarmLastAttemptedProof.tsx:53
 msgid "This table shows you the last time your farm attempted to win a block challenge. <0>Learn more</0>"
 msgstr "Эта таблица показывает вам, когда ваша ферма в последний раз пыталась выиграть испытание при фарминге блока. <0>Подробнее</0>"
+
+#: src/hooks/useOpenUnsafeLink.tsx:24
+#~ msgid "This type of the URL is not allowed to open for security reasons."
+#~ msgstr ""
+
+#: src/hooks/useOpenUnsafeLink.tsx:24
+msgid "This URL is not allowed for security reasons."
+msgstr ""
 
 #: src/components/settings/SettingsIntegration.tsx:398
 msgid "This will reset all previously granted permissions across all Dapps that have been connected to. After resetting you will be asked to grant permission again."
@@ -5741,9 +5763,10 @@ msgstr "Ожидает обновления"
 msgid "Uris"
 msgstr ""
 
-#: src/components/notification/NotificationAnnouncementDialog.tsx:62
+#: src/components/notification/NotificationAnnouncementDialog.tsx:76
 #: src/constants/WalletConnectCommands.tsx:964
-#: src/hooks/useOpenUnsafeLink.tsx:43
+#: src/hooks/useOpenUnsafeLink.tsx:27
+#: src/hooks/useOpenUnsafeLink.tsx:72
 msgid "URL"
 msgstr "URL-адрес"
 
@@ -5876,7 +5899,7 @@ msgstr "Посмотреть на Dexie"
 #~ msgid "View on Hashgreen DEX"
 #~ msgstr "View on Hashgreen DEX"
 
-#: src/components/nfts/NFTContextualActions.tsx:643
+#: src/components/nfts/NFTContextualActions.tsx:646
 #: src/components/offers/OfferShareDialog.tsx:441
 msgid "View on MintGarden"
 msgstr "Посмотреть в MintGarden"
@@ -5889,7 +5912,7 @@ msgstr "Посмотреть в MintGarden"
 msgid "View on Offerpool"
 msgstr ""
 
-#: src/components/nfts/NFTContextualActions.tsx:651
+#: src/components/nfts/NFTContextualActions.tsx:654
 #: src/components/offers/OfferShareDialog.tsx:538
 msgid "View on Spacescan.io"
 msgstr "Посмотреть в Spacescan.io"
@@ -5940,7 +5963,7 @@ msgstr "Ожидание подтверждения транзакции"
 #: src/components/app/AppStatusHeader.tsx:152
 #: src/components/walletConnect/WalletConnectAddConnectionDialog.tsx:187
 #: src/components/walletConnect/WalletConnectAddConnectionDialog.tsx:191
-#: src/components/walletConnect/WalletConnectConfirmDialog.tsx:109
+#: src/components/walletConnect/WalletConnectConfirmDialog.tsx:190
 msgid "Wallet"
 msgstr "Кошелёк"
 
@@ -5948,7 +5971,7 @@ msgstr "Кошелёк"
 msgid "Wallet {0}"
 msgstr ""
 
-#: src/components/signVerify/SignMessage.tsx:153
+#: src/components/signVerify/SignMessage.tsx:159
 msgid "Wallet Address"
 msgstr ""
 
@@ -6028,16 +6051,24 @@ msgstr "Предупреждение"
 msgid "Warning Threshold"
 msgstr ""
 
+#: src/hooks/useOpenUnsafeLink.tsx:21
+#~ msgid "Warning: Invalid URL"
+#~ msgstr ""
+
 #: src/components/app/AppVersionWarning.tsx:30
 msgid "Warning: Mismatched Versions"
 msgstr ""
 
+#: src/hooks/useOpenUnsafeLink.tsx:21
+msgid "Warning: Unsupported URL"
+msgstr ""
+
 #: src/components/offers/OfferSummary.tsx:134
-#: src/components/offers2/OfferBuilderValue.tsx:210
+#: src/components/offers2/OfferBuilderValue.tsx:220
 msgid "Warning: Verify that the offered CAT asset IDs match the asset IDs of the tokens you expect to receive."
 msgstr ""
 
-#: src/hooks/useOpenUnsafeLink.tsx:30
+#: src/hooks/useOpenUnsafeLink.tsx:59
 msgid "Warning: You're about to visit a website"
 msgstr ""
 

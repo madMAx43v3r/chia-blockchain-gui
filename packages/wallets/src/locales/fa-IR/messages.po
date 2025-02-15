@@ -8,7 +8,7 @@ msgstr ""
 "Language: fa_IR\n"
 "Project-Id-Version: 1263bc1f20e1271bda78e84d2f4a6562\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-12-01 00:06\n"
+"PO-Revision-Date: 2025-01-12 00:05\n"
 "Last-Translator: \n"
 "Language-Team: Persian\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Crowdin-File: /main/packages/wallets/src/locales/en-US/messages.po\n"
 "X-Crowdin-File-ID: 25\n"
 
-#: src/components/WalletHistory.tsx:117
+#: src/components/WalletHistory.tsx:125
 msgid "-"
 msgstr "-"
 
@@ -30,7 +30,7 @@ msgstr "- یادداشت به طرف گیرنده کمک میکند تا پرد�
 msgid "- Set a time frame which allows you claw back (revoke) the transaction.<0/>- Recipient of the transaction can only claim the funds once that time frame expires."
 msgstr "- یک بازه زمانی تعیین کنید که به شما امکان میدهد تراکنش را پس بگیرید (لغو کنید).<0/>- گیرنده تراکنش فقط زمانی میتواند وجوه را مطالبه کند که این بازه زمانی منقضی شود."
 
-#: src/components/WalletHistory.tsx:117
+#: src/components/WalletHistory.tsx:125
 msgid "+"
 msgstr "+"
 
@@ -94,7 +94,7 @@ msgstr "تراکنش های معلق را تأیید کنید"
 msgid "Are you sure you want to delete unconfirmed transactions?"
 msgstr "آیا مطمئن هستید که میخواهید تراکنش های تایید نشده را حذف کنید؟"
 
-#: src/components/WalletHistory.tsx:130
+#: src/components/WalletHistory.tsx:138
 msgid "Asset"
 msgstr "دارایی"
 
@@ -169,7 +169,7 @@ msgstr "...در حال گرقتن"
 msgid "Classic version of Stably USDS as held by Prime Trust"
 msgstr "نسخه کلاسیک توکن استیبل یو اس دی اس که توسط پرایم تراست نگهداری میشود"
 
-#: src/components/WalletHistory.tsx:432
+#: src/components/WalletHistory.tsx:431
 msgid "Claw back expiration"
 msgstr "انقضای پس گرفتن"
 
@@ -219,11 +219,11 @@ msgstr "ببندید"
 msgid "Confirmation"
 msgstr "تائیدیه"
 
-#: src/components/WalletHistory.tsx:199
+#: src/components/WalletHistory.tsx:207
 msgid "Confirmed"
 msgstr "تایید شده"
 
-#: src/components/WalletHistory.tsx:421
+#: src/components/WalletHistory.tsx:420
 msgid "Confirmed at Height"
 msgstr "تایید شده در ارتفاع"
 
@@ -253,7 +253,7 @@ msgstr "ایجاد پیشنهاد"
 msgid "Create Transaction"
 msgstr "ایجاد تراکنش"
 
-#: src/components/WalletHistory.tsx:222
+#: src/components/WalletHistory.tsx:230
 msgid "Creation Date"
 msgstr "تاریخ ایجاد"
 
@@ -311,7 +311,7 @@ msgid "Farm"
 msgstr "فارم"
 
 #: src/components/cat/WalletCATSend.tsx:228
-#: src/components/WalletHistory.tsx:236
+#: src/components/WalletHistory.tsx:244
 #: src/components/WalletSend.tsx:254
 msgid "Fee"
 msgstr "کارمزد"
@@ -367,7 +367,7 @@ msgstr "مدیریت لیست توکن"
 msgid "Memo"
 msgstr "یادداشت"
 
-#: src/components/WalletHistory.tsx:426
+#: src/components/WalletHistory.tsx:425
 msgid "Memos"
 msgstr "یادداشت ها"
 
@@ -416,7 +416,7 @@ msgstr "کیف پول ان اف تی"
 msgid "Nickname"
 msgstr "نام مستعار"
 
-#: src/components/WalletHistory.tsx:503
+#: src/components/WalletHistory.tsx:502
 msgid "No previous transactions"
 msgstr "بدون تراکنش های قبلی"
 
@@ -424,8 +424,8 @@ msgstr "بدون تراکنش های قبلی"
 msgid "Node ID"
 msgstr "شناسه نود"
 
-#: src/components/WalletHistory.tsx:415
-#: src/components/WalletHistory.tsx:422
+#: src/components/WalletHistory.tsx:414
+#: src/components/WalletHistory.tsx:421
 msgid "Not Available"
 msgstr "غیرقابل دسترسی"
 
@@ -433,7 +433,7 @@ msgstr "غیرقابل دسترسی"
 msgid "Not Synced"
 msgstr "سینک نشده"
 
-#: src/components/WalletHistory.tsx:208
+#: src/components/WalletHistory.tsx:216
 msgid "Offer Accepted"
 msgstr "پیشنهاد پذیرفته شد"
 
@@ -462,7 +462,7 @@ msgstr "قراردادن کد کلمات ({0}رمز)"
 msgid "Payments approved"
 msgstr "پرداخت ها تایید شد"
 
-#: src/components/WalletHistory.tsx:201
+#: src/components/WalletHistory.tsx:209
 msgid "Pending"
 msgstr "در انتظار تایید"
 
@@ -587,7 +587,7 @@ msgstr "تغییر نام کیف پول"
 msgid "Restricted CAT"
 msgstr "توکن محدود"
 
-#: src/components/WalletHistory.tsx:207
+#: src/components/WalletHistory.tsx:215
 msgid "Retire"
 msgstr "کنارگذاشته شده"
 
@@ -626,7 +626,7 @@ msgstr "موجودی قابل خرج کردن"
 msgid "Standard Wallet"
 msgstr "کیف پول استاندارد"
 
-#: src/components/WalletHistory.tsx:213
+#: src/components/WalletHistory.tsx:221
 msgid "Status"
 msgstr "وضعیت"
 
@@ -676,7 +676,7 @@ msgstr "تراکنش در انتظار درج در حافظه استخر ترا�
 msgid "This access token is verified"
 msgstr "این توکن در دسترس تأیید شده است"
 
-#: src/components/WalletHistory.tsx:159
+#: src/components/WalletHistory.tsx:167
 msgid "This is not a valid address for sending funds to"
 msgstr "این یک آدرس معتبر برای ارسال وجوه به آن نیست"
 
@@ -709,7 +709,7 @@ msgstr ":این تراکنش به صورت خودکار با کارمزد گرف
 #~ msgstr "To"
 
 #: src/components/ClawbackClaimTransactionDialog.tsx:183
-#: src/components/WalletHistory.tsx:185
+#: src/components/WalletHistory.tsx:193
 msgid "To:"
 msgstr ":به"
 
@@ -733,7 +733,7 @@ msgstr "موجودی کل"
 msgid "Transaction has successfully been sent to a full node and included in the mempool."
 msgstr "تراکنش به نودکامل منتقل شد و در حافظه استخر تراکنش قرار گرفت."
 
-#: src/components/WalletHistory.tsx:480
+#: src/components/WalletHistory.tsx:479
 msgid "Transactions"
 msgstr "تراکنش ها"
 

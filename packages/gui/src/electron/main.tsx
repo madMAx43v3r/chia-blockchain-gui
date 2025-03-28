@@ -14,7 +14,6 @@ import {
 import fs from 'fs';
 import path from 'path';
 import url from 'url';
-import sanitizeFilename from 'sanitize-filename';
 
 import { initialize, enable } from '@electron/remote/main';
 import axios from 'axios';
@@ -22,6 +21,7 @@ import windowStateKeeper from 'electron-window-state';
 import React from 'react';
 // import os from 'os';
 import ReactDOMServer from 'react-dom/server';
+import sanitizeFilename from 'sanitize-filename';
 import { ServerStyleSheet, StyleSheetManager } from 'styled-components';
 import isURL from 'validator/es/lib/isURL';
 
@@ -32,7 +32,6 @@ import AppIcon from '../assets/img/chia64x64.png';
 import About from '../components/about/About';
 import { i18n } from '../config/locales';
 import chiaEnvironment, { chiaInit } from '../util/chiaEnvironment';
-import downloadFile from './utils/downloadFile';
 import loadConfig, { checkConfigFileExists } from '../util/loadConfig';
 import manageDaemonLifetime from '../util/manageDaemonLifetime';
 import { setUserDataDir } from '../util/userData';
@@ -41,6 +40,7 @@ import CacheManager from './CacheManager';
 import { readAddressBook, saveAddressBook } from './addressBook';
 import installDevTools from './installDevTools.dev';
 import { readPrefs, savePrefs, migratePrefs } from './prefs';
+import downloadFile from './utils/downloadFile';
 
 /**
  * Open the given external protocol URL in the desktop's default manner.
@@ -262,8 +262,6 @@ if (ensureSingleInstance() && ensureCorrectEnvironment()) {
       return { err, statusCode, statusMessage, responseBody };
     });
 
-
-
     ipcMain.handle('showMessageBox', async (_event, options) => dialog.showMessageBox(mainWindow, options));
 
     ipcMain.handle('showOpenDialog', async (_event, options) => dialog.showOpenDialog(options));
@@ -322,53 +320,59 @@ if (ensureSingleInstance() && ensureCorrectEnvironment()) {
       return responseObj;
     });
 
+    ipcMain.handle(
+      'startMultipleDownload',
+      async (_event: any, options: { folder: string; tasks: { url: string; filename: string }[] }) => {
+        /* eslint no-await-in-loop: off -- we want to handle each file separately! */
+        let totalDownloadedSize = 0;
+        let successFileCount = 0;
+        let errorFileCount = 0;
 
-    ipcMain.handle('startMultipleDownload', async (_event: any, options: { folder: string, tasks: { url: string; filename: string }[] }) => {
-      /* eslint no-await-in-loop: off -- we want to handle each file separately! */
-      let totalDownloadedSize = 0;
-      let successFileCount = 0;
-      let errorFileCount = 0;
+        const { folder, tasks } = options;
 
-      const { folder, tasks } = options;
-
-      for (let i = 0; i < tasks.length; i++) {
-        const { url: downloadUrl, filename } = tasks[i];
-
-        try {
-          const sanitizedFilename = sanitizeFilename(filename);
-          if (sanitizedFilename !== filename) {
-            throw new Error(`Filename ${filename} contains invalid characters. Filename sanitized to ${sanitizedFilename}`);
-          }
-          
-          const filePath = path.join(folder, sanitizedFilename);
-
-          await downloadFile(downloadUrl, filePath, {
-            onProgress: (progress) => {
-              mainWindow?.webContents.send('multipleDownloadProgress', {
-                progress,
-                url: downloadUrl,
-                index: i,
-                total: tasks.length,
-              });
-            },
+        const handleDownloadProgress = (progress: any, downloadUrl: string, index: number, total: number) => {
+          mainWindow?.webContents.send('multipleDownloadProgress', {
+            progress,
+            url: downloadUrl,
+            index,
+            total,
           });
+        };
 
-          const fileStats = await fs.promises.stat(filePath);
+        for (let i = 0; i < tasks.length; i++) {
+          const { url: downloadUrl, filename } = tasks[i];
 
-          totalDownloadedSize += fileStats.size;
-          successFileCount++;
-        } catch (e: any) {
-          if (e.message === 'download aborted' && abortDownloadingFiles) {
-            break;
+          try {
+            const sanitizedFilename = sanitizeFilename(filename);
+            if (sanitizedFilename !== filename) {
+              throw new Error(
+                `Filename ${filename} contains invalid characters. Filename sanitized to ${sanitizedFilename}`,
+              );
+            }
+
+            const filePath = path.join(folder, sanitizedFilename);
+
+            await downloadFile(downloadUrl, filePath, {
+              onProgress: (progress) => handleDownloadProgress(progress, downloadUrl, i, tasks.length),
+            });
+
+            const fileStats = await fs.promises.stat(filePath);
+
+            totalDownloadedSize += fileStats.size;
+            successFileCount++;
+          } catch (e: any) {
+            if (e.message === 'download aborted' && abortDownloadingFiles) {
+              break;
+            }
+            mainWindow?.webContents.send('errorDownloadingUrl', downloadUrl);
+            errorFileCount++;
           }
-          mainWindow?.webContents.send('errorDownloadingUrl', downloadUrl);
-          errorFileCount++;
         }
-      }
-      abortDownloadingFiles = false;
-      mainWindow?.webContents.send('multipleDownloadDone', { totalDownloadedSize, successFileCount, errorFileCount });
-      return true;
-    });
+        abortDownloadingFiles = false;
+        mainWindow?.webContents.send('multipleDownloadDone', { totalDownloadedSize, successFileCount, errorFileCount });
+        return true;
+      },
+    );
 
     ipcMain.handle('abortDownloadingFiles', async (_event: any) => {
       abortDownloadingFiles = true;

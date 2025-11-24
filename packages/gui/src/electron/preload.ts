@@ -33,6 +33,7 @@ contextBridge.exposeInMainWorld(API.APP, {
   showNotification: (options: { title: string; body: string }) =>
     invokeWithCustomErrors(AppAPI.SHOW_NOTIFICATION, options),
   fetchTextResponse: (url: string, data: string) => invokeWithCustomErrors(AppAPI.FETCH_TEXT_RESPONSE, url, data),
+  fetchPoolInfo: (poolUrl: string) => invokeWithCustomErrors(AppAPI.FETCH_POOL_INFO, poolUrl),
   openKeyDetail: (fingerprint: string) => invokeWithCustomErrors(AppAPI.OPEN_KEY_DETAIL, fingerprint),
 
   download: (url: string) => invokeWithCustomErrors(AppAPI.DOWNLOAD, url),
@@ -43,6 +44,8 @@ contextBridge.exposeInMainWorld(API.APP, {
 
   setBypassCommands: (commands: string[]) => invokeWithCustomErrors(AppAPI.SET_BYPASS_COMMANDS, commands),
   getBypassCommands: () => invokeWithCustomErrors(AppAPI.GET_BYPASS_COMMANDS),
+
+  checkNFTOwnership: (nftId: string) => invokeWithCustomErrors(AppAPI.CHECK_NFT_OWNERSHIP, nftId),
 
   showOpenDirectoryDialog: (options?: { defaultPath?: string }) =>
     invokeWithCustomErrors(AppAPI.SHOW_OPEN_DIRECTORY_DIALOG, options),

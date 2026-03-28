@@ -8,7 +8,7 @@ msgstr ""
 "Language: fa_IR\n"
 "Project-Id-Version: 1263bc1f20e1271bda78e84d2f4a6562\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-11-16 00:05\n"
+"PO-Revision-Date: 2026-02-08 00:11\n"
 "Last-Translator: \n"
 "Language-Team: Persian\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -944,13 +944,13 @@ msgstr "اضافه نمودن شواهد"
 msgid "Add Proofs To Verifiable Credential"
 msgstr "اضافه نمودن شواهد به اعتبارنامه قابل تأیید"
 
-#: src/components/vcs/VCList.tsx:228
+#: src/components/vcs/VCList.tsx:227
 msgid "Add Verifiable Credential from file"
 msgstr "اضافه نمودن اعتبار قابل تأیید را از فایل"
 
 #: src/components/addressbook/ContactAdd.tsx:58
 #: src/components/addressbook/ContactEdit.tsx:61
-#: src/components/notification/NotificationSendDialog.tsx:220
+#: src/components/notification/NotificationSendDialog.tsx:221
 #: src/components/signVerify/SigningEntityWalletAddress.tsx:45
 #: src/constants/WalletConnectCommands.tsx:142
 #: src/constants/WalletConnectCommands.tsx:217
@@ -994,11 +994,11 @@ msgstr "به برنامه‌ها و وب‌سایت‌های دیگر اجازه
 msgid "Allow requests that require switching to a different wallet key."
 msgstr "به درخواست هایی که نیاز به جابجایی به کلید کیف پول دیگری دارند اجازه دهید."
 
-#: src/components/notification/NotificationSendDialog.tsx:285
+#: src/components/notification/NotificationSendDialog.tsx:286
 msgid "Allow the NFT holder to send a counter offer"
 msgstr "به دارنده ان اف تی اجازه دهید یک پیشنهاد متقابل ارسال کند"
 
-#: src/components/notification/NotificationSendDialog.tsx:287
+#: src/components/notification/NotificationSendDialog.tsx:288
 msgid "Allow the recipient to send a counter offer"
 msgstr "به گیرنده اجازه دهید یک پیشنهاد متقابل ارسال کند"
 
@@ -1079,7 +1079,7 @@ msgstr "برنامه منتظر درخواست مجوز برای اجرای ای
 msgid "App Permissions"
 msgstr "مجوزهای برنامه"
 
-#: src/components/walletConnect/WalletConnectConfirmDialog.tsx:203
+#: src/components/walletConnect/WalletConnectConfirmDialog.tsx:230
 #: src/components/walletConnect/WalletConnectPairInfoDialog.tsx:92
 #: src/components/walletConnect/WalletConnectRequestPermissionsConfirmDialog.tsx:160
 msgid "Application"
@@ -1186,7 +1186,7 @@ msgstr "دارایی هایی که شما پرداخت میکنید"
 msgid "Assets you will receive"
 msgstr "دارایی هایی که شما دریافت میکنید"
 
-#: src/components/app/AppState.tsx:233
+#: src/components/app/AppState.tsx:234
 msgid "Attempt {attempt}"
 msgstr "کوشش {attempt}"
 
@@ -1222,7 +1222,7 @@ msgstr "بازگشت"
 msgid "Backup DIDs"
 msgstr "پشتیبان گیری از شناسه غیرمتمرکز ها"
 
-#: src/components/vcs/VCList.tsx:280
+#: src/components/vcs/VCList.tsx:279
 msgid "Badging"
 msgstr "نمایش"
 
@@ -1547,7 +1547,7 @@ msgstr "با کلیک بر روی نماد حذف فقط یک پوشه از ای
 #: src/components/nfts/NFTMoveToProfileDialog.tsx:299
 #: src/components/nfts/NFTTransferAction.tsx:150
 #: src/components/notification/NotificationAnnouncementDialog.tsx:87
-#: src/components/notification/NotificationSendDialog.tsx:308
+#: src/components/notification/NotificationSendDialog.tsx:309
 #: src/components/offers/ConfirmOfferCancellation.tsx:126
 #: src/components/offers/OfferShareDialog.tsx:316
 #: src/components/offers/OfferShareDialog.tsx:391
@@ -1613,7 +1613,7 @@ msgstr "سطح فشرده سازی"
 
 #: src/components/plotNFT/PlotNFTAbsorbRewards.tsx:167
 #: src/components/vcs/VCRevokeDialog.tsx:27
-#: src/components/walletConnect/WalletConnectConfirmDialog.tsx:172
+#: src/components/walletConnect/WalletConnectConfirmDialog.tsx:199
 msgid "Confirm"
 msgstr "تایید"
 
@@ -1643,7 +1643,7 @@ msgstr "تایید رمز ورود"
 msgid "Confirmation"
 msgstr "تائیدیه"
 
-#: src/components/walletConnect/WalletConnectConfirmDialog.tsx:170
+#: src/components/walletConnect/WalletConnectConfirmDialog.tsx:197
 msgid "Confirmation Request"
 msgstr "تقاضای تایید"
 
@@ -1673,8 +1673,8 @@ msgstr "متصل شده"
 msgid "Connected Applications"
 msgstr "برنامه های کاربردی متصل"
 
-#: src/components/app/AppState.tsx:225
-#: src/components/app/AppState.tsx:230
+#: src/components/app/AppState.tsx:226
+#: src/components/app/AppState.tsx:231
 msgid "Connecting to daemon"
 msgstr "اتصال به دیمن یا برنامه پس زمینه"
 
@@ -1737,11 +1737,11 @@ msgstr "کپی در حافظه"
 msgid "Copy To Clipboard"
 msgstr "کپی در حافظه"
 
-#: src/components/notification/NotificationSendDialog.tsx:240
+#: src/components/notification/NotificationSendDialog.tsx:241
 msgid "Cost to send notification"
 msgstr "هزینه ارسال اغلان"
 
-#: src/components/notification/NotificationSendDialog.tsx:238
+#: src/components/notification/NotificationSendDialog.tsx:239
 msgid "Cost to send notification to the NFT holder"
 msgstr "هزینه ارسال اعلان به دارنده ان اف تی"
 
@@ -1840,7 +1840,7 @@ msgstr "ایجاد مشخصات"
 msgid "Create Signature"
 msgstr "ایجاد امضاء"
 
-#: src/components/offers/OfferViewerTitle.tsx:36
+#: src/components/offers/OfferViewerTitle.tsx:34
 msgid "created {0}"
 msgstr "ایجاد شده {0}"
 
@@ -1979,7 +1979,7 @@ msgstr "تاخیر"
 #: src/components/plot/PlotAction.tsx:36
 #: src/components/plot/queue/PlotQueueActions.tsx:65
 #: src/components/plotNFT/PlotNFTCard.tsx:106
-#: src/hooks/useBlockchainNotifications.tsx:159
+#: src/hooks/useBlockchainNotifications.tsx:162
 msgid "Delete"
 msgstr "حذف"
 
@@ -2181,7 +2181,7 @@ msgstr "را اجرا کنید؟ {command} آیا میخواهید دستور"
 msgid "Do you want to log in to {fingerprint} and execute command {command}?"
 msgstr "را اجرا کنید؟ {fingerprint} شوید و دستور {command} آیا میخواهید وارد"
 
-#: src/hooks/useBlockchainNotifications.tsx:167
+#: src/hooks/useBlockchainNotifications.tsx:170
 msgid "Do you want to remove this offer notification? This action cannot be undone."
 msgstr "آیا میخواهید این اعلان پیشنهاد را حذف کنید؟ این عمل قابل لغو نیست."
 
@@ -2404,7 +2404,7 @@ msgstr "خطا"
 #~ msgid "Error fetching video preview"
 #~ msgstr ""
 
-#: src/components/vcs/VCList.tsx:216
+#: src/components/vcs/VCList.tsx:215
 msgid "Error parsing file"
 msgstr "خطا در تجزیه فایل"
 
@@ -2417,7 +2417,7 @@ msgid "Error posting offer: {0}"
 msgstr "خطا در ارسال پیشنهاد: {0}"
 
 #: src/components/signVerify/VerifyMessage.tsx:146
-#: src/components/walletConnect/WalletConnectConfirmDialog.tsx:159
+#: src/components/walletConnect/WalletConnectConfirmDialog.tsx:186
 msgid "Error:"
 msgstr "خطا:"
 
@@ -2507,7 +2507,7 @@ msgstr "رمزگشایی شناسه ان اف تی انجام نشد"
 #~ msgid "Failed to execute Keybase command: {stderr}"
 #~ msgstr "Failed to execute Keybase command: {stderr}"
 
-#: src/components/notification/NotificationSendDialog.tsx:148
+#: src/components/notification/NotificationSendDialog.tsx:149
 msgid "Failed to send the notification: {error}"
 msgstr "{error} :ارسال اعلان ناموفق"
 
@@ -2523,7 +2523,7 @@ msgstr "تنظیمات برداشت کننده بروز نشد"
 msgid "Failed to update passphrase: {0}"
 msgstr "بروزرسانی رمز ورود ناموفق: {0}"
 
-#: src/components/notification/NotificationSendDialog.tsx:143
+#: src/components/notification/NotificationSendDialog.tsx:144
 msgid "Failure"
 msgstr "عدم موفقیت"
 
@@ -2944,7 +2944,7 @@ msgstr "برو چند جواهر جمع کن"
 #~ msgid "Go to #{channelName}"
 #~ msgstr "Go to #{channelName}"
 
-#: src/components/vcs/VCList.tsx:296
+#: src/components/vcs/VCList.tsx:295
 msgid "Government IDs"
 msgstr "شناسه های دولتی"
 
@@ -3245,7 +3245,7 @@ msgstr "شناسه ان اف تی نامعتبر"
 msgid "Invalid state"
 msgstr "حالت نامعتبر"
 
-#: src/components/walletConnect/WalletConnectConfirmDialog.tsx:155
+#: src/components/walletConnect/WalletConnectConfirmDialog.tsx:182
 msgid "Invalid WalletConnect data"
 msgstr "اطلاعات اتصال ولت نامعتبر است"
 
@@ -3313,7 +3313,7 @@ msgstr "مقدار حجم یا مخفف کی"
 msgid "K-Size"
 msgstr "اندازه حجم یا مخفف کی"
 
-#: src/components/walletConnect/WalletConnectConfirmDialog.tsx:186
+#: src/components/walletConnect/WalletConnectConfirmDialog.tsx:213
 #: src/components/walletConnect/WalletConnectRequestPermissionsConfirmDialog.tsx:143
 #: src/constants/WalletConnectCommands.tsx:1051
 #: src/constants/WalletConnectCommands.tsx:1295
@@ -3350,7 +3350,7 @@ msgstr "کلیدها"
 msgid "KiB Up/Down"
 msgstr "کیلوبایت ذخیره/بارگذاری"
 
-#: src/components/vcs/VCList.tsx:302
+#: src/components/vcs/VCList.tsx:301
 msgid "KYC status"
 msgstr " KYC وضعیت شناختن مشتری یا"
 
@@ -3468,7 +3468,7 @@ msgstr "بارگداری اطلاعات فارم"
 msgid "Loading fingerprint"
 msgstr "بازکذاری کدهای شخصی"
 
-#: src/components/app/AppState.tsx:196
+#: src/components/app/AppState.tsx:197
 msgid "Loading keyring status"
 msgstr "بارکذاری وضعیت دسته کلید"
 
@@ -3573,7 +3573,7 @@ msgstr "حداکثر"
 msgid "Max page size"
 msgstr "حداکثر اندازه صفحه"
 
-#: src/components/vcs/VCList.tsx:306
+#: src/components/vcs/VCList.tsx:305
 msgid "Memberships"
 msgstr "عضویت ها"
 
@@ -3866,7 +3866,7 @@ msgstr "جزئیات ان اف تی در دسترس نیست"
 msgid "NFT has no royalties"
 msgstr "ان اف تی هیچ حق امتیازی ندارد"
 
-#: src/components/notification/NotificationSendDialog.tsx:212
+#: src/components/notification/NotificationSendDialog.tsx:213
 msgid "NFT holder address"
 msgstr "آدرس دارنده ان اف تی"
 
@@ -4042,7 +4042,7 @@ msgstr "در دسترس نیست"
 #: src/components/offers2/OfferBuilderValue.tsx:73
 #: src/components/plot/PlotStatus.tsx:20
 #: src/components/plotNFT/PlotNFTCard.tsx:307
-#: src/components/walletConnect/WalletConnectConfirmDialog.tsx:143
+#: src/components/walletConnect/WalletConnectConfirmDialog.tsx:20
 #: src/components/walletConnect/WalletConnectRequestPermissionsConfirmDialog.tsx:132
 msgid "Not Available"
 msgstr "غیرقابل دسترسی"
@@ -4075,11 +4075,11 @@ msgstr "است {farmerPublicKeyForFingerprint} توجه: کلید عمومی ف�
 msgid "Note: the pool public key corresponding to the current logged-in wallet is {poolPublicKeyForFingerprint}"
 msgstr "است {poolPublicKeyForFingerprint} توجه: کلید عمومی استخر مربوط به کیف پول وارد شده فعلی"
 
-#: src/components/notification/NotificationSendDialog.tsx:146
+#: src/components/notification/NotificationSendDialog.tsx:147
 msgid "Notification has successfully been sent to a full node and included in the mempool."
 msgstr "اعلان با موفقیت به نود کامل منتقل شد و در حافظه استخر تراکنش قرار گرفت."
 
-#: src/components/notification/NotificationSendDialog.tsx:214
+#: src/components/notification/NotificationSendDialog.tsx:215
 msgid "Notification recipient's address"
 msgstr "آدرس گیرنده اعلان"
 
@@ -4522,7 +4522,7 @@ msgid "Please check the following link to verify the site you are going to visit
 msgstr "لطفا لینک زیر را بررسی کنید تا از سایتی که میخواهید ببینید مطمن شوید. با مسئولیت خود ادامه دهید."
 
 #: src/components/plotNFT/PlotNFTAbsorbRewards.tsx:139
-#: src/hooks/useBlockchainNotifications.tsx:158
+#: src/hooks/useBlockchainNotifications.tsx:161
 msgid "Please Confirm"
 msgstr "لطفا تایید کنید"
 
@@ -5032,7 +5032,7 @@ msgid "Refresh Plots"
 msgstr "بروز رسانی پلات ها"
 
 #: src/components/walletConnect/WalletConnectAddConnectionDialog.tsx:270
-#: src/components/walletConnect/WalletConnectConfirmDialog.tsx:173
+#: src/components/walletConnect/WalletConnectConfirmDialog.tsx:200
 #: src/components/walletConnect/WalletConnectRequestPermissionsConfirmDialog.tsx:90
 msgid "Reject"
 msgstr "رد کردن"
@@ -5456,7 +5456,7 @@ msgstr "استخر شخصی"
 msgid "Sell an NFT"
 msgstr "فروش یک ان اف تی"
 
-#: src/components/notification/NotificationSendDialog.tsx:311
+#: src/components/notification/NotificationSendDialog.tsx:312
 msgid "Send Message"
 msgstr "ارسال پیام"
 
@@ -5466,7 +5466,7 @@ msgstr "ارسال پیام"
 msgid "Send Notification"
 msgstr "ارسال اعلان"
 
-#: src/components/notification/NotificationSendDialog.tsx:179
+#: src/components/notification/NotificationSendDialog.tsx:180
 msgid "Send offer notification"
 msgstr "ارسال اعلان پیشنهاد"
 
@@ -5742,7 +5742,7 @@ msgstr "فهرست شروع"
 msgid "Start Key"
 msgstr "کلید شروع"
 
-#: src/components/app/AppState.tsx:254
+#: src/components/app/AppState.tsx:255
 msgid "Starting services"
 msgstr "شروع خدمات"
 
@@ -5812,7 +5812,7 @@ msgstr "اشتراک"
 msgid "Subscriptions"
 msgstr "اشتراک ها"
 
-#: src/components/notification/NotificationSendDialog.tsx:143
+#: src/components/notification/NotificationSendDialog.tsx:144
 #: src/components/vcs/VCCard.tsx:278
 #: src/hooks/useAcceptOfferHook.tsx:98
 msgid "Success"
@@ -6340,7 +6340,7 @@ msgstr "معامله توکن ها"
 msgid "Transaction auto claim fee"
 msgstr "کارمزد برداشت خودکار تراکنش"
 
-#: src/components/notification/NotificationSendDialog.tsx:261
+#: src/components/notification/NotificationSendDialog.tsx:262
 msgid "Transaction Fee"
 msgstr "کارمزد تراکنش"
 
@@ -6608,7 +6608,7 @@ msgstr "پرمخاطب"
 msgid "Verifiable Credential"
 msgstr "اعتبار قابل تایید"
 
-#: src/components/vcs/VCList.tsx:200
+#: src/components/vcs/VCList.tsx:199
 msgid "Verifiable Credential already exists."
 msgstr "اعتبار قابل تأیید از قبل وجود دارد."
 
@@ -6624,17 +6624,17 @@ msgstr "اعتبار قابل تأیید حذف شد."
 msgid "Verifiable Credential Revoked."
 msgstr "اعتبار قابل تأیید باطل شد."
 
-#: src/components/vcs/VCList.tsx:208
+#: src/components/vcs/VCList.tsx:207
 msgid "Verifiable Credential successfully added."
 msgstr "اعتبار قابل تأیید با موفقیت اضافه شد."
 
 #: src/components/settings/SettingsVerifiableCredentials.tsx:17
-#: src/components/vcs/VCList.tsx:268
-#: src/components/vcs/VCList.tsx:329
+#: src/components/vcs/VCList.tsx:267
+#: src/components/vcs/VCList.tsx:328
 msgid "Verifiable Credentials"
 msgstr "اعتبار قابل تایید"
 
-#: src/components/vcs/VCList.tsx:271
+#: src/components/vcs/VCList.tsx:270
 msgid "Verifiable Credentials are like digital ID cards that can prove certain information about you without giving away your private details."
 msgstr "اعتبارنامه‌های قابل تأیید مانند کارت‌های شناسایی دیجیتال هستند که میتوانند اطلاعات خاصی را در مورد شما بدون ارائه اطلاعات شخصیتان ثابت کنند"
 
@@ -6722,7 +6722,7 @@ msgstr "Spacescan.io دیدن در"
 msgid "View Pool Login Link"
 msgstr "دیدن لینک ورود به استخر"
 
-#: src/components/offers/OfferViewerTitle.tsx:49
+#: src/components/offers/OfferViewerTitle.tsx:47
 msgid "Viewing offer"
 msgstr "مشاهده پیشنهاد"
 
@@ -6764,7 +6764,7 @@ msgstr "منتظر تایید تراکنش هستیم"
 #: src/components/app/AppStatusHeader.tsx:152
 #: src/components/walletConnect/WalletConnectAddConnectionDialog.tsx:187
 #: src/components/walletConnect/WalletConnectAddConnectionDialog.tsx:191
-#: src/components/walletConnect/WalletConnectConfirmDialog.tsx:190
+#: src/components/walletConnect/WalletConnectConfirmDialog.tsx:217
 #: src/components/walletConnect/WalletConnectRequestPermissionsConfirmDialog.tsx:147
 msgid "Wallet"
 msgstr "کیف پول"

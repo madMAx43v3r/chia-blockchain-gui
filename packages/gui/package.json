@@ -52,9 +52,9 @@
     "@mui/styles": "5.14.5",
     "@mui/x-charts": "7.3.2",
     "@rehooks/local-storage": "2.4.4",
-    "@walletconnect/sign-client": "2.10.0",
-    "@walletconnect/utils": "2.10.0",
-    "axios": "1.13.5",
+    "@walletconnect/sign-client": "2.23.9",
+    "@walletconnect/utils": "2.23.9",
+    "axios": "1.16.0",
     "bech32": "2.0.0",
     "bignumber.js": "9.1.1",
     "buffer": "6.0.3",
@@ -71,7 +71,8 @@
     "is-plain-object": "5.0.0",
     "isomorphic-fetch": "3.0.0",
     "js-yaml": "4.1.1",
-    "lodash": "4.17.23",
+    "json-bigint": "1.0.0",
+    "lodash": "4.18.1",
     "match-sorter": "6.3.4",
     "moment": "2.30.1",
     "normalize-url": "7.0.3",
@@ -118,6 +119,7 @@
     "@types/big.js": "6.2.0",
     "@types/jest": "29.5.3",
     "@types/js-yaml": "4.0.5",
+    "@types/json-bigint": "1.0.4",
     "@types/lodash": "4.14.202",
     "@types/node": "20.5.2",
     "@types/react": "18.2.20",
@@ -127,7 +129,7 @@
     "@types/seedrandom": "3.0.5",
     "@types/styled-components": "5.1.26",
     "@types/validator": "13.11.1",
-    "@walletconnect/types": "2.10.0",
+    "@walletconnect/types": "2.23.9",
     "@welldone-software/why-did-you-render": "7.0.1",
     "ajv": "8.18.0",
     "babel-core": "7.0.0-bridge.0",
@@ -137,11 +139,11 @@
     "babel-plugin-styled-components": "2.1.4",
     "babel-plugin-transform-imports": "2.0.0",
     "concurrently": "8.2.1",
-    "copy-webpack-plugin": "11.0.0",
+    "copy-webpack-plugin": "14.0.0",
     "cross-env": "7.0.3",
     "css-loader": "6.11.0",
     "date-and-time": "2.4.3",
-    "electron": "37.3.1",
+    "electron": "39.8.5",
     "electron-devtools-assembler": "1.2.0",
     "electron-playwright-helpers": "^1.6.0",
     "electron-winstaller": "5.4.0",
@@ -154,12 +156,12 @@
     "style-loader": "4.0.0",
     "tailwindcss": "^4.1.10",
     "terser": "5.44.1",
-    "terser-webpack-plugin": "5.3.14",
+    "terser-webpack-plugin": "5.4.0",
     "typescript": "5.7.3",
     "webpack": "5.105.1",
     "webpack-bundle-analyzer": "4.10.2",
     "webpack-cli": "6.0.1",
-    "webpack-dev-server": "5.2.2"
+    "webpack-dev-server": "5.2.3"
   },
   "optionalDependencies": {
     "playwright": "1.57.0"
@@ -176,5 +178,5 @@
       "last 1 safari version"
     ]
   },
-  "version": "2.7.0"
+  "version": "2.7.1"
 }

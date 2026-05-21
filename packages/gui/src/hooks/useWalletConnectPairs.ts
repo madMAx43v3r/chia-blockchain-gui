@@ -18,12 +18,6 @@ export type Pairs = {
   removePairBySession: (sessionTopic: string) => void;
 
   removeSessionFromPair: (sessionTopic: string) => void;
-
-  bypassCommand: (sessionTopic: string, command: string, confirm: boolean) => void;
-  bypassCommands: (sessionTopic: string, commands: string[], confirm: boolean) => void;
-  removeBypassCommand: (sessionTopic: string, command: string) => void;
-  resetBypassForAllPairs: () => void;
-  resetBypassForPair: (pairTopic: string) => void;
 };
 
 export default function useWalletConnectPairs(): Pairs {
@@ -34,29 +28,50 @@ export default function useWalletConnectPairs(): Pairs {
   pairsRef.current = localStorageData;
 
   const updatePair = useCallback((topic: string, data: Partial<Omit<Pair, 'topic'>> | ((pair: Pair) => Pair)) => {
-    const [, setPairs] = pairsRef.current;
+    const [latestPairs, setPairs] = pairsRef.current;
+
+    const index = latestPairs.findIndex((item) => item.topic === topic);
+    if (index !== -1) {
+      const oldPair = latestPairs[index];
+      const newPairing = typeof data === 'function' ? data(oldPair) : { ...oldPair, ...data };
+      const newPairings = [...latestPairs];
+      newPairings[index] = newPairing;
+      pairsRef.current = [newPairings, setPairs];
+    }
+
     setPairs((pairs: Pair[]) => {
-      const index = pairs.findIndex((item) => item.topic === topic);
-      if (index === -1) {
+      const idx = pairs.findIndex((item) => item.topic === topic);
+      if (idx === -1) {
         return pairs;
       }
 
-      const oldPair = pairs[index];
+      const oldPair = pairs[idx];
       const newPairing = typeof data === 'function' ? data(oldPair) : { ...oldPair, ...data };
       const newPairings = [...pairs];
-      newPairings[index] = newPairing;
+      newPairings[idx] = newPairing;
 
       return newPairings;
     });
   }, []);
 
   const removePair = useCallback((topic: string) => {
-    const [, setPairs] = pairsRef.current;
+    const [latestPairs, setPairs] = pairsRef.current;
+    if (!latestPairs.some((item) => item.topic === topic)) {
+      return;
+    }
+
+    pairsRef.current = [latestPairs.filter((item) => item.topic !== topic), setPairs];
+
     setPairs((pairs: Pair[]) => pairs.filter((item) => item.topic !== topic));
   }, []);
 
   const removePairBySession = useCallback((sessionTopic: string) => {
-    const [, setPairs] = pairsRef.current;
+    const [latestPairs, setPairs] = pairsRef.current;
+    pairsRef.current = [
+      latestPairs.filter((item) => !item.sessions.find((session) => session.topic === sessionTopic)),
+      setPairs,
+    ];
+
     setPairs((pairs: Pair[]) =>
       pairs.filter((item) => !item.sessions.find((session) => session.topic === sessionTopic)),
     );
@@ -78,19 +93,31 @@ export default function useWalletConnectPairs(): Pairs {
   }, []);
 
   const addPair = useCallback((pair: Pair) => {
-    const [, setPairs] = pairsRef.current;
-    setPairs((pairs: Pair[]) => {
-      const index = pairs.findIndex((item) => item.topic === pair.topic);
-      if (index !== -1) {
-        throw new Error('Pair already exists');
-      }
+    const [latestPairs, setPairs] = pairsRef.current;
+    if (latestPairs.findIndex((item) => item.topic === pair.topic) !== -1) {
+      throw new Error('Pair already exists');
+    }
 
+    pairsRef.current = [[...latestPairs, pair], setPairs];
+
+    setPairs((pairs: Pair[]) => {
+      if (pairs.some((item) => item.topic === pair.topic)) {
+        return pairs;
+      }
       return [...pairs, pair];
     });
   }, []);
 
   const removeSessionFromPair = useCallback((sessionTopic: string) => {
-    const [, setPairs] = pairsRef.current;
+    const [latestPairs, setPairs] = pairsRef.current;
+    pairsRef.current = [
+      latestPairs.map((pair) => ({
+        ...pair,
+        sessions: pair.sessions.filter((item) => item.topic !== sessionTopic),
+      })),
+      setPairs,
+    ];
+
     setPairs((pairs: Pair[]) =>
       pairs.map((pair) => ({
         ...pair,
@@ -100,97 +127,6 @@ export default function useWalletConnectPairs(): Pairs {
   }, []);
 
   const get = useCallback(() => pairsRef.current[0], []);
-
-  const bypassCommand = useCallback((sessionTopic: string, command: string, confirm: boolean) => {
-    const [, setPairs] = pairsRef.current;
-    setPairs((pairs: Pair[]) => {
-      const pair = pairs.find((item) => item.sessions?.find((session) => session.topic === sessionTopic));
-      if (!pair) {
-        throw new Error('Pair not found');
-      }
-
-      return pairs.map((item) => ({
-        ...item,
-        bypassCommands:
-          item.topic === pair.topic
-            ? {
-                ...item.bypassCommands,
-                [command]: confirm,
-              }
-            : item.bypassCommands,
-      }));
-    });
-  }, []);
-
-  const bypassCommands = useCallback((sessionTopic: string, commands: string[], confirm: boolean) => {
-    const [, setPairs] = pairsRef.current;
-    setPairs((pairs: Pair[]) => {
-      const pair = pairs.find((item) => item.sessions?.find((session) => session.topic === sessionTopic));
-      if (!pair) {
-        throw new Error('Pair not found');
-      }
-
-      return pairs.map((item) => ({
-        ...item,
-        bypassCommands:
-          item.topic === pair.topic
-            ? {
-                ...item.bypassCommands,
-                ...commands.reduce((acc, command) => ({ ...acc, [command]: confirm }), {}),
-              }
-            : item.bypassCommands,
-      }));
-    });
-  }, []);
-
-  const removeBypassCommand = useCallback((sessionTopic: string, command: string) => {
-    const deleteCommand = (commands: Record<string, boolean> | undefined) => {
-      const newBypassCommands = { ...commands };
-      delete newBypassCommands[command];
-      return newBypassCommands;
-    };
-
-    const [, setPairs] = pairsRef.current;
-    setPairs((pairs: Pair[]) => {
-      const pair = pairs.find((item) => item.sessions?.find((session) => session.topic === sessionTopic));
-      if (!pair) {
-        throw new Error('Pair not found');
-      }
-
-      return pairs.map((item) => ({
-        ...item,
-        bypassCommands:
-          item.topic === pair.topic && command in (item.bypassCommands ?? {})
-            ? deleteCommand(item.bypassCommands)
-            : item.bypassCommands,
-      }));
-    });
-  }, []);
-
-  const resetBypassForAllPairs = useCallback(() => {
-    const [, setPairs] = pairsRef.current;
-
-    setPairs((pairs: Pair[]) =>
-      pairs.map((item) => ({
-        ...item,
-        bypassCommands: {},
-      })),
-    );
-  }, []);
-
-  const resetBypassForPair = useCallback((pairTopic: string) => {
-    const [, setPairs] = pairsRef.current;
-
-    setPairs((pairs: Pair[]) =>
-      pairs.map((item) => ({
-        ...item,
-        bypassCommands:
-          item.topic === pairTopic
-            ? {} // reset bypass commands
-            : item.bypassCommands,
-      })),
-    );
-  }, []);
 
   const pairs = useMemo(
     () => ({
@@ -206,11 +142,6 @@ export default function useWalletConnectPairs(): Pairs {
       removePairBySession,
 
       removeSessionFromPair,
-      bypassCommand,
-      bypassCommands,
-      removeBypassCommand,
-      resetBypassForAllPairs,
-      resetBypassForPair,
       pairs: currentPairs,
     }),
     [
@@ -223,11 +154,6 @@ export default function useWalletConnectPairs(): Pairs {
       getPairBySession,
       removePairBySession,
       removeSessionFromPair,
-      bypassCommand,
-      bypassCommands,
-      removeBypassCommand,
-      resetBypassForAllPairs,
-      resetBypassForPair,
       currentPairs,
     ],
   );

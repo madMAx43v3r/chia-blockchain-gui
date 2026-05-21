@@ -1,12 +1,28 @@
 /* eslint-disable no-param-reassign -- This file use Immer */
-import { CAT, DID, Farmer, NFT, Pool, WalletService, WalletType, toBech32m, VC, normalizeHex } from '@chia-network/api';
-import type { NFTInfo, Transaction, Wallet, WalletBalance } from '@chia-network/api';
+import {
+  CAT,
+  DID,
+  Farmer,
+  NFT,
+  Pool,
+  WalletService,
+  WalletType,
+  toBech32m,
+  VC,
+  normalizeHex,
+  type HeightInfo,
+  type NFTInfo,
+  type Transaction,
+  type Wallet,
+  type WalletBalance,
+} from '@chia-network/api';
 import BigNumber from 'bignumber.js';
 
 import api, { baseQuery } from '../api';
 import normalizePoolState from '../utils/normalizePoolState';
 import onCacheEntryAddedInvalidate from '../utils/onCacheEntryAddedInvalidate';
 import { query, mutation } from '../utils/reduxToolkitEndpointAbstractions';
+import withAllowUnsynced from '../utils/withAllowUnsynced';
 
 const tagTypes = [
   'Address',
@@ -194,6 +210,7 @@ export const walletApi = apiWithTag.injectEndpoints({
     }),
 
     pwAbsorbRewards: mutation(build, WalletService, 'pwAbsorbRewards', {
+      mergeAllowUnsynced: true,
       invalidatesTags: [
         { type: 'Transactions', id: 'LIST' },
         { type: 'PlotNFT', id: 'LIST' },
@@ -201,6 +218,7 @@ export const walletApi = apiWithTag.injectEndpoints({
     }),
 
     pwJoinPool: mutation(build, WalletService, 'pwJoinPool', {
+      mergeAllowUnsynced: true,
       invalidatesTags: [
         { type: 'Transactions', id: 'LIST' },
         { type: 'PlotNFT', id: 'LIST' },
@@ -208,6 +226,7 @@ export const walletApi = apiWithTag.injectEndpoints({
     }),
 
     pwSelfPool: mutation(build, WalletService, 'pwSelfPool', {
+      mergeAllowUnsynced: true,
       invalidatesTags: [
         { type: 'Transactions', id: 'LIST' },
         { type: 'PlotNFT', id: 'LIST' },
@@ -215,6 +234,7 @@ export const walletApi = apiWithTag.injectEndpoints({
     }),
 
     createNewWallet: mutation(build, WalletService, 'createNewWallet', {
+      mergeAllowUnsynced: true,
       invalidatesTags: [
         { type: 'Wallets', id: 'LIST' },
         { type: 'DIDWallet', id: 'LIST' },
@@ -397,7 +417,7 @@ export const walletApi = apiWithTag.injectEndpoints({
               const { data: sendTransactionData, error } = await fetchWithBQ({
                 command: 'sendTransaction',
                 service: WalletService,
-                args: restArgs,
+                args: withAllowUnsynced(queryApi.getState(), restArgs),
               });
 
               if (error) {
@@ -544,7 +564,16 @@ export const walletApi = apiWithTag.injectEndpoints({
       invalidatesTags: (result, _error, { walletId }) => (result ? [{ type: 'Address', id: walletId }] : []),
     }),
 
-    getCoinRecordsByNames: query(build, WalletService, 'getCoinRecordsByNames'),
+    getCoinRecordsByNames: mutation(build, WalletService, 'getCoinRecordsByNames', {
+      mergeAllowUnsynced: true,
+    }),
+
+    pushTransactions: mutation(build, WalletService, 'pushTransactions', {
+      invalidatesTags: [{ type: 'Transactions', id: 'LIST' }],
+    }),
+    selectCoins: query(build, WalletService, 'selectCoins'),
+
+    getSpendableCoins: query(build, WalletService, 'getSpendableCoins'),
 
     registerRemoteCoins: mutation(build, WalletService, 'registerRemoteCoins'),
 
@@ -553,7 +582,12 @@ export const walletApi = apiWithTag.injectEndpoints({
     getTimestampForHeight: query(build, WalletService, 'getTimestampForHeight'),
 
     getHeightInfo: query(build, WalletService, 'getHeightInfo', {
-      transformResponse: (response) => response.height,
+      transformResponse: (response: HeightInfo) => ({
+        height: response.height,
+        latestTimestamp: response.latestTimestamp,
+        isTransactionBlock: response.isTransactionBlock ?? null,
+        prevTransactionBlockHeight: response.prevTransactionBlockHeight ?? null,
+      }),
       onCacheEntryAdded: onCacheEntryAddedInvalidate(baseQuery, api, [
         {
           command: 'onSyncChanged',
@@ -567,6 +601,8 @@ export const walletApi = apiWithTag.injectEndpoints({
         },
       ]),
     }),
+
+    getPuzzleAndSolution: mutation(build, WalletService, 'getPuzzleAndSolution'),
 
     getCurrentDerivationIndex: query(build, WalletService, 'getCurrentDerivationIndex', {
       providesTags: (result) => (result ? [{ type: 'DerivationIndex' }] : []),
@@ -670,10 +706,12 @@ export const walletApi = apiWithTag.injectEndpoints({
     }),
 
     createOfferForIds: mutation(build, WalletService, 'createOfferForIds', {
+      mergeAllowUnsynced: true,
       invalidatesTags: [{ type: 'OfferTradeRecord', id: 'LIST' }, 'OfferCounts'],
     }),
 
     cancelOffer: mutation(build, WalletService, 'cancelOffer', {
+      mergeAllowUnsynced: true,
       invalidatesTags: (_result, _error, { tradeId }) => [{ type: 'OfferTradeRecord', id: tradeId }],
     }),
 
@@ -685,6 +723,7 @@ export const walletApi = apiWithTag.injectEndpoints({
     }),
 
     takeOffer: mutation(build, WalletService, 'takeOffer', {
+      mergeAllowUnsynced: true,
       invalidatesTags: [{ type: 'OfferTradeRecord', id: 'LIST' }, 'OfferCounts'],
     }),
 
@@ -696,6 +735,7 @@ export const walletApi = apiWithTag.injectEndpoints({
 
     // Pool
     createNewPoolWallet: mutation(build, Pool, 'createNewPoolWallet', {
+      mergeAllowUnsynced: true,
       invalidatesTags: [
         { type: 'Wallets', id: 'LIST' },
         { type: 'Transactions', id: 'LIST' },
@@ -704,6 +744,7 @@ export const walletApi = apiWithTag.injectEndpoints({
 
     // CAT
     createNewCATWallet: mutation(build, CAT, 'createNewCatWallet', {
+      mergeAllowUnsynced: true,
       invalidatesTags: [
         { type: 'Wallets', id: 'LIST' },
         { type: 'Transactions', id: 'LIST' },
@@ -711,6 +752,7 @@ export const walletApi = apiWithTag.injectEndpoints({
     }),
 
     createCATWalletForExisting: mutation(build, CAT, 'createWalletForExisting', {
+      mergeAllowUnsynced: true,
       invalidatesTags: [
         { type: 'Wallets', id: 'LIST' },
         { type: 'Transactions', id: 'LIST' },
@@ -837,7 +879,7 @@ export const walletApi = apiWithTag.injectEndpoints({
                 command: 'spend',
                 service: CAT,
 
-                args: restArgs,
+                args: withAllowUnsynced(queryApi.getState(), restArgs),
               });
 
               if (error) {
@@ -880,12 +922,12 @@ export const walletApi = apiWithTag.injectEndpoints({
         fee: string;
       }
     >({
-      async queryFn({ name, ...restArgs }, _queryApi, _extraOptions, fetchWithBQ) {
+      async queryFn({ name, ...restArgs }, queryApi, _extraOptions, fetchWithBQ) {
         try {
           const { data, error } = await fetchWithBQ({
             command: 'createWalletForExisting',
             service: CAT,
-            args: restArgs,
+            args: withAllowUnsynced(queryApi.getState(), restArgs),
           });
 
           if (error) {
@@ -919,6 +961,7 @@ export const walletApi = apiWithTag.injectEndpoints({
     }),
 
     crCatApprovePending: mutation(build, CAT, 'crCatApprovePending', {
+      mergeAllowUnsynced: true,
       invalidatesTags: [{ type: 'Transactions', id: 'LIST' }],
     }),
 
@@ -1061,6 +1104,7 @@ export const walletApi = apiWithTag.injectEndpoints({
     // DID
 
     createNewDIDWallet: mutation(build, DID, 'createNewDIDWallet', {
+      mergeAllowUnsynced: true,
       invalidatesTags: [
         { type: 'Wallets', id: 'LIST' },
         { type: 'DIDWallet', id: 'LIST' },
@@ -1069,14 +1113,17 @@ export const walletApi = apiWithTag.injectEndpoints({
     }),
 
     createNewRemoteWallet: build.mutation({
-      query: () => ({
-        service: WalletService,
-        command: 'createNewWallet',
-        args: {
-          walletType: 'remote_wallet',
+      async queryFn(_arg, queryApi, _extraOptions, fetchWithBQ) {
+        const args = withAllowUnsynced(queryApi.getState(), {
+          walletType: 'remote_wallet' as const,
           options: {},
-        },
-      }),
+        });
+        const result = await fetchWithBQ({ service: WalletService, command: 'createNewWallet', args });
+        if (result.error) {
+          return { error: result.error as any };
+        }
+        return { data: result.data };
+      },
       invalidatesTags: [{ type: 'Wallets', id: 'LIST' }],
     }),
 
@@ -1085,6 +1132,7 @@ export const walletApi = apiWithTag.injectEndpoints({
     }),
 
     setDIDName: mutation(build, DID, 'setDIDName', {
+      mergeAllowUnsynced: true,
       invalidatesTags: (_result, _error, { walletId }) => [
         { type: 'Wallets', id: walletId },
         { type: 'DIDWallet', id: walletId },
@@ -1093,6 +1141,7 @@ export const walletApi = apiWithTag.injectEndpoints({
     }),
 
     updateDIDRecoveryIds: mutation(build, DID, 'updateRecoveryIds', {
+      mergeAllowUnsynced: true,
       invalidatesTags: (_result, _error, { walletId }) => [
         { type: 'Wallets', id: walletId },
         { type: 'DIDRecoveryList', id: walletId },
@@ -1201,6 +1250,7 @@ export const walletApi = apiWithTag.injectEndpoints({
     }),
 
     updateDIDMetadata: mutation(build, DID, 'updateDIDMetadata', {
+      mergeAllowUnsynced: true,
       invalidatesTags: (_result, _error, { walletId }) => [
         { type: 'DIDInfo' },
         { type: 'DIDCoinInfo', id: walletId },
@@ -1430,18 +1480,22 @@ export const walletApi = apiWithTag.injectEndpoints({
     }),
 
     mintBulk: mutation(build, NFT, 'mintBulk', {
+      mergeAllowUnsynced: true,
       invalidatesTags: (result, _error) => (result ? [{ type: 'NFTInfo', id: 'LIST' }] : []),
     }),
 
     mintNFT: mutation(build, NFT, 'mintNFT', {
+      mergeAllowUnsynced: true,
       invalidatesTags: (result, _error) => (result ? [{ type: 'NFTInfo', id: 'LIST' }] : []),
     }),
 
     transferNFT: mutation(build, NFT, 'transferNft', {
+      mergeAllowUnsynced: true,
       invalidatesTags: (result, _error) => (result ? [{ type: 'NFTInfo', id: 'LIST' }] : []),
     }),
 
     setNFTDID: mutation(build, NFT, 'setNftDid', {
+      mergeAllowUnsynced: true,
       invalidatesTags: (result, _error) =>
         result
           ? [
@@ -1453,6 +1507,7 @@ export const walletApi = apiWithTag.injectEndpoints({
     }),
 
     setNFTStatus: mutation(build, NFT, 'setNftStatus', {
+      mergeAllowUnsynced: true,
       invalidatesTags: (result, _error) => (result ? [{ type: 'NFTInfo', id: 'LIST' }] : []),
     }),
 
@@ -1490,6 +1545,7 @@ export const walletApi = apiWithTag.injectEndpoints({
     }),
 
     sendNotification: mutation(build, WalletService, 'sendNotification', {
+      mergeAllowUnsynced: true,
       invalidatesTags: (result, _error) => (result ? [{ type: 'Notification', id: 'LIST' }] : []),
     }),
 
@@ -1514,13 +1570,13 @@ export const walletApi = apiWithTag.injectEndpoints({
       ]),
     }),
 
-    spendVC: mutation(build, VC, 'spendVC'),
+    spendVC: mutation(build, VC, 'spendVC', { mergeAllowUnsynced: true }),
 
-    addVCProofs: mutation(build, VC, 'addVCProofs'),
+    addVCProofs: mutation(build, VC, 'addVCProofs', { mergeAllowUnsynced: true }),
 
     getProofsForRoot: query(build, VC, 'getProofsForRoot'),
 
-    revokeVC: mutation(build, VC, 'revokeVC'),
+    revokeVC: mutation(build, VC, 'revokeVC', { mergeAllowUnsynced: true }),
     // clawback
     setAutoClaim: mutation(build, WalletService, 'setAutoClaim', {
       invalidatesTags: [{ type: 'AutoClaim' }],
@@ -1529,7 +1585,7 @@ export const walletApi = apiWithTag.injectEndpoints({
       providesTags: (result) => (result ? [{ type: 'AutoClaim' }] : []),
     }),
 
-    spendClawbackCoins: mutation(build, WalletService, 'spendClawbackCoins'),
+    spendClawbackCoins: mutation(build, WalletService, 'spendClawbackCoins', { mergeAllowUnsynced: true }),
   }),
 });
 
@@ -1561,13 +1617,18 @@ export const {
   useGetTransactionsCountQuery,
   useGetCurrentAddressQuery,
   useGetNextAddressMutation,
-  useGetCoinRecordsByNamesQuery,
-  useLazyGetCoinRecordsByNamesQuery,
+  useGetCoinRecordsByNamesMutation,
+  usePushTransactionsMutation,
+  useSelectCoinsQuery,
+  useLazySelectCoinsQuery,
+  useGetSpendableCoinsQuery,
+  useLazyGetSpendableCoinsQuery,
   useRegisterRemoteCoinsMutation,
   useFarmBlockMutation,
   useGetTimestampForHeightQuery,
   useLazyGetTimestampForHeightQuery,
   useGetHeightInfoQuery,
+  useGetPuzzleAndSolutionMutation,
   useGetNetworkInfoQuery,
   useGetSyncStatusQuery,
   useGetWalletConnectionsQuery,

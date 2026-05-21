@@ -1,7 +1,6 @@
 import { useEffect, useCallback, useRef } from 'react';
 
-import type Notification from '../@types/Notification';
-import { disconnectPair, bindEvents, cleanupPairings } from '../util/walletConnect';
+import { approveSessionProposal, bindEvents, disconnectPair, rejectSessionProposal } from '../util/walletConnect';
 
 import useWalletConnectClient from './useWalletConnectClient';
 import useWalletConnectCommand from './useWalletConnectCommand';
@@ -18,11 +17,10 @@ export type UseWalletConnectConfig = {
     icons: string[];
   };
   debug?: boolean;
-  onNotification?: (notification: Notification) => void;
 };
 
 export default function useWalletConnect(config: UseWalletConnectConfig) {
-  const { projectId, relayUrl, metadata, debug, onNotification } = config;
+  const { projectId, relayUrl, metadata, debug } = config;
 
   const pairs = useWalletConnectPairs();
   const { client, isLoading, error } = useWalletConnectClient({
@@ -32,13 +30,14 @@ export default function useWalletConnect(config: UseWalletConnectConfig) {
     debug,
   });
 
-  const { process, isLoading: isLoadingWalletConnectCommand } = useWalletConnectCommand({
-    onNotification,
-  });
+  const { process, isLoading: isLoadingWalletConnectCommand } = useWalletConnectCommand();
   const { enabled } = useWalletConnectPreferences();
 
   const processRef = useRef(process);
   processRef.current = process;
+
+  const pairsRef = useRef(pairs);
+  pairsRef.current = pairs;
 
   const isLoadingData = isLoading || isLoadingWalletConnectCommand;
 
@@ -47,13 +46,11 @@ export default function useWalletConnect(config: UseWalletConnectConfig) {
       return undefined;
     }
 
-    cleanupPairings(client, pairs);
-
-    return bindEvents(client, pairs, () => processRef.current);
-  }, [client, pairs]);
+    return bindEvents(client, pairsRef.current, () => processRef.current);
+  }, [client]);
 
   const handlePair = useCallback(
-    async (uri: string, fingerprints: number[], mainnet = false) => {
+    async (uri: string) => {
       if (!client) {
         throw new Error('Client is not defined');
       }
@@ -63,16 +60,18 @@ export default function useWalletConnect(config: UseWalletConnectConfig) {
         throw new Error('Pairing failed');
       }
 
-      pairs.addPair({
+      // Mainnet vs testnet is captured by main when `registerPair` runs and
+      // persisted on the YAML PairRecord — it's not stored on the renderer
+      // side anymore. The renderer's pair record is purely transient WC SDK
+      // state (sessions, pendingProposal).
+      pairsRef.current.addPair({
         topic,
-        fingerprints,
-        mainnet,
         sessions: [],
       });
 
       return topic;
     },
-    [client, pairs],
+    [client],
   );
 
   const handleDisconnect = useCallback(
@@ -81,9 +80,31 @@ export default function useWalletConnect(config: UseWalletConnectConfig) {
         throw new Error('Client is not defined');
       }
 
-      return disconnectPair(client, pairs, topic);
+      return disconnectPair(client, pairsRef.current, topic);
     },
-    [client, pairs],
+    [client],
+  );
+
+  const handleApproveSession = useCallback(
+    (topic: string, fingerprints: number[], mainnet: boolean, methods?: string[]) => {
+      if (!client) {
+        throw new Error('Client is not defined');
+      }
+
+      return approveSessionProposal(client, pairsRef.current, topic, fingerprints, mainnet, methods);
+    },
+    [client],
+  );
+
+  const handleRejectSession = useCallback(
+    (topic: string) => {
+      if (!client) {
+        throw new Error('Client is not defined');
+      }
+
+      return rejectSessionProposal(client, pairsRef.current, topic);
+    },
+    [client],
   );
 
   return {
@@ -93,6 +114,8 @@ export default function useWalletConnect(config: UseWalletConnectConfig) {
 
     pair: handlePair,
     disconnect: handleDisconnect,
+    approveSession: handleApproveSession,
+    rejectSession: handleRejectSession,
 
     pairs,
   };

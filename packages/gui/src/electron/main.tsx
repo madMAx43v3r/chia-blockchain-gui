@@ -10,6 +10,7 @@ import {
   Notification,
   type MenuItemConstructorOptions,
   nativeTheme,
+  protocol,
 } from 'electron';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -28,8 +29,9 @@ import type { PermissionsNotificationPayload } from '../@types/PermissionsServic
 import { WcError, WcErrorCode, encodeWcErrorForIpc } from '../@types/WcError';
 import AppIcon from '../assets/img/chia64x64.png';
 import { i18n } from '../config/locales';
+import { isIpfsUrl } from '../util/ipfs';
 
-import CacheManager from './CacheManager';
+import CacheManager, { CACHE_PROTOCOL } from './CacheManager';
 import { checkNFTOwnership } from './api/checkNFTOwnership';
 import { getKeyDetails } from './api/getKeyDetails';
 import { getNetworkInfo } from './api/getNetworkInfo';
@@ -60,7 +62,8 @@ import { dispatchPairRequest } from './utils/dispatchPairRequest';
 import downloadFile from './utils/downloadFile';
 import fetchJSON from './utils/fetchJSON';
 import ipcMainHandle from './utils/ipcMainHandle';
-import isValidURL from './utils/isValidURL';
+import maybeIpfsToGatewayUrl from './utils/ipfsGateway';
+import isValidURL, { isValidRequestURL } from './utils/isValidURL';
 import { loadConfig, checkConfigFileExists } from './utils/loadConfig';
 import { getDefaultLogPath, LogPathValidationError, resolveTrustedLogPath } from './utils/logPath';
 import manageDaemonLifetime from './utils/manageDaemonLifetime';
@@ -79,6 +82,8 @@ import {
   addBypassCommand,
 } from './utils/pairStore';
 import * as privatePreferences from './utils/privatePreferences';
+import resolveStoredCacheDirectory from './utils/resolveStoredCacheDirectory';
+import resolveStoredMaxCacheSize from './utils/resolveStoredMaxCacheSize';
 import toCamelCase from './utils/toCamelCase';
 import { setUserDataDir } from './utils/userData';
 import webSocketBridgeBindEvents from './utils/webSocketBridge';
@@ -94,16 +99,47 @@ type ConfirmDialogResult = {
 app.disableHardwareAcceleration();
 app.commandLine.appendSwitch('disable-http-cache');
 
+// A URL without its fragment: what a window would actually load.
+function documentOf(target: string): string {
+  try {
+    const parsed = new URL(target);
+    parsed.hash = '';
+    return parsed.href;
+  } catch {
+    return target;
+  }
+}
+
+// The cache: scheme serves NFT media to <img>/<video>/<audio> tags. Media
+// elements expect protocols to buffer their responses unless the scheme is
+// registered with stream: true, so without this video and audio playback
+// stalls. Must be called before the app ready event.
+protocol.registerSchemesAsPrivileged([
+  {
+    scheme: CACHE_PROTOCOL,
+    privileges: {
+      standard: true,
+      secure: true,
+      supportFetchAPI: true,
+      stream: true,
+    },
+  },
+]);
+
 const appIcon = nativeImage.createFromPath(path.join(__dirname, AppIcon));
 
 const prefs = readPrefs();
 
 const defaultCacheFolder = path.join(app.getPath('cache'), app.getName());
-const cacheDirectory: string = prefs.cacheFolder || defaultCacheFolder;
+const cacheDirectory: string = resolveStoredCacheDirectory(prefs.cacheFolder, defaultCacheFolder, (message) =>
+  console.warn(message),
+);
+
+const storedMaxCacheSize: number | undefined = resolveStoredMaxCacheSize(prefs);
 
 const cacheManager = new CacheManager({
   cacheDirectory,
-  maxCacheSize: prefs.maxCacheSize,
+  maxCacheSize: storedMaxCacheSize,
 });
 
 // Hoisted so IPC handlers registered below can close over them; assigned in
@@ -555,7 +591,18 @@ if (ensureSingleInstance() && ensureCorrectEnvironment()) {
         return;
       }
 
-      mainWindow.webContents.downloadURL(urlLocal);
+      // Chromium's downloader cannot fetch the ipfs: scheme; when the user
+      // has enabled the gateway, download ipfs URIs through it like every
+      // other network path. With the option off there is nothing the
+      // downloader could fetch, so the request is dropped instead of handing
+      // Chromium a URL it silently fails on. The gateway form is the URL
+      // actually requested, so it is the one validated.
+      const downloadUrl = maybeIpfsToGatewayUrl(urlLocal);
+      if (isIpfsUrl(downloadUrl) || !isValidRequestURL(downloadUrl)) {
+        return;
+      }
+
+      mainWindow.webContents.downloadURL(downloadUrl);
     });
 
     ipcMainHandle(AppAPI.START_MULTIPLE_DOWNLOAD, async (tasks: { url: string; filename: string }[]) => {
@@ -971,6 +1018,20 @@ if (ensureSingleInstance() && ensureCorrectEnvironment()) {
             slashes: true,
           });
 
+    // The window shows the bundled renderer and nothing else. A navigation
+    // away from that document — a link inside NFT content that found a way
+    // out of its sandbox, a dropped file, a submitted form — is refused, and
+    // a request to open a new window is denied: external links reach the
+    // system browser through LinkAPI.OPEN_EXTERNAL instead. Hash changes are
+    // in-page and never reach this handler.
+    const rendererDocument = documentOf(startUrl);
+    mainWindow.webContents.on('will-navigate', (event, navigationUrl) => {
+      if (documentOf(navigationUrl) !== rendererDocument) {
+        event.preventDefault();
+      }
+    });
+    mainWindow.webContents.setWindowOpenHandler(() => ({ action: 'deny' }));
+
     mainWindow.loadURL(startUrl);
   };
 
@@ -1192,6 +1253,7 @@ async function openAbout() {
     throw new Error('`mainWindow` is empty');
   }
 
+  const aboutPrefs = readPrefs();
   await openReactDialog(
     mainWindow,
     About,
@@ -1199,6 +1261,7 @@ async function openAbout() {
       packageJson,
       versions: process.versions as Record<string, string>,
       version: app.getVersion(),
+      themeVariant: aboutPrefs.themeVariant,
     },
     {
       title: 'About',

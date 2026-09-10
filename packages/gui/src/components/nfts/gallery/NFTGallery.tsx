@@ -3,7 +3,6 @@ import type { NFTInfo } from '@chia-network/api';
 import { useLocalStorage } from '@chia-network/api-react';
 import {
   Button,
-  Color,
   FormatLargeNumber,
   Flex,
   LayoutDashboardSub,
@@ -13,8 +12,13 @@ import {
   ScrollbarVirtuoso,
 } from '@chia-network/core';
 import { t, Trans } from '@lingui/macro';
-import { FilterList as FilterListIcon, LibraryAddCheck as LibraryAddCheckIcon } from '@mui/icons-material';
 import {
+  FilterList as FilterListIcon,
+  LibraryAddCheck as LibraryAddCheckIcon,
+  Refresh as RefreshIcon,
+} from '@mui/icons-material';
+import {
+  Alert,
   Divider,
   Chip,
   FormControlLabel,
@@ -29,13 +33,17 @@ import { useTheme } from '@mui/material/styles';
 import { styled } from '@mui/styles';
 import { xor, intersection /* , sortBy */ } from 'lodash';
 import React, { useMemo, useCallback, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { VirtuosoGrid } from 'react-virtuoso';
 
+import NFTPreviewAvailability from '../../../@types/NFTPreviewAvailability';
 import NFTVisibility from '../../../@types/NFTVisibility';
 import FileType from '../../../constants/FileType';
 import useFilteredNFTs from '../../../hooks/useFilteredNFTs';
 import useHideObjectionableContent from '../../../hooks/useHideObjectionableContent';
+import useIpfsGatewayHealth from '../../../hooks/useIpfsGatewayHealth';
 import useNFTGalleryScrollPosition from '../../../hooks/useNFTGalleryScrollPosition';
+import useNFTProvider from '../../../hooks/useNFTProvider';
 import getNFTId from '../../../util/getNFTId';
 import LabelProgress from '../../helpers/LabelProgress';
 import NFTCard from '../NFTCard';
@@ -89,6 +97,10 @@ export const defaultCacheSizeLimit = 1024; /* MB */
 
 export default function NFTGallery() {
   const theme: any = useTheme();
+  const navigate = useNavigate();
+  // One notice for a gateway that cannot be reached at all, in place of the
+  // same generic failure on every tile fetched through it.
+  const gatewayHealth = useIpfsGatewayHealth();
   const {
     nfts,
     isLoading,
@@ -106,8 +118,13 @@ export default function NFTGallery() {
     visibility,
     setVisibility,
 
+    previewAvailability,
+    setPreviewAvailability,
+
     statistics,
   } = useFilteredNFTs();
+
+  const { refetch } = useNFTProvider();
 
   const [scrollPosition, setScrollPosition] = useNFTGalleryScrollPosition();
   const scrollerRef = useRef<HTMLElement>(null);
@@ -238,6 +255,40 @@ export default function NFTGallery() {
     }
   }
 
+  function togglePreviewAvailable() {
+    switch (previewAvailability) {
+      case NFTPreviewAvailability.ALL:
+        setPreviewAvailability(NFTPreviewAvailability.UNAVAILABLE);
+        return;
+      case NFTPreviewAvailability.AVAILABLE:
+        setPreviewAvailability(NFTPreviewAvailability.NONE);
+        return;
+      case NFTPreviewAvailability.NONE:
+        setPreviewAvailability(NFTPreviewAvailability.AVAILABLE);
+        return;
+      case NFTPreviewAvailability.UNAVAILABLE:
+      default:
+        setPreviewAvailability(NFTPreviewAvailability.ALL);
+    }
+  }
+
+  function togglePreviewUnavailable() {
+    switch (previewAvailability) {
+      case NFTPreviewAvailability.ALL:
+        setPreviewAvailability(NFTPreviewAvailability.AVAILABLE);
+        return;
+      case NFTPreviewAvailability.AVAILABLE:
+        setPreviewAvailability(NFTPreviewAvailability.ALL);
+        return;
+      case NFTPreviewAvailability.NONE:
+        setPreviewAvailability(NFTPreviewAvailability.UNAVAILABLE);
+        return;
+      case NFTPreviewAvailability.UNAVAILABLE:
+      default:
+        setPreviewAvailability(NFTPreviewAvailability.NONE);
+    }
+  }
+
   function renderNFTCard(index: number, nft: NFTInfo) {
     return (
       <NFTCard
@@ -260,6 +311,21 @@ export default function NFTGallery() {
       // onScroll={handleOnScroll}
       header={
         <Flex gap={1} flexDirection="column">
+          {gatewayHealth && !gatewayHealth.reachable && (
+            <Alert
+              severity="warning"
+              action={
+                <Button size="small" color="inherit" onClick={() => navigate('/dashboard/settings/nft')}>
+                  <Trans>Settings</Trans>
+                </Button>
+              }
+            >
+              <Trans>
+                The IPFS gateway {gatewayHealth.gateway} cannot be reached ({gatewayHealth.error}). NFT files fetched
+                through it cannot be shown until it answers; check the gateway address.
+              </Trans>
+            </Alert>
+          )}
           <Flex gap={2} alignItems="stretch" flexWrap="wrap" justifyContent="space-between">
             <NFTProfileDropdown onChange={handleSetWalletId} walletId={walletIds?.[0]} />
             <Flex gap={2} alignItems="stretch" justifyContent="space-between">
@@ -270,7 +336,7 @@ export default function NFTGallery() {
                   backgroundColor: 'background.paper',
                   paddingX: 1,
                   borderRadius: 1,
-                  borderColor: theme.palette.mode === 'dark' ? Color.Neutral[700] : Color.Neutral[300],
+                  borderColor: theme.palette.mode === 'dark' ? theme.palette.border.dark : theme.palette.border.main,
                   borderWidth: 1,
                   borderStyle: 'solid',
                 }}
@@ -284,6 +350,13 @@ export default function NFTGallery() {
                   <IconButton onClick={toggleShowFilters} color={showFilters ? 'primary' : undefined}>
                     <FilterListIcon color="info" />
                   </IconButton>
+                </Tooltip>
+                <Tooltip title={<Trans>Refresh NFTs</Trans>} placement="top">
+                  <span>
+                    <IconButton onClick={() => refetch()} disabled={isLoading}>
+                      <RefreshIcon color={isLoading ? 'disabled' : 'info'} />
+                    </IconButton>
+                  </span>
                 </Tooltip>
               </Flex>
             </Flex>
@@ -428,6 +501,82 @@ export default function NFTGallery() {
                                   <Trans>Hidden</Trans>
                                 </Box>
                                 <Chip label={<FormatLargeNumber value={statistics.hidden} />} size="extraSmall" />
+                              </Flex>
+                            }
+                          />
+                        </Flex>
+                      </FormControl>
+                    </FilterPill>
+                  </Box>
+                </Fade>
+                <Fade in={showFilters} unmountOnExit>
+                  <Box>
+                    <FilterPill
+                      title={
+                        previewAvailability === NFTPreviewAvailability.ALL ? (
+                          <Trans>
+                            Any preview &nbsp;
+                            <Chip label={<FormatLargeNumber value={statistics.total} />} size="extraSmall" />
+                          </Trans>
+                        ) : previewAvailability === NFTPreviewAvailability.AVAILABLE ? (
+                          <Trans>
+                            Preview available &nbsp;
+                            <Chip label={<FormatLargeNumber value={statistics.previewAvailable} />} size="extraSmall" />
+                          </Trans>
+                        ) : previewAvailability === NFTPreviewAvailability.UNAVAILABLE ? (
+                          <Trans>
+                            Preview not available &nbsp;
+                            <Chip
+                              label={<FormatLargeNumber value={statistics.previewUnavailable} />}
+                              size="extraSmall"
+                            />
+                          </Trans>
+                        ) : (
+                          <Trans>None (0)</Trans>
+                        )
+                      }
+                    >
+                      <FormControl>
+                        <Flex flexDirection="column">
+                          <FormControlLabel
+                            control={
+                              <Checkbox
+                                checked={[NFTPreviewAvailability.AVAILABLE, NFTPreviewAvailability.ALL].includes(
+                                  previewAvailability,
+                                )}
+                                onChange={togglePreviewAvailable}
+                              />
+                            }
+                            label={
+                              <Flex width="100%" gap={1} justifyContent="space-between" alignItems="center">
+                                <Box>
+                                  <Trans>Preview available</Trans>
+                                </Box>
+                                <Chip
+                                  label={<FormatLargeNumber value={statistics.previewAvailable} />}
+                                  size="extraSmall"
+                                />
+                              </Flex>
+                            }
+                          />
+                          <FormControlLabel
+                            control={
+                              <Checkbox
+                                checked={[NFTPreviewAvailability.UNAVAILABLE, NFTPreviewAvailability.ALL].includes(
+                                  previewAvailability,
+                                )}
+                                onChange={togglePreviewUnavailable}
+                              />
+                            }
+                            label={
+                              <Flex width="100%" gap={1} justifyContent="space-between" alignItems="center">
+                                <Box>
+                                  <Trans>Preview not available</Trans>
+                                </Box>
+                                <Chip
+                                  label={<FormatLargeNumber value={statistics.previewUnavailable} />}
+                                  size="extraSmall"
+                                />
                               </Flex>
                             }
                           />

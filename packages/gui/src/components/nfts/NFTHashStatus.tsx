@@ -6,8 +6,10 @@ import { Chip, Typography } from '@mui/material';
 import CircularProgress from '@mui/material/CircularProgress';
 import React, { useMemo } from 'react';
 
+import useIpfsGateway from '../../hooks/useIpfsGateway';
 import useNFT from '../../hooks/useNFT';
 import useNFTVerifyHash from '../../hooks/useNFTVerifyHash';
+import { getIpfsPath, isIpfsUrl } from '../../util/ipfs';
 
 export type NFTHashStatusProps = {
   nftId: string;
@@ -27,22 +29,33 @@ export default function NFTHashStatus(props: NFTHashStatusProps) {
   });
 
   const { nft, isLoading: isLoadingNFT, error: errorNFT } = useNFT(nftId);
+  const [ipfsGateway] = useIpfsGateway();
 
   const isLoading = isLoadingNFTVerifyHash || isLoadingNFT;
   const isVerified = preview ? nftPreview?.isVerified : data?.isVerified;
   const error = (errorNFT ?? preview) ? nftPreview?.error : data?.error;
+  const failedFetch = preview ? nftPreview?.failedFetch : data?.failedFetch;
 
   const isValidURI = useMemo(() => {
-    if (!nftPreview || !('originalUri' in nftPreview)) {
+    const uri = nftPreview?.uri;
+    if (!uri) {
+      // nothing to validate — other branches cover the missing-preview cases
       return true;
     }
 
-    if (nftPreview.uri) {
-      return isValidURL(nftPreview.uri);
+    // While the user has IPFS gateway fetching enabled, ipfs:// URIs are
+    // served through a gateway by the cache layer, so an ipfs URI is valid
+    // when it carries a CID path — the gateway itself was validated when the
+    // user configured it, and may legitimately be a plain-http local node
+    // that the https-only URL check here would reject. With the option off
+    // they are not fetchable and stay flagged — unless the file already
+    // verified from the cache, which the message branches above this check.
+    if (isIpfsUrl(uri)) {
+      return ipfsGateway && getIpfsPath(uri) !== undefined;
     }
 
-    return false;
-  }, [nftPreview]);
+    return isValidURL(uri);
+  }, [nftPreview, ipfsGateway]);
 
   const icon = useMemo(() => {
     if (hideIcon) {
@@ -77,8 +90,12 @@ export default function NFTHashStatus(props: NFTHashStatusProps) {
       return <Trans>URL is not valid</Trans>;
     }
 
+    if (failedFetch) {
+      return <Trans>File is not available</Trans>;
+    }
+
     return <Trans>Invalid hash</Trans>;
-  }, [isLoading, isVerified, nft, isValidURI]);
+  }, [isLoading, isVerified, nft, isValidURI, failedFetch]);
 
   const color = useMemo(() => {
     if (isLoading) {
@@ -122,7 +139,25 @@ export default function NFTHashStatus(props: NFTHashStatusProps) {
     return null;
   }
 
-  const chip = <Chip icon={icon} label={message} color={color} size="small" />;
+  const chip = (
+    <Chip
+      icon={icon}
+      label={message}
+      color={color}
+      size="small"
+      sx={
+        isVerified && !isLoading && !nft?.pendingTransaction
+          ? {
+              backgroundColor: 'primary.main',
+              color: 'primary.contrastText',
+              '& .MuiChip-icon': {
+                color: 'primary.contrastText',
+              },
+            }
+          : undefined
+      }
+    />
+  );
 
   if (tooltipContent) {
     return <Tooltip title={<Typography variant="caption">{tooltipContent}</Typography>}>{chip}</Tooltip>;

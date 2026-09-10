@@ -8,7 +8,7 @@ msgstr ""
 "Language: ro_RO\n"
 "Project-Id-Version: 1263bc1f20e1271bda78e84d2f4a6562\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2026-05-24 00:23\n"
+"PO-Revision-Date: 2026-08-23 00:04\n"
 "Last-Translator: \n"
 "Language-Team: Romanian\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100>0 && n%100<20)) ? 1 : 2);\n"
@@ -68,7 +68,7 @@ msgstr ""
 #: src/electron/commands/Commands.ts:74
 #: src/electron/commands/Commands.ts:378
 #: src/electron/commands/Commands.ts:406
-#: src/electron/commands/Commands.ts:1800
+#: src/electron/commands/Commands.ts:1801
 msgid "Message"
 msgstr ""
 
@@ -79,8 +79,8 @@ msgstr ""
 
 #. js-lingui-explicit-id
 #: src/electron/commands/Commands.ts:86
-#: src/electron/commands/Commands.ts:2023
-#: src/electron/commands/Commands.ts:2038
+#: src/electron/commands/Commands.ts:2043
+#: src/electron/commands/Commands.ts:2058
 msgid "Offer Data"
 msgstr ""
 
@@ -148,7 +148,7 @@ msgstr ""
 #: src/electron/commands/Commands.ts:188
 #: src/electron/commands/Commands.ts:504
 #: src/electron/commands/Commands.ts:1204
-#: src/electron/commands/Commands.ts:1711
+#: src/electron/commands/Commands.ts:1712
 msgid "Amount"
 msgstr ""
 
@@ -191,7 +191,7 @@ msgstr "Taxe"
 #: src/electron/commands/Commands.ts:148
 #: src/electron/commands/Commands.ts:185
 #: src/electron/commands/Commands.ts:377
-#: src/electron/commands/Commands.ts:1805
+#: src/electron/commands/Commands.ts:1806
 msgid "Address"
 msgstr ""
 
@@ -207,15 +207,15 @@ msgstr ""
 #: src/electron/commands/Commands.ts:1000
 #: src/electron/commands/Commands.ts:1497
 #: src/electron/commands/Commands.ts:1581
-#: src/electron/commands/Commands.ts:1710
-#: src/electron/commands/Commands.ts:1758
-#: src/electron/commands/Commands.ts:1833
-#: src/electron/commands/Commands.ts:2099
-#: src/electron/commands/Commands.ts:2205
-#: src/electron/commands/Commands.ts:2219
-#: src/electron/commands/Commands.ts:2247
-#: src/electron/commands/Commands.ts:2261
-#: src/electron/commands/Commands.ts:2275
+#: src/electron/commands/Commands.ts:1711
+#: src/electron/commands/Commands.ts:1759
+#: src/electron/commands/Commands.ts:1834
+#: src/electron/commands/Commands.ts:2119
+#: src/electron/commands/Commands.ts:2225
+#: src/electron/commands/Commands.ts:2239
+#: src/electron/commands/Commands.ts:2267
+#: src/electron/commands/Commands.ts:2281
+#: src/electron/commands/Commands.ts:2295
 msgid "Wallet Id"
 msgstr ""
 
@@ -310,44 +310,45 @@ msgstr ""
 #: src/electron/commands/Commands.ts:1577
 #: src/electron/commands/Commands.ts:1633
 #: src/electron/commands/Commands.ts:1662
-#: src/electron/commands/Commands.ts:1756
-#: src/electron/commands/Commands.ts:1829
-#: src/electron/commands/Commands.ts:1870
-#: src/electron/commands/Commands.ts:1890
-#: src/electron/commands/Commands.ts:1923
-#: src/electron/commands/Commands.ts:1939
-#: src/electron/commands/Commands.ts:2006
-#: src/electron/commands/Commands.ts:2022
-#: src/electron/commands/Commands.ts:2037
-#: src/electron/commands/Commands.ts:2052
-#: src/electron/commands/Commands.ts:2068
-#: src/electron/commands/Commands.ts:2084
-#: src/electron/commands/Commands.ts:2098
-#: src/electron/commands/Commands.ts:2119
-#: src/electron/commands/Commands.ts:2153
+#: src/electron/commands/Commands.ts:1757
+#: src/electron/commands/Commands.ts:1830
+#: src/electron/commands/Commands.ts:1871
+#: src/electron/commands/Commands.ts:1887
+#: src/electron/commands/Commands.ts:1909
+#: src/electron/commands/Commands.ts:1943
+#: src/electron/commands/Commands.ts:1959
+#: src/electron/commands/Commands.ts:2026
+#: src/electron/commands/Commands.ts:2042
+#: src/electron/commands/Commands.ts:2057
+#: src/electron/commands/Commands.ts:2072
+#: src/electron/commands/Commands.ts:2088
+#: src/electron/commands/Commands.ts:2104
+#: src/electron/commands/Commands.ts:2118
+#: src/electron/commands/Commands.ts:2139
 #: src/electron/commands/Commands.ts:2173
-#: src/electron/commands/Commands.ts:2189
-#: src/electron/commands/Commands.ts:2204
-#: src/electron/commands/Commands.ts:2218
-#: src/electron/commands/Commands.ts:2232
-#: src/electron/commands/Commands.ts:2246
-#: src/electron/commands/Commands.ts:2260
-#: src/electron/commands/Commands.ts:2274
-#: src/electron/commands/Commands.ts:2288
-#: src/electron/commands/Commands.ts:2302
-#: src/electron/commands/Commands.ts:2317
-#: src/electron/commands/Commands.ts:2331
-#: src/electron/commands/Commands.ts:2365
-#: src/electron/commands/Commands.ts:2399
-#: src/electron/commands/Commands.ts:2429
-#: src/electron/commands/Commands.ts:2443
-#: src/electron/commands/Commands.ts:2457
-#: src/electron/commands/Commands.ts:2471
-#: src/electron/commands/Commands.ts:2485
-#: src/electron/commands/Commands.ts:2499
-#: src/electron/commands/Commands.ts:2513
-#: src/electron/commands/Commands.ts:2527
-#: src/electron/commands/Commands.ts:2550
+#: src/electron/commands/Commands.ts:2193
+#: src/electron/commands/Commands.ts:2209
+#: src/electron/commands/Commands.ts:2224
+#: src/electron/commands/Commands.ts:2238
+#: src/electron/commands/Commands.ts:2252
+#: src/electron/commands/Commands.ts:2266
+#: src/electron/commands/Commands.ts:2280
+#: src/electron/commands/Commands.ts:2294
+#: src/electron/commands/Commands.ts:2308
+#: src/electron/commands/Commands.ts:2322
+#: src/electron/commands/Commands.ts:2337
+#: src/electron/commands/Commands.ts:2351
+#: src/electron/commands/Commands.ts:2385
+#: src/electron/commands/Commands.ts:2419
+#: src/electron/commands/Commands.ts:2449
+#: src/electron/commands/Commands.ts:2463
+#: src/electron/commands/Commands.ts:2477
+#: src/electron/commands/Commands.ts:2491
+#: src/electron/commands/Commands.ts:2505
+#: src/electron/commands/Commands.ts:2519
+#: src/electron/commands/Commands.ts:2533
+#: src/electron/commands/Commands.ts:2547
+#: src/electron/commands/Commands.ts:2570
 #: src/electron/commands/humanizeCommand.ts:22
 msgid "Proceed"
 msgstr ""
@@ -433,7 +434,7 @@ msgstr ""
 #: src/electron/commands/Commands.ts:526
 #: src/electron/commands/Commands.ts:680
 #: src/electron/commands/Commands.ts:1689
-#: src/electron/commands/Commands.ts:1738
+#: src/electron/commands/Commands.ts:1739
 msgid "Allow Unsynced"
 msgstr ""
 
@@ -779,7 +780,7 @@ msgstr "Deconectare"
 #: src/electron/commands/Commands.ts:587
 #: src/electron/commands/Commands.ts:601
 msgid "Node ID"
-msgstr ""
+msgstr "ID-ul Nodului"
 
 #. js-lingui-explicit-id
 #: src/electron/commands/Commands.ts:595
@@ -1088,8 +1089,8 @@ msgstr ""
 #. js-lingui-explicit-id
 #: src/electron/commands/Commands.ts:897
 #: src/electron/commands/Commands.ts:1226
-#: src/electron/commands/Commands.ts:2154
-#: src/electron/commands/Commands.ts:2233
+#: src/electron/commands/Commands.ts:2174
+#: src/electron/commands/Commands.ts:2253
 msgid "Coin Id"
 msgstr ""
 
@@ -1187,7 +1188,7 @@ msgstr ""
 
 #. js-lingui-explicit-id
 #: src/electron/commands/Commands.ts:1016
-#: src/electron/commands/Commands.ts:2303
+#: src/electron/commands/Commands.ts:2323
 msgid "Launcher Id"
 msgstr ""
 
@@ -1296,15 +1297,15 @@ msgstr ""
 #: src/electron/commands/Commands.ts:1287
 #: src/electron/commands/Commands.ts:1348
 #: src/electron/commands/Commands.ts:1362
-#: src/electron/commands/Commands.ts:2333
-#: src/electron/commands/Commands.ts:2367
-#: src/electron/commands/Commands.ts:2401
-#: src/electron/commands/Commands.ts:2430
-#: src/electron/commands/Commands.ts:2444
-#: src/electron/commands/Commands.ts:2472
-#: src/electron/commands/Commands.ts:2500
-#: src/electron/commands/Commands.ts:2514
-#: src/electron/commands/Commands.ts:2529
+#: src/electron/commands/Commands.ts:2353
+#: src/electron/commands/Commands.ts:2387
+#: src/electron/commands/Commands.ts:2421
+#: src/electron/commands/Commands.ts:2450
+#: src/electron/commands/Commands.ts:2464
+#: src/electron/commands/Commands.ts:2492
+#: src/electron/commands/Commands.ts:2520
+#: src/electron/commands/Commands.ts:2534
+#: src/electron/commands/Commands.ts:2549
 msgid "Store Id"
 msgstr ""
 
@@ -1342,7 +1343,7 @@ msgstr ""
 #. js-lingui-explicit-id
 #: src/electron/commands/Commands.ts:1155
 #: src/electron/commands/Commands.ts:1180
-#: src/electron/commands/Commands.ts:2530
+#: src/electron/commands/Commands.ts:2550
 msgid "Key"
 msgstr ""
 
@@ -1472,7 +1473,7 @@ msgstr ""
 
 #. js-lingui-explicit-id
 #: src/electron/commands/Commands.ts:1305
-#: src/electron/commands/Commands.ts:2486
+#: src/electron/commands/Commands.ts:2506
 msgid "Store Ids"
 msgstr ""
 
@@ -1615,9 +1616,9 @@ msgstr ""
 
 #. js-lingui-explicit-id
 #: src/electron/commands/Commands.ts:1434
-#: src/electron/dialogs/Confirm/Confirm.tsx:423
+#: src/electron/dialogs/Confirm/Confirm.tsx:438
 #: src/electron/dialogs/Pair/Pair.tsx:377
-#: src/electron/main.tsx:1088
+#: src/electron/main.tsx:1121
 msgid "Cancel"
 msgstr "Anulare"
 
@@ -1638,7 +1639,7 @@ msgstr ""
 
 #. js-lingui-explicit-id
 #: src/electron/commands/Commands.ts:1473
-#: src/electron/commands/Commands.ts:1798
+#: src/electron/commands/Commands.ts:1799
 msgid "Verify"
 msgstr ""
 
@@ -1757,8 +1758,8 @@ msgstr ""
 
 #. js-lingui-explicit-id
 #: src/electron/commands/Commands.ts:1637
-#: src/electron/commands/Commands.ts:2121
-#: src/electron/commands/Commands.ts:2174
+#: src/electron/commands/Commands.ts:2141
+#: src/electron/commands/Commands.ts:2194
 msgid "Wallet Ids"
 msgstr ""
 
@@ -1795,640 +1796,652 @@ msgid "Include Spent Coins"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:1706
-#: src/electron/commands/Commands.ts:1746
+#: src/electron/commands/Commands.ts:1707
+#: src/electron/commands/Commands.ts:1747
 msgid "Select Coins"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:1707
-#: src/electron/commands/Commands.ts:1747
+#: src/electron/commands/Commands.ts:1708
+#: src/electron/commands/Commands.ts:1748
 msgid "Selects coins to be spent from a specific wallet"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:1708
+#: src/electron/commands/Commands.ts:1709
 msgid "Select"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:1714
-#: src/electron/commands/Commands.ts:1761
+#: src/electron/commands/Commands.ts:1715
+#: src/electron/commands/Commands.ts:1762
 msgid "Min Coin Amount"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:1720
-#: src/electron/commands/Commands.ts:1767
+#: src/electron/commands/Commands.ts:1721
+#: src/electron/commands/Commands.ts:1768
 msgid "Max Coin Amount"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:1726
-#: src/electron/commands/Commands.ts:1773
+#: src/electron/commands/Commands.ts:1727
+#: src/electron/commands/Commands.ts:1774
 msgid "Excluded Coin Amounts"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:1732
-#: src/electron/commands/Commands.ts:1779
+#: src/electron/commands/Commands.ts:1733
+#: src/electron/commands/Commands.ts:1780
 msgid "Excluded Coin IDs"
-msgstr ""
-
-#. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:1754
-#: src/electron/commands/Commands.ts:1787
-msgid "Get Spendable Coins"
 msgstr ""
 
 #. js-lingui-explicit-id
 #: src/electron/commands/Commands.ts:1755
 #: src/electron/commands/Commands.ts:1788
-msgid "Requests spendable coins for a specific wallet"
+msgid "Get Spendable Coins"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:1796
-#: src/electron/commands/Commands.ts:1819
-msgid "Verify Signature"
+#: src/electron/commands/Commands.ts:1756
+#: src/electron/commands/Commands.ts:1789
+msgid "Requests spendable coins for a specific wallet"
 msgstr ""
 
 #. js-lingui-explicit-id
 #: src/electron/commands/Commands.ts:1797
 #: src/electron/commands/Commands.ts:1820
+msgid "Verify Signature"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/electron/commands/Commands.ts:1798
+#: src/electron/commands/Commands.ts:1821
 msgid "Requests the verification status for a digital signature"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:1801
+#: src/electron/commands/Commands.ts:1802
 #: src/electron/dialogs/KeyDetail/KeyDetail.tsx:32
 msgid "Public Key"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:1802
+#: src/electron/commands/Commands.ts:1803
 msgid "Signature"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:1811
+#: src/electron/commands/Commands.ts:1812
 msgid "Signing Mode"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:1827
-#: src/electron/commands/Commands.ts:1849
+#: src/electron/commands/Commands.ts:1828
+#: src/electron/commands/Commands.ts:1850
 msgid "Get Next Address"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:1828
-#: src/electron/commands/Commands.ts:1851
+#: src/electron/commands/Commands.ts:1829
+#: src/electron/commands/Commands.ts:1852
 msgid "Requests a new receive address associated with the current wallet key"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:1840
+#: src/electron/commands/Commands.ts:1841
 msgid "New Address"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:1857
+#: src/electron/commands/Commands.ts:1858
 msgid "Get Current Address"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:1859
+#: src/electron/commands/Commands.ts:1860
 msgid "Requests the current receive address associated with the current wallet key"
-msgstr ""
-
-#. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:1868
-#: src/electron/commands/Commands.ts:1875
-msgid "Get Wallet Sync Status"
 msgstr ""
 
 #. js-lingui-explicit-id
 #: src/electron/commands/Commands.ts:1869
 #: src/electron/commands/Commands.ts:1876
+msgid "Get Wallet Sync Status"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/electron/commands/Commands.ts:1870
+#: src/electron/commands/Commands.ts:1877
 msgid "Requests the syncing status of current wallet"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:1883
-#: src/electron/commands/Commands.ts:1902
-msgid "Get Height Info"
+#: src/electron/commands/Commands.ts:1884
+#: src/electron/commands/Commands.ts:1892
+msgid "Get Full Node Peer Count"
 msgstr ""
 
 #. js-lingui-explicit-id
 #: src/electron/commands/Commands.ts:1886
+#: src/electron/commands/Commands.ts:1894
+msgid "Requests the number of full node peers currently connected to the wallet"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/electron/commands/Commands.ts:1902
+#: src/electron/commands/Commands.ts:1921
+msgid "Get Height Info"
+msgstr ""
+
+#. js-lingui-explicit-id
 #: src/electron/commands/Commands.ts:1905
+#: src/electron/commands/Commands.ts:1924
 msgid "Returns wallet height, latest block timestamp, and related fields. Optional usePeakHeight uses the chain tip while syncing."
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:1894
+#: src/electron/commands/Commands.ts:1913
 msgid "Use peak height"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:1921
-#: src/electron/commands/Commands.ts:1928
+#: src/electron/commands/Commands.ts:1941
+#: src/electron/commands/Commands.ts:1948
 msgid "Get puzzle and solution"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:1922
-#: src/electron/commands/Commands.ts:1930
+#: src/electron/commands/Commands.ts:1942
+#: src/electron/commands/Commands.ts:1950
 msgid "Fetches the puzzle reveal and solution for a spent coin (hex strings)."
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:1924
+#: src/electron/commands/Commands.ts:1944
 msgid "Coin name"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:1936
-#: src/electron/commands/Commands.ts:1981
+#: src/electron/commands/Commands.ts:1956
+#: src/electron/commands/Commands.ts:2001
 msgid "Get all Offers"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:1938
-#: src/electron/commands/Commands.ts:1983
+#: src/electron/commands/Commands.ts:1958
+#: src/electron/commands/Commands.ts:2003
 msgid "Requests a complete listing of the offers associated with the current wallet key"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:1943
+#: src/electron/commands/Commands.ts:1963
 msgid "Start"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:1949
+#: src/electron/commands/Commands.ts:1969
 msgid "End"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:1955
+#: src/electron/commands/Commands.ts:1975
 msgid "Start Key"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:1961
+#: src/electron/commands/Commands.ts:1981
 msgid "Reverse"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:1967
+#: src/electron/commands/Commands.ts:1987
 msgid "Include My Offers"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:1973
+#: src/electron/commands/Commands.ts:1993
 msgid "Include Taken Offers"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2004
-#: src/electron/commands/Commands.ts:2011
+#: src/electron/commands/Commands.ts:2024
+#: src/electron/commands/Commands.ts:2031
 msgid "Get Offers Count"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2005
-#: src/electron/commands/Commands.ts:2013
+#: src/electron/commands/Commands.ts:2025
+#: src/electron/commands/Commands.ts:2033
 msgid "Requests the number of offers associated with the current wallet key"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2020
-#: src/electron/commands/Commands.ts:2027
+#: src/electron/commands/Commands.ts:2040
+#: src/electron/commands/Commands.ts:2047
 msgid "Check Offer Validity"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2021
-#: src/electron/commands/Commands.ts:2028
+#: src/electron/commands/Commands.ts:2041
+#: src/electron/commands/Commands.ts:2048
 msgid "Requests the validity status of a specific offer"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2035
-#: src/electron/commands/Commands.ts:2042
+#: src/electron/commands/Commands.ts:2055
+#: src/electron/commands/Commands.ts:2062
 msgid "Get Offer Summary"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2036
-#: src/electron/commands/Commands.ts:2043
+#: src/electron/commands/Commands.ts:2056
+#: src/electron/commands/Commands.ts:2063
 msgid "Requests the summarized details of a specific offer"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2050
-#: src/electron/commands/Commands.ts:2057
+#: src/electron/commands/Commands.ts:2070
+#: src/electron/commands/Commands.ts:2077
 msgid "Get Offer Data"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2051
-#: src/electron/commands/Commands.ts:2058
+#: src/electron/commands/Commands.ts:2071
+#: src/electron/commands/Commands.ts:2078
 msgid "Requests the raw offer data for a specific offer"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2053
-#: src/electron/commands/Commands.ts:2069
+#: src/electron/commands/Commands.ts:2073
+#: src/electron/commands/Commands.ts:2089
 msgid "Offer Id"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2066
-#: src/electron/commands/Commands.ts:2073
+#: src/electron/commands/Commands.ts:2086
+#: src/electron/commands/Commands.ts:2093
 msgid "Get Offer Record"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2067
-#: src/electron/commands/Commands.ts:2074
+#: src/electron/commands/Commands.ts:2087
+#: src/electron/commands/Commands.ts:2094
 msgid "Requests the details for a specific offer"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2082
-#: src/electron/commands/Commands.ts:2089
+#: src/electron/commands/Commands.ts:2102
+#: src/electron/commands/Commands.ts:2109
 msgid "Get CAT Wallet Info"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2083
+#: src/electron/commands/Commands.ts:2103
 msgid "Requests the CAT wallet info"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2085
+#: src/electron/commands/Commands.ts:2105
 msgid "Asset Id"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2096
-#: src/electron/commands/Commands.ts:2103
+#: src/electron/commands/Commands.ts:2116
+#: src/electron/commands/Commands.ts:2123
 msgid "Get CAT Asset Id"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2097
-#: src/electron/commands/Commands.ts:2104
+#: src/electron/commands/Commands.ts:2117
+#: src/electron/commands/Commands.ts:2124
 msgid "Requests the CAT asset ID for a specific CAT wallet"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2112
-#: src/electron/commands/Commands.ts:2138
+#: src/electron/commands/Commands.ts:2132
+#: src/electron/commands/Commands.ts:2158
 msgid "Get NFTs"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2115
-#: src/electron/commands/Commands.ts:2141
+#: src/electron/commands/Commands.ts:2135
+#: src/electron/commands/Commands.ts:2161
 msgid "Requests a full or paginated listing of NFTs associated with one or more wallets associated with the current wallet key"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2124
+#: src/electron/commands/Commands.ts:2144
 msgid "Number of NFTs"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2130
+#: src/electron/commands/Commands.ts:2150
 msgid "Start Index"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2151
-#: src/electron/commands/Commands.ts:2158
+#: src/electron/commands/Commands.ts:2171
+#: src/electron/commands/Commands.ts:2178
 msgid "Get NFT Info"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2152
-#: src/electron/commands/Commands.ts:2159
+#: src/electron/commands/Commands.ts:2172
+#: src/electron/commands/Commands.ts:2179
 msgid "Requests details for a specific NFT"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2166
+#: src/electron/commands/Commands.ts:2186
 msgid "Get NFTs Count"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2169
+#: src/electron/commands/Commands.ts:2189
 msgid "Requests the number of NFTs associated with one or more wallets associated with the current wallet key"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2184
-#: src/electron/commands/Commands.ts:2194
+#: src/electron/commands/Commands.ts:2204
+#: src/electron/commands/Commands.ts:2214
 msgid "Get NFT Wallets with DIDs"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2187
+#: src/electron/commands/Commands.ts:2207
 msgid "Requests a complete listing of the NFT wallets associated with the current wallet key"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2202
-#: src/electron/commands/Commands.ts:2209
+#: src/electron/commands/Commands.ts:2222
+#: src/electron/commands/Commands.ts:2229
 msgid "Get DID Current Coin Info"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2203
+#: src/electron/commands/Commands.ts:2223
 msgid "Requests the current coin info for a specific DID"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2216
-#: src/electron/commands/Commands.ts:2223
+#: src/electron/commands/Commands.ts:2236
+#: src/electron/commands/Commands.ts:2243
 msgid "Get DID"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2217
+#: src/electron/commands/Commands.ts:2237
 msgid "Requests the DID"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2230
-#: src/electron/commands/Commands.ts:2237
+#: src/electron/commands/Commands.ts:2250
+#: src/electron/commands/Commands.ts:2257
 msgid "Get DID Info"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2231
+#: src/electron/commands/Commands.ts:2251
 msgid "Requests the info for a specific DID"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2244
-#: src/electron/commands/Commands.ts:2251
+#: src/electron/commands/Commands.ts:2264
+#: src/electron/commands/Commands.ts:2271
 msgid "Get DID Metadata"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2245
+#: src/electron/commands/Commands.ts:2265
 msgid "Requests the metadata for a specific DID"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2258
-#: src/electron/commands/Commands.ts:2265
+#: src/electron/commands/Commands.ts:2278
+#: src/electron/commands/Commands.ts:2285
 msgid "Get DID Public Key"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2259
+#: src/electron/commands/Commands.ts:2279
 msgid "Requests the public key for a specific DID"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2272
-#: src/electron/commands/Commands.ts:2279
+#: src/electron/commands/Commands.ts:2292
+#: src/electron/commands/Commands.ts:2299
 msgid "Get DID Name"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2273
+#: src/electron/commands/Commands.ts:2293
 msgid "Requests the name for a specific DID"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2286
-#: src/electron/commands/Commands.ts:2293
+#: src/electron/commands/Commands.ts:2306
+#: src/electron/commands/Commands.ts:2313
 msgid "Get All Verifiable Credentials"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2287
+#: src/electron/commands/Commands.ts:2307
 msgid "Requests a complete listing of all verifiable credentials"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2300
-#: src/electron/commands/Commands.ts:2307
+#: src/electron/commands/Commands.ts:2320
+#: src/electron/commands/Commands.ts:2327
 msgid "Get Verifiable Credential"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2301
+#: src/electron/commands/Commands.ts:2321
 msgid "Requests the verifiable credential for a specific launcher id"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2315
-#: src/electron/commands/Commands.ts:2322
+#: src/electron/commands/Commands.ts:2335
+#: src/electron/commands/Commands.ts:2342
 msgid "Get Proofs For Root Hash"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2316
+#: src/electron/commands/Commands.ts:2336
 msgid "Requests the proofs for a specific root hash"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2318
+#: src/electron/commands/Commands.ts:2338
 msgid "Proofs Hash"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2329
-#: src/electron/commands/Commands.ts:2356
+#: src/electron/commands/Commands.ts:2349
+#: src/electron/commands/Commands.ts:2376
 msgid "Get Keys"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2330
+#: src/electron/commands/Commands.ts:2350
 msgid "Requests the keys for a specific store"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2336
-#: src/electron/commands/Commands.ts:2370
-#: src/electron/commands/Commands.ts:2533
+#: src/electron/commands/Commands.ts:2356
+#: src/electron/commands/Commands.ts:2390
+#: src/electron/commands/Commands.ts:2553
 msgid "Root Hash"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2342
-#: src/electron/commands/Commands.ts:2376
-#: src/electron/commands/Commands.ts:2406
+#: src/electron/commands/Commands.ts:2362
+#: src/electron/commands/Commands.ts:2396
+#: src/electron/commands/Commands.ts:2426
 msgid "Page"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2348
-#: src/electron/commands/Commands.ts:2382
-#: src/electron/commands/Commands.ts:2412
+#: src/electron/commands/Commands.ts:2368
+#: src/electron/commands/Commands.ts:2402
+#: src/electron/commands/Commands.ts:2432
 msgid "Max page size"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2363
-#: src/electron/commands/Commands.ts:2390
+#: src/electron/commands/Commands.ts:2383
+#: src/electron/commands/Commands.ts:2410
 msgid "Get Keys Values"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2364
+#: src/electron/commands/Commands.ts:2384
 msgid "Requests the values for a specific store"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2397
-#: src/electron/commands/Commands.ts:2420
+#: src/electron/commands/Commands.ts:2417
+#: src/electron/commands/Commands.ts:2440
 msgid "Get Kv Diff"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2398
+#: src/electron/commands/Commands.ts:2418
 msgid "Requests the diff between two hashes for a specific store"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2402
+#: src/electron/commands/Commands.ts:2422
 msgid "Hash 1"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2403
+#: src/electron/commands/Commands.ts:2423
 msgid "Hash 2"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2427
-#: src/electron/commands/Commands.ts:2434
+#: src/electron/commands/Commands.ts:2447
+#: src/electron/commands/Commands.ts:2454
 msgid "Get Local Root"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2428
+#: src/electron/commands/Commands.ts:2448
 msgid "Requests the local root for a specific store"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2441
-#: src/electron/commands/Commands.ts:2448
+#: src/electron/commands/Commands.ts:2461
+#: src/electron/commands/Commands.ts:2468
 msgid "Get Mirrors"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2442
+#: src/electron/commands/Commands.ts:2462
 msgid "Requests the mirrors for a specific store"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2455
-#: src/electron/commands/Commands.ts:2462
+#: src/electron/commands/Commands.ts:2475
+#: src/electron/commands/Commands.ts:2482
 msgid "Get Owned Stores"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2456
+#: src/electron/commands/Commands.ts:2476
 msgid "Requests a complete listing of all owned stores"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2469
-#: src/electron/commands/Commands.ts:2476
+#: src/electron/commands/Commands.ts:2489
+#: src/electron/commands/Commands.ts:2496
 msgid "Get Root"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2470
+#: src/electron/commands/Commands.ts:2490
 msgid "Requests the root for a specific store"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2483
-#: src/electron/commands/Commands.ts:2490
+#: src/electron/commands/Commands.ts:2503
+#: src/electron/commands/Commands.ts:2510
 msgid "Get Roots"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2484
+#: src/electron/commands/Commands.ts:2504
 msgid "Requests the roots for a specific store ids"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2497
-#: src/electron/commands/Commands.ts:2504
+#: src/electron/commands/Commands.ts:2517
+#: src/electron/commands/Commands.ts:2524
 msgid "Get Root History"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2498
+#: src/electron/commands/Commands.ts:2518
 msgid "Requests the history for a specific store"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2511
-#: src/electron/commands/Commands.ts:2518
+#: src/electron/commands/Commands.ts:2531
+#: src/electron/commands/Commands.ts:2538
 msgid "Get DataLayer Sync Status"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2512
+#: src/electron/commands/Commands.ts:2532
 msgid "Requests the sync status for a specific store"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2525
-#: src/electron/commands/Commands.ts:2541
+#: src/electron/commands/Commands.ts:2545
+#: src/electron/commands/Commands.ts:2561
 msgid "Get Value"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2526
+#: src/electron/commands/Commands.ts:2546
 msgid "Requests the value for a specific store and key"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2548
-#: src/electron/commands/Commands.ts:2580
+#: src/electron/commands/Commands.ts:2568
+#: src/electron/commands/Commands.ts:2600
 msgid "Get wallet addresses for one or more wallet keys"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2549
+#: src/electron/commands/Commands.ts:2569
 msgid "Requests the addresses for a specific wallet keys"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2554
+#: src/electron/commands/Commands.ts:2574
 msgid "Fingerprints"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2560
+#: src/electron/commands/Commands.ts:2580
 msgid "Index"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2566
+#: src/electron/commands/Commands.ts:2586
 msgid "Count"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/commands/Commands.ts:2572
+#: src/electron/commands/Commands.ts:2592
 msgid "Non Observer Derivation"
 msgstr ""
 
 #. js-lingui-explicit-id
 #: src/electron/commands/humanizeCommand.ts:20
-#: src/electron/main.tsx:921
+#: src/electron/main.tsx:954
 msgid "Confirm"
 msgstr "Confirmare"
 
@@ -2444,78 +2457,88 @@ msgstr ""
 
 #. js-lingui-explicit-id
 #: src/electron/commands/humanizeParamValue.ts:63
-#: src/electron/main.tsx:669
-#: src/electron/main.tsx:920
+#: src/electron/main.tsx:702
+#: src/electron/main.tsx:953
 msgid "Yes"
 msgstr "Da"
 
 #. js-lingui-explicit-id
 #: src/electron/commands/humanizeParamValue.ts:63
-#: src/electron/main.tsx:669
-#: src/electron/main.tsx:920
+#: src/electron/main.tsx:702
+#: src/electron/main.tsx:953
 msgid "No"
 msgstr "Nu"
 
 #. js-lingui-explicit-id
-#: src/electron/dialogs/About/About.tsx:72
+#: src/electron/dialogs/About/About.tsx:75
 msgid "Report an issue"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/dialogs/Confirm/Confirm.tsx:111
-#: src/electron/dialogs/Confirm/Confirm.tsx:132
-#: src/electron/dialogs/Confirm/Confirm.tsx:150
+#: src/electron/dialogs/Confirm/Confirm.tsx:113
+#: src/electron/dialogs/Confirm/Confirm.tsx:134
+#: src/electron/dialogs/Confirm/Confirm.tsx:152
 msgid "Total Amount with Royalties"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/dialogs/Confirm/Confirm.tsx:145
+#: src/electron/dialogs/Confirm/Confirm.tsx:147
 msgid "Wallet ID"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/dialogs/Confirm/Confirm.tsx:175
+#: src/electron/dialogs/Confirm/Confirm.tsx:161
+msgid "Unknown Asset"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/electron/dialogs/Confirm/Confirm.tsx:166
+msgid "Raw Amount"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/electron/dialogs/Confirm/Confirm.tsx:190
 msgid "Royalties Percentage"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/dialogs/Confirm/Confirm.tsx:195
+#: src/electron/dialogs/Confirm/Confirm.tsx:210
 msgid "You Spend"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/dialogs/Confirm/Confirm.tsx:199
-#: src/electron/dialogs/Confirm/Confirm.tsx:213
+#: src/electron/dialogs/Confirm/Confirm.tsx:214
+#: src/electron/dialogs/Confirm/Confirm.tsx:228
 msgid "Nothing"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/dialogs/Confirm/Confirm.tsx:209
+#: src/electron/dialogs/Confirm/Confirm.tsx:224
 msgid "You Receive"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/dialogs/Confirm/Confirm.tsx:224
+#: src/electron/dialogs/Confirm/Confirm.tsx:239
 msgid "Offer Fees"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/dialogs/Confirm/Confirm.tsx:331
+#: src/electron/dialogs/Confirm/Confirm.tsx:346
 msgid "Request from"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/dialogs/Confirm/Confirm.tsx:363
+#: src/electron/dialogs/Confirm/Confirm.tsx:378
 msgid "Different wallet key"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/dialogs/Confirm/Confirm.tsx:365
+#: src/electron/dialogs/Confirm/Confirm.tsx:380
 msgid "This app is asking to run under {requested}, but {current} is currently logged in."
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/dialogs/Confirm/Confirm.tsx:412
+#: src/electron/dialogs/Confirm/Confirm.tsx:427
 msgid "Always allow this command without asking"
 msgstr ""
 
@@ -2671,17 +2694,17 @@ msgid "Save changes"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:670
+#: src/electron/main.tsx:703
 msgid "Save Command Preferences"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:672
+#: src/electron/main.tsx:705
 msgid "Would you like to save preferences for the following commands?"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:676
+#: src/electron/main.tsx:709
 msgid ""
 "These commands will be executed without confirmation in the future:\n"
 "\n"
@@ -2689,146 +2712,146 @@ msgid ""
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:923
+#: src/electron/main.tsx:956
 msgid "Are you sure you want to quit?"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:928
+#: src/electron/main.tsx:961
 msgid "Keep service running in the background"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:1088
+#: src/electron/main.tsx:1121
 msgid "Continue"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:1090
+#: src/electron/main.tsx:1123
 msgid "Warning"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:1091
+#: src/electron/main.tsx:1124
 msgid "Log files may contain sensitive information"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:1092
+#: src/electron/main.tsx:1125
 msgid "Are you sure you want to view the log contents?"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:1216
-#: src/electron/main.tsx:1424
+#: src/electron/main.tsx:1251
+#: src/electron/main.tsx:1459
 msgid "File"
 msgstr "Filă"
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:1224
+#: src/electron/main.tsx:1259
 msgid "Edit"
 msgstr "Editare"
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:1256
+#: src/electron/main.tsx:1291
 msgid "View"
 msgstr "Afișare"
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:1265
+#: src/electron/main.tsx:1300
 msgid "Developer"
 msgstr "Dezvoltator"
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:1268
+#: src/electron/main.tsx:1303
 msgid "Developer Tools"
 msgstr "Unelte Dezvoltator"
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:1276
+#: src/electron/main.tsx:1311
 msgid "Trigger Desktop Notification"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:1305
+#: src/electron/main.tsx:1340
 msgid "Full Screen"
 msgstr "Ecran Complet"
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:1312
+#: src/electron/main.tsx:1347
 msgid "Window"
 msgstr "Fereastră"
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:1326
+#: src/electron/main.tsx:1361
 msgid "Help"
 msgstr "Ajutor"
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:1330
+#: src/electron/main.tsx:1365
 msgid "Chia Blockchain Wiki"
 msgstr "Wiki Blockchain Chia"
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:1336
+#: src/electron/main.tsx:1371
 msgid "Frequently Asked Questions"
 msgstr "Întrebări frecvente"
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:1342
+#: src/electron/main.tsx:1377
 msgid "Release Notes"
 msgstr "Note de lansare"
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:1348
+#: src/electron/main.tsx:1383
 msgid "Contribute on GitHub"
 msgstr "Contribuie pe GitHub"
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:1357
+#: src/electron/main.tsx:1392
 msgid "Report an Issue..."
 msgstr "Semnalează o problemă..."
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:1363
+#: src/electron/main.tsx:1398
 msgid "Chat on Discord"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:1369
+#: src/electron/main.tsx:1404
 msgid "Follow on X"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:1381
+#: src/electron/main.tsx:1416
 msgid "Chia"
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:1384
-#: src/electron/main.tsx:1480
+#: src/electron/main.tsx:1419
+#: src/electron/main.tsx:1515
 msgid "About Chia Blockchain"
 msgstr "Despre blockchain-ul Chia"
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:1390
+#: src/electron/main.tsx:1425
 msgid "Check for Updates..."
 msgstr ""
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:1439
+#: src/electron/main.tsx:1474
 msgid "Speech"
 msgstr "Vorbire"
 
 #. js-lingui-explicit-id
-#: src/electron/main.tsx:1486
+#: src/electron/main.tsx:1521
 msgid "Check for updates..."
 msgstr ""
 
 #. js-lingui-explicit-id
 #: src/electron/constants/commandRegistry.ts:104
 #~ msgid "App is requesting permission to execute these commands"
-#~ msgstr ""
+#~ msgstr "App is requesting permission to execute these commands"
 
 #. js-lingui-explicit-id
 #: src/electron/constants/commandRegistry.ts:138
@@ -2848,12 +2871,12 @@ msgstr ""
 #. js-lingui-explicit-id
 #: src/electron/constants/commandRegistry.ts:232
 #~ msgid "Create new DID Wallet"
-#~ msgstr ""
+#~ msgstr "Create new DID Wallet"
 
 #. js-lingui-explicit-id
 #: src/electron/constants/commandRegistry.ts:365
 #~ msgid "Confirm Create Offer"
-#~ msgstr ""
+#~ msgstr "Confirm Create Offer"
 
 #. js-lingui-explicit-id
 #: src/electron/constants/commandRegistry.ts:473
@@ -2904,7 +2927,7 @@ msgstr ""
 #. js-lingui-explicit-id
 #: src/electron/constants/commandRegistry.ts:1051
 #~ msgid "Update DID Recovery Ids"
-#~ msgstr ""
+#~ msgstr "Update DID Recovery Ids"
 
 #. js-lingui-explicit-id
 #: src/electron/constants/commandRegistry.ts:1075
@@ -2914,7 +2937,7 @@ msgstr ""
 #. js-lingui-explicit-id
 #: src/electron/constants/commandRegistry.ts:1121
 #~ msgid "Proofs"
-#~ msgstr ""
+#~ msgstr "Proofs"
 
 #. js-lingui-explicit-id
 #: src/electron/constants/commandRegistry.ts:1505
@@ -2929,22 +2952,22 @@ msgstr ""
 #. js-lingui-explicit-id
 #: src/electron/constants/commandRegistry.ts:1549
 #~ msgid "Get Information Needed For DID Recovery"
-#~ msgstr ""
+#~ msgstr "Get Information Needed For DID Recovery"
 
 #. js-lingui-explicit-id
 #: src/electron/constants/commandRegistry.ts:2155
 #~ msgid "Get DID Recovery List"
-#~ msgstr ""
+#~ msgstr "Get DID Recovery List"
 
 #. js-lingui-explicit-id
 #: src/electron/dialogs/Confirm/Confirm.tsx:164
 #~ msgid "Offered"
-#~ msgstr ""
+#~ msgstr "Offered"
 
 #. js-lingui-explicit-id
 #: src/electron/dialogs/Confirm/Confirm.tsx:178
 #~ msgid "Requested"
-#~ msgstr ""
+#~ msgstr "Requested"
 
 #. js-lingui-explicit-id
 #: src/electron/dialogs/Confirm/Confirm.tsx:381
@@ -2974,7 +2997,7 @@ msgstr ""
 #. js-lingui-explicit-id
 #: src/electron/dialogs/Pair/Pair.tsx:389
 #~ msgid "Reset"
-#~ msgstr ""
+#~ msgstr "Reset"
 
 #. js-lingui-explicit-id
 #: src/electron/dialogs/Pair/Pair.tsx:408
@@ -3078,11 +3101,11 @@ msgstr ""
 #~ msgid "- Set a time after which the offer expires.<0/>- An expiring offer can only be claimed prior to the expiration time."
 #~ msgstr ""
 
-#: src/components/offers2/OfferBuilderImport.tsx:129
+#: src/components/offers2/OfferBuilderImport.tsx:139
 msgid "(⌘V) a blob"
 msgstr ""
 
-#: src/components/offers2/OfferBuilderImport.tsx:129
+#: src/components/offers2/OfferBuilderImport.tsx:139
 msgid "(Ctrl-V) a blob"
 msgstr ""
 
@@ -3118,12 +3141,16 @@ msgstr ""
 msgid "{0} {1}"
 msgstr ""
 
+#: src/components/dashboard/DashboardOverview.tsx:357
+msgid "{0} / {1} plots passed filter"
+msgstr ""
+
 #: src/components/plot/add/PlotAddNumberOfPlots.tsx:169
 #: src/components/plot/add/PlotAddNumberOfPlots.tsx:201
 msgid "{0} buckets is recommended"
 msgstr ""
 
-#: src/components/nfts/detail/NFTDetailV2.tsx:230
+#: src/components/nfts/detail/NFTDetailV2.tsx:228
 msgid "{0} of {1}"
 msgstr ""
 
@@ -3131,7 +3158,7 @@ msgstr ""
 msgid "{0} of {allCount} items selected:"
 msgstr ""
 
-#: src/components/plotNFT/PlotNFTGraph.tsx:63
+#: src/components/plotNFT/PlotNFTGraph.tsx:65
 msgid "{0} points {1} - {2} hours ago"
 msgstr ""
 
@@ -3212,7 +3239,7 @@ msgstr ""
 msgid "+ Add New Plot NFT"
 msgstr ""
 
-#: src/components/nfts/gallery/NFTGallery.tsx:306
+#: src/components/nfts/gallery/NFTGallery.tsx:358
 msgid "<0>Loading...</0> {0}%"
 msgstr ""
 
@@ -3220,7 +3247,7 @@ msgstr ""
 #~ msgid "<0>Need some XCH?</0>"
 #~ msgstr "<0>Need some XCH?</0>"
 
-#: src/components/nfts/gallery/NFTGallery.tsx:296
+#: src/components/nfts/gallery/NFTGallery.tsx:348
 msgid "<0>Showing</0> {0} <1>of</1> {1}  <2>items</2>"
 msgstr ""
 
@@ -3275,7 +3302,7 @@ msgstr "Acțiune"
 #: src/components/farm/FarmFullNodeConnections.tsx:54
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:54
 #: src/components/fullNode/FullNodeConnections.tsx:65
-#: src/components/nfts/NFTContextualActions.tsx:605
+#: src/components/nfts/NFTContextualActions.tsx:607
 #: src/components/offers2/OfferIncomingTable.tsx:119
 msgid "Actions"
 msgstr "Acțiuni"
@@ -3362,7 +3389,7 @@ msgstr "Adaugă Parcelă la Coadă"
 #~ msgid "Add Proofs To Verifiable Credential"
 #~ msgstr "Add Proofs To Verifiable Credential"
 
-#: src/components/vcs/VCList.tsx:227
+#: src/components/vcs/VCList.tsx:273
 msgid "Add Verifiable Credential from file"
 msgstr ""
 
@@ -3371,6 +3398,10 @@ msgstr ""
 #: src/components/notification/NotificationSendDialog.tsx:221
 #: src/components/signVerify/SigningEntityWalletAddress.tsx:45
 msgid "Address"
+msgstr ""
+
+#: src/components/dashboard/DashboardOverview.tsx:84
+msgid "Address book"
 msgstr ""
 
 #: src/components/addressbook/ContactAdd.tsx:30
@@ -3391,6 +3422,10 @@ msgstr ""
 msgid "After your keys are successfully migrated to the new keyring, you may choose to have your keys removed from the old keyring."
 msgstr ""
 
+#: src/components/settings/SettingsNFT.tsx:151
+msgid "All NFT videos will restart automatically when they finish playing. When disabled, looping can still be turned on for individual videos from their detail page."
+msgstr ""
+
 #: src/components/nfts/NFTProfileDropdown.tsx:102
 #: src/components/nfts/NFTProfileDropdown.tsx:115
 msgid "All NFTs"
@@ -3406,7 +3441,7 @@ msgstr ""
 
 #: src/components/settings/SettingsIntegration.tsx:146
 #~ msgid "Allow requests that require switching to a different wallet key."
-#~ msgstr ""
+#~ msgstr "Allow requests that require switching to a different wallet key."
 
 #: src/components/notification/NotificationSendDialog.tsx:286
 msgid "Allow the NFT holder to send a counter offer"
@@ -3472,7 +3507,7 @@ msgstr ""
 #~ msgid "An app has requested permission to execute the following commands."
 #~ msgstr "An app has requested permission to execute the following commands."
 
-#: src/components/farm/FarmHealth.tsx:321
+#: src/components/farm/FarmHealth.tsx:330
 msgid "An increase in the number of missing signage points (SPs) suggests that you were either disconnected from or significantly distant from a Timelord in your Full Node network. The total number of missing SPs serves as an indicator of potential rewards you could have claimed."
 msgstr ""
 
@@ -3483,6 +3518,10 @@ msgstr ""
 
 #: src/components/notification/NotificationAnnouncementDialog.tsx:49
 msgid "Announcement"
+msgstr ""
+
+#: src/components/nfts/gallery/NFTGallery.tsx:496
+msgid "Any preview  <0/>"
 msgstr ""
 
 #: src/constants/WalletConnectCommands.tsx:17
@@ -3519,7 +3558,7 @@ msgstr ""
 msgid "Are you sure you want to cancel your offer?"
 msgstr ""
 
-#: src/components/settings/SettingsNFT.tsx:58
+#: src/components/settings/SettingsNFT.tsx:76
 msgid "Are you sure you want to delete the NFT cache?"
 msgstr ""
 
@@ -3640,13 +3679,17 @@ msgstr ""
 #~ msgid "Backup DIDs"
 #~ msgstr "Backup DIDs"
 
-#: src/components/vcs/VCList.tsx:279
+#: src/components/vcs/VCList.tsx:325
 msgid "Badging"
 msgstr ""
 
 #: src/components/settings/ProfileAdd.tsx:98
 #~ msgid "Balance: {standardBalance} XCH"
 #~ msgstr "Balance: {standardBalance} XCH"
+
+#: src/components/dashboard/DashboardOverview.tsx:33
+msgid "Balances, send, receive, transactions"
+msgstr ""
 
 #: src/components/block/Block.jsx:236
 msgid "Base Farmer Reward Amount"
@@ -3724,7 +3767,7 @@ msgstr "Selectează"
 
 #: src/components/nfts/NFTBurnDialog.tsx:90
 #: src/components/nfts/NFTBurnDialog.tsx:185
-#: src/components/nfts/NFTContextualActions.tsx:543
+#: src/components/nfts/NFTContextualActions.tsx:545
 msgid "Burn"
 msgstr ""
 
@@ -3748,7 +3791,7 @@ msgstr ""
 msgid "Bypassed Commands"
 msgstr ""
 
-#: src/components/settings/SettingsNFT.tsx:125
+#: src/components/settings/SettingsNFT.tsx:204
 msgid "Cache"
 msgstr ""
 
@@ -3801,7 +3844,7 @@ msgstr ""
 msgid "Cancel on blockchain"
 msgstr ""
 
-#: src/components/nfts/NFTContextualActions.tsx:278
+#: src/components/nfts/NFTContextualActions.tsx:280
 msgid "Cancel Unconfirmed Transaction"
 msgstr ""
 
@@ -3826,7 +3869,7 @@ msgid "Challenge Hash"
 msgstr "Hash-ul provocării"
 
 #: src/components/plotNFT/PlotNFTChangePool.tsx:110
-#: src/components/settings/SettingsNFT.tsx:163
+#: src/components/settings/SettingsNFT.tsx:242
 msgid "Change"
 msgstr ""
 
@@ -3882,6 +3925,10 @@ msgstr ""
 msgid "Check Provenance on Spacescan.io"
 msgstr ""
 
+#: src/components/dashboard/DashboardOverview.tsx:355
+msgid "Checking plots"
+msgstr ""
+
 #: src/electron/main.tsx:1098
 #~ msgid "Chia"
 #~ msgstr "Chia"
@@ -3926,7 +3973,7 @@ msgstr ""
 msgid "Choose Wallet Mode"
 msgstr ""
 
-#: src/components/settings/SettingsNFT.tsx:75
+#: src/components/settings/SettingsNFT.tsx:93
 msgid "Choose what you want to see and how you want to view it."
 msgstr ""
 
@@ -3955,8 +4002,8 @@ msgstr ""
 msgid "Clear every \"always allow\" override for this app. Future commands will require confirmation again."
 msgstr ""
 
-#: src/components/settings/SettingsNFT.tsx:51
-#: src/components/settings/SettingsNFT.tsx:145
+#: src/components/settings/SettingsNFT.tsx:69
+#: src/components/settings/SettingsNFT.tsx:224
 msgid "Clear NFT cache"
 msgstr ""
 
@@ -4015,7 +4062,7 @@ msgstr ""
 #~ msgid "Coin name"
 #~ msgstr "Coin name"
 
-#: src/components/nfts/detail/NFTDetailV2.tsx:215
+#: src/components/nfts/detail/NFTDetailV2.tsx:213
 #: src/components/nfts/NFTSummary.tsx:50
 msgid "Collection"
 msgstr ""
@@ -4028,7 +4075,7 @@ msgstr ""
 msgid "Commands listed here will be executed without confirmation. Use with caution as this can affect your funds."
 msgstr ""
 
-#: src/components/farm/FarmHealth.tsx:327
+#: src/components/farm/FarmHealth.tsx:336
 msgid "Common reasons for missing SPs include:"
 msgstr ""
 
@@ -4036,7 +4083,7 @@ msgstr ""
 msgid "Compressed plot support"
 msgstr ""
 
-#: src/components/harvest/HarvesterPlotDetails.tsx:132
+#: src/components/harvest/HarvesterPlotDetails.tsx:172
 msgid "Compression"
 msgstr ""
 
@@ -4132,11 +4179,12 @@ msgid "Contact Name"
 msgstr ""
 
 #: src/components/addressbook/AddressBookSideBar.tsx:124
-#: src/components/dashboard/DashboardSideBar.tsx:74
+#: src/components/dashboard/DashboardOverview.tsx:83
+#: src/components/dashboard/DashboardSideBar.tsx:84
 msgid "Contacts"
 msgstr ""
 
-#: src/components/nfts/NFTHashStatus.tsx:109
+#: src/components/nfts/NFTHashStatus.tsx:120
 msgid "Content does not match the expected hash value that was specified during NFT minting. The content may have been modified."
 msgstr ""
 
@@ -4144,11 +4192,11 @@ msgstr ""
 #~ msgid "Content has not been validated against the hash that was specified during NFT minting."
 #~ msgstr ""
 
-#: src/components/nfts/NFTHashStatus.tsx:102
+#: src/components/nfts/NFTHashStatus.tsx:113
 msgid "Content has not been validated against the hash that was specified during NFT minting. Error: {0}"
 msgstr ""
 
-#: src/components/walletConnect/WalletConnectAddConnectionDialog.tsx:135
+#: src/components/walletConnect/WalletConnectAddConnectionDialog.tsx:134
 msgid "Continue"
 msgstr ""
 
@@ -4156,11 +4204,11 @@ msgstr ""
 #~ msgid "Contribute on GitHub"
 #~ msgstr "Contribute on GitHub"
 
-#: src/components/nfts/NFTContextualActions.tsx:349
+#: src/components/nfts/NFTContextualActions.tsx:351
 msgid "Copy Media URL"
 msgstr ""
 
-#: src/components/nfts/NFTContextualActions.tsx:106
+#: src/components/nfts/NFTContextualActions.tsx:107
 msgid "Copy NFT ID"
 msgstr ""
 
@@ -4184,7 +4232,7 @@ msgstr ""
 msgid "Could not connect to host {host} on port {port}"
 msgstr ""
 
-#: src/components/offers2/OfferBuilderImport.tsx:37
+#: src/components/offers2/OfferBuilderImport.tsx:38
 msgid "Could not parse offer data"
 msgstr ""
 
@@ -4263,7 +4311,7 @@ msgstr ""
 #~ msgid "Create new Remote Wallet"
 #~ msgstr "Create new Remote Wallet"
 
-#: src/components/nfts/NFTContextualActions.tsx:150
+#: src/components/nfts/NFTContextualActions.tsx:152
 #: src/components/offers/NFTOfferEditor.tsx:438
 #: src/components/offers/OfferEditor.tsx:156
 #: src/components/offers/OfferManager.tsx:393
@@ -4281,6 +4329,10 @@ msgstr ""
 
 #: src/components/settings/SettingsAdvanced.tsx:168
 msgid "Create Signature"
+msgstr ""
+
+#: src/components/dashboard/DashboardOverview.tsx:71
+msgid "Create, import, inspect, manage"
 msgstr ""
 
 #: src/components/offers/OfferViewerTitle.tsx:34
@@ -4326,7 +4378,8 @@ msgstr ""
 msgid "Creator royalty percentage seems high"
 msgstr ""
 
-#: src/components/dashboard/DashboardSideBar.tsx:61
+#: src/components/dashboard/DashboardOverview.tsx:76
+#: src/components/dashboard/DashboardSideBar.tsx:71
 msgid "Credentials"
 msgstr ""
 
@@ -4475,11 +4528,11 @@ msgstr ""
 msgid "Derivation index must be greater than {index}"
 msgstr ""
 
-#: src/components/nfts/detail/NFTDetailV2.tsx:205
+#: src/components/nfts/detail/NFTDetailV2.tsx:203
 msgid "Description"
 msgstr ""
 
-#: src/components/nfts/gallery/NFTGallery.tsx:320
+#: src/components/nfts/gallery/NFTGallery.tsx:372
 msgid "Deselect all"
 msgstr ""
 
@@ -4646,11 +4699,11 @@ msgstr ""
 #~ msgid "Don't allocate host tables using pinned buffers, instead download to intermediate pinned buffers then copy to the final host buffer."
 #~ msgstr "Don't allocate host tables using pinned buffers, instead download to intermediate pinned buffers then copy to the final host buffer."
 
-#: src/components/nfts/NFTContextualActions.tsx:461
+#: src/components/nfts/NFTContextualActions.tsx:463
 msgid "Download"
 msgstr ""
 
-#: src/components/nfts/NFTContextualActions.tsx:444
+#: src/components/nfts/NFTContextualActions.tsx:446
 msgid "Download Failed"
 msgstr ""
 
@@ -4678,7 +4731,7 @@ msgstr ""
 msgid "Downloading selected NFTs"
 msgstr ""
 
-#: src/components/signVerify/VerifyMessageImport.tsx:75
+#: src/components/signVerify/VerifyMessageImport.tsx:77
 msgid "Drag & Drop a Signed Message File,<0/> Paste ({0}V)"
 msgstr ""
 
@@ -4686,7 +4739,7 @@ msgstr ""
 msgid "Drag & Drop an Offer File"
 msgstr ""
 
-#: src/components/offers2/OfferBuilderImport.tsx:128
+#: src/components/offers2/OfferBuilderImport.tsx:138
 msgid "Drag & Drop an Offer File, Paste"
 msgstr ""
 
@@ -4706,7 +4759,7 @@ msgstr ""
 msgid "Duplicate Plots"
 msgstr ""
 
-#: src/components/harvest/HarvesterDetail.tsx:123
+#: src/components/harvest/HarvesterDetail.tsx:125
 msgid "Earned"
 msgstr ""
 
@@ -4729,7 +4782,7 @@ msgstr ""
 msgid "Edition #"
 msgstr ""
 
-#: src/components/nfts/detail/NFTDetailV2.tsx:226
+#: src/components/nfts/detail/NFTDetailV2.tsx:224
 msgid "Edition Number"
 msgstr ""
 
@@ -4737,7 +4790,7 @@ msgstr ""
 #~ msgid "Edition Total"
 #~ msgstr "Edition Total"
 
-#: src/components/harvest/HarvesterDetail.tsx:159
+#: src/components/harvest/HarvesterDetail.tsx:161
 msgid "Effective Space"
 msgstr ""
 
@@ -4850,7 +4903,7 @@ msgstr "Eroare"
 #~ msgid "Error fetching video preview"
 #~ msgstr ""
 
-#: src/components/vcs/VCList.tsx:215
+#: src/components/vcs/VCList.tsx:261
 msgid "Error parsing file"
 msgstr ""
 
@@ -4916,7 +4969,7 @@ msgstr "Exclude directorul final"
 #~ msgid "Excluded Coin IDs"
 #~ msgstr "Excluded Coin IDs"
 
-#: src/components/farm/FarmHealth.tsx:252
+#: src/components/farm/FarmHealth.tsx:261
 msgid "Expected Total plots passing filter"
 msgstr ""
 
@@ -4955,7 +5008,7 @@ msgstr ""
 msgid "Failed downloads:"
 msgstr ""
 
-#: src/components/farm/PoolingHealth.tsx:310
+#: src/components/farm/PoolingHealth.tsx:318
 msgid "Failed partials"
 msgstr ""
 
@@ -4987,11 +5040,12 @@ msgstr ""
 msgid "Failure"
 msgstr ""
 
-#: src/components/dashboard/DashboardSideBar.tsx:94
+#: src/components/dashboard/DashboardOverview.tsx:47
+#: src/components/dashboard/DashboardSideBar.tsx:103
 msgid "Farm"
 msgstr ""
 
-#: src/components/farm/FarmHealth.tsx:424
+#: src/components/farm/FarmHealth.tsx:433
 msgid "Farm Health"
 msgstr ""
 
@@ -5043,6 +5097,10 @@ msgstr "Fermierii câștigă recompense bloc și taxe de tranzacționare prin an
 msgid "Farming"
 msgstr "Cultivare"
 
+#: src/components/dashboard/DashboardOverview.tsx:341
+msgid "Farming info did not respond"
+msgstr ""
+
 #: src/components/app/AppSelectMode.tsx:112
 msgid "Farming Mode"
 msgstr ""
@@ -5066,6 +5124,10 @@ msgstr ""
 #: src/components/farm/card/FarmCardStatus.tsx:59
 #~ msgid "Farming Status"
 #~ msgstr "Farming Status"
+
+#: src/components/dashboard/DashboardOverview.tsx:48
+msgid "Farming status and rewards"
+msgstr ""
 
 #: src/components/settings/SettingsAdvanced.tsx:77
 msgid "Features for advanced users."
@@ -5114,6 +5176,10 @@ msgstr "Suma taxe"
 msgid "Fees included in offer:"
 msgstr ""
 
+#: src/components/settings/SettingsNFT.tsx:162
+msgid "Fetch IPFS content through a gateway"
+msgstr ""
+
 #: src/constants/WalletConnectCommands.tsx:483
 #~ msgid "Fetches the puzzle reveal and solution for a spent coin (hex strings)."
 #~ msgstr "Fetches the puzzle reveal and solution for a spent coin (hex strings)."
@@ -5123,6 +5189,15 @@ msgstr ""
 #~ msgid "File"
 #~ msgstr "File"
 
+#: src/components/nfts/NFTPreview.tsx:571
+msgid "File does not match the expected hash"
+msgstr ""
+
+#: src/components/nfts/NFTHashStatus.tsx:88
+#: src/components/nfts/NFTPreview.tsx:251
+msgid "File is not available"
+msgstr ""
+
 #: src/components/plot/PlotHarvesterPlots.tsx:70
 #: src/components/plot/PlotHarvesterPlotsDuplicate.tsx:14
 #: src/components/plot/PlotHarvesterPlotsFailed.tsx:14
@@ -5130,7 +5205,7 @@ msgstr ""
 msgid "Filename"
 msgstr ""
 
-#: src/components/nfts/gallery/NFTGallery.tsx:283
+#: src/components/nfts/gallery/NFTGallery.tsx:328
 msgid "Filter"
 msgstr ""
 
@@ -5156,7 +5231,7 @@ msgstr "Locatia folderului final"
 msgid "Finished"
 msgstr "Terminat"
 
-#: src/components/settings/SettingsNFT.tsx:107
+#: src/components/settings/SettingsNFT.tsx:125
 msgid "Fit images to cards"
 msgstr ""
 
@@ -5181,7 +5256,8 @@ msgid "From"
 msgstr ""
 
 #: src/components/app/AppStatusHeader.tsx:127
-#: src/components/dashboard/DashboardSideBar.tsx:87
+#: src/components/dashboard/DashboardOverview.tsx:40
+#: src/components/dashboard/DashboardSideBar.tsx:97
 #: src/components/fullNode/FullNode.jsx:116
 msgid "Full Node"
 msgstr "Nod complet"
@@ -5190,13 +5266,21 @@ msgstr "Nod complet"
 msgid "Full Node Connections"
 msgstr ""
 
-#: src/components/farm/FarmHealth.tsx:336
+#: src/components/dashboard/DashboardOverview.tsx:263
+msgid "Full node service did not respond"
+msgstr ""
+
+#: src/components/farm/FarmHealth.tsx:345
 msgid "Full Node was out of sync"
 msgstr ""
 
 #: src/electron/main.tsx:1022
 #~ msgid "Full Screen"
 #~ msgstr "Full Screen"
+
+#: src/components/dashboard/DashboardOverview.tsx:65
+msgid "Gallery and detail pages"
+msgstr ""
 
 #: src/components/settings/Settings.tsx:29
 msgid "General"
@@ -5403,7 +5487,7 @@ msgstr ""
 #~ msgid "Go to #{channelName}"
 #~ msgstr "Go to #{channelName}"
 
-#: src/components/vcs/VCList.tsx:295
+#: src/components/vcs/VCList.tsx:405
 msgid "Government IDs"
 msgstr ""
 
@@ -5416,7 +5500,8 @@ msgstr ""
 msgid "Halves the temp2 cache size requirements by alternating bucket writing methods between tables."
 msgstr ""
 
-#: src/components/dashboard/DashboardSideBar.tsx:106
+#: src/components/dashboard/DashboardOverview.tsx:89
+#: src/components/dashboard/DashboardSideBar.tsx:115
 msgid "Harvest"
 msgstr ""
 
@@ -5428,12 +5513,24 @@ msgstr ""
 msgid "Harvester latency"
 msgstr ""
 
+#: src/components/dashboard/DashboardOverview.tsx:90
+msgid "Harvester overview"
+msgstr ""
+
 #: src/components/settings/SettingsHarvester.tsx:372
 msgid "Harvester Services"
 msgstr ""
 
 #: src/components/harvest/HarvesterOverview.tsx:153
 msgid "Harvester Summary"
+msgstr ""
+
+#: src/components/dashboard/DashboardOverview.tsx:309
+msgid "Harvester summary did not respond"
+msgstr ""
+
+#: src/components/dashboard/DashboardOverview.tsx:322
+msgid "harvesters"
 msgstr ""
 
 #: src/components/harvest/HarvesterOverview.tsx:218
@@ -5462,7 +5559,7 @@ msgstr ""
 #~ msgid "Hash is validated."
 #~ msgstr ""
 
-#: src/components/nfts/NFTHashStatus.tsx:73
+#: src/components/nfts/NFTHashStatus.tsx:80
 msgid "Hash matches"
 msgstr ""
 
@@ -5483,6 +5580,7 @@ msgid "Header Hash"
 msgstr "Hash-ul Antetului"
 
 #: src/components/block/Block.jsx:169
+#: src/components/dashboard/DashboardOverview.tsx:272
 #: src/components/fullNode/FullNode.jsx:61
 #: src/components/fullNode/FullNodeConnections.tsx:62
 msgid "Height"
@@ -5500,11 +5598,11 @@ msgstr ""
 msgid "Hex public key of pool"
 msgstr ""
 
-#: src/components/nfts/gallery/NFTGallery.tsx:428
+#: src/components/nfts/gallery/NFTGallery.tsx:480
 msgid "Hidden"
 msgstr ""
 
-#: src/components/nfts/gallery/NFTGallery.tsx:391
+#: src/components/nfts/gallery/NFTGallery.tsx:443
 msgid "Hidden  <0/>"
 msgstr ""
 
@@ -5512,11 +5610,11 @@ msgstr ""
 #~ msgid "Hidden ({0})"
 #~ msgstr ""
 
-#: src/components/nfts/NFTContextualActions.tsx:511
+#: src/components/nfts/NFTContextualActions.tsx:513
 msgid "Hide"
 msgstr ""
 
-#: src/components/settings/SettingsNFT.tsx:87
+#: src/components/settings/SettingsNFT.tsx:105
 msgid "Hide objectionable content"
 msgstr ""
 
@@ -5586,7 +5684,7 @@ msgstr ""
 #~ msgid "Image Hash Mismatch"
 #~ msgstr "Image Hash Mismatch"
 
-#: src/components/settings/SettingsNFT.tsx:117
+#: src/components/settings/SettingsNFT.tsx:135
 msgid "Images will be scaled to fill the NFT card and ignore their original proportions."
 msgstr ""
 
@@ -5662,7 +5760,7 @@ msgid ""
 "spendable balance is sufficient to cover the offer amount."
 msgstr ""
 
-#: src/components/farm/PoolingHealth.tsx:302
+#: src/components/farm/PoolingHealth.tsx:310
 msgid "Insufficient partials"
 msgstr ""
 
@@ -5683,7 +5781,7 @@ msgstr ""
 msgid "Invalid"
 msgstr ""
 
-#: src/components/nfts/NFTHashStatus.tsx:80
+#: src/components/nfts/NFTHashStatus.tsx:91
 msgid "Invalid hash"
 msgstr ""
 
@@ -5785,7 +5883,7 @@ msgstr "Mărime K"
 
 #: src/components/settings/SettingsIntegration.tsx:129
 #~ msgid "Key Switching"
-#~ msgstr ""
+#~ msgstr "Key Switching"
 
 #: src/components/offers/OfferShareDialog.tsx:1086
 #~ msgid "Keybase command failed {e}. If you haven't installed Keybase, you can download from https://keybase.io"
@@ -5808,7 +5906,7 @@ msgstr ""
 msgid "KiB Up/Down"
 msgstr ""
 
-#: src/components/vcs/VCList.tsx:301
+#: src/components/vcs/VCList.tsx:411
 msgid "KYC status"
 msgstr ""
 
@@ -5860,7 +5958,7 @@ msgstr ""
 msgid "Launcher ID"
 msgstr ""
 
-#: src/components/farm/FarmHealth.tsx:341
+#: src/components/farm/FarmHealth.tsx:350
 #: src/components/plot/add/PlotAddNFT.tsx:84
 msgid "Learn more"
 msgstr ""
@@ -5894,7 +5992,7 @@ msgstr ""
 msgid "License URL {0}"
 msgstr ""
 
-#: src/components/settings/SettingsNFT.tsx:176
+#: src/components/settings/SettingsNFT.tsx:255
 msgid "Limit cache size"
 msgstr ""
 
@@ -5906,7 +6004,14 @@ msgstr ""
 msgid "Load Logs"
 msgstr ""
 
-#: src/components/app/AppProviders.tsx:83
+#: src/components/dashboard/DashboardOverview.tsx:200
+#: src/components/dashboard/DashboardOverview.tsx:255
+#: src/components/dashboard/DashboardOverview.tsx:301
+#: src/components/dashboard/DashboardOverview.tsx:333
+msgid "Loading"
+msgstr ""
+
+#: src/components/app/AppProviders.tsx:86
 msgid "Loading configuration"
 msgstr ""
 
@@ -5935,7 +6040,7 @@ msgstr ""
 msgid "Loading NFT Info..."
 msgstr ""
 
-#: src/components/nfts/NFTPreview.tsx:386
+#: src/components/nfts/NFTPreview.tsx:560
 msgid "Loading NFT..."
 msgstr ""
 
@@ -5943,7 +6048,8 @@ msgstr ""
 #~ msgid "Loading NFTs..."
 #~ msgstr ""
 
-#: src/components/nfts/NFTPreview.tsx:386
+#: src/components/nfts/NFTPreview.tsx:560
+#: src/components/nfts/NFTPreview.tsx:582
 msgid "Loading preview..."
 msgstr ""
 
@@ -5962,11 +6068,11 @@ msgstr "Încărcare..."
 msgid "Local"
 msgstr ""
 
-#: src/components/settings/SettingsNFT.tsx:158
+#: src/components/settings/SettingsNFT.tsx:237
 msgid "Local folder"
 msgstr ""
 
-#: src/components/harvest/HarvesterDetail.tsx:47
+#: src/components/harvest/HarvesterDetail.tsx:49
 msgid "Local Harvester"
 msgstr ""
 
@@ -5986,6 +6092,26 @@ msgstr ""
 msgid "Log Viewer"
 msgstr ""
 
+#: src/components/dashboard/DashboardOverview.tsx:97
+msgid "Logs and diagnostics"
+msgstr ""
+
+#: src/components/nfts/NFTPreview.tsx:440
+msgid "Loop video"
+msgstr ""
+
+#: src/components/settings/SettingsNFT.tsx:143
+msgid "Loop videos"
+msgstr ""
+
+#: src/components/nfts/NFTPreview.tsx:436
+msgid "Looping is enabled for all videos in Settings"
+msgstr ""
+
+#: src/components/nfts/NFTPreview.tsx:438
+msgid "Looping on"
+msgstr ""
+
 #: src/constants/WalletConnectCommands.tsx:1574
 #~ msgid "Make DataLayer Offer"
 #~ msgstr "Make DataLayer Offer"
@@ -6002,7 +6128,7 @@ msgstr ""
 msgid "Manage Farming Rewards"
 msgstr "Administrare Răsplată Cultivare"
 
-#: src/components/settings/SettingsNFT.tsx:128
+#: src/components/settings/SettingsNFT.tsx:207
 msgid "Manage how and where files are stored on this computer."
 msgstr ""
 
@@ -6033,7 +6159,7 @@ msgstr ""
 #~ msgid "Max page size"
 #~ msgstr "Max page size"
 
-#: src/components/vcs/VCList.tsx:305
+#: src/components/vcs/VCList.tsx:415
 msgid "Memberships"
 msgstr ""
 
@@ -6160,7 +6286,7 @@ msgstr "Minute"
 msgid "Missing Keys"
 msgstr ""
 
-#: src/components/farm/PoolingHealth.tsx:325
+#: src/components/farm/PoolingHealth.tsx:333
 msgid "Missing partials"
 msgstr ""
 
@@ -6172,9 +6298,13 @@ msgstr ""
 #~ msgid "Missing preview_video_hash key"
 #~ msgstr ""
 
-#: src/components/farm/FarmHealth.tsx:359
-#: src/components/farm/FarmHealth.tsx:373
+#: src/components/farm/FarmHealth.tsx:368
+#: src/components/farm/FarmHealth.tsx:382
 msgid "Missing signage points"
+msgstr ""
+
+#: src/components/dashboard/DashboardOverview.tsx:399
+msgid "More areas"
 msgstr ""
 
 #: src/components/walletConnect/WalletConnectConnections.tsx:83
@@ -6185,7 +6315,7 @@ msgstr ""
 msgid "More memory slightly increases speed"
 msgstr "Mai multă memorie crește ușor viteza"
 
-#: src/components/harvest/HarvesterDetail.tsx:129
+#: src/components/harvest/HarvesterDetail.tsx:131
 msgid "more space"
 msgstr ""
 
@@ -6197,11 +6327,11 @@ msgstr ""
 msgid "Move NFT to Profile"
 msgstr ""
 
-#: src/components/nfts/NFTContextualActions.tsx:226
+#: src/components/nfts/NFTContextualActions.tsx:228
 msgid "Move to Profile"
 msgstr ""
 
-#: src/components/nfts/gallery/NFTGallery.tsx:278
+#: src/components/nfts/gallery/NFTGallery.tsx:323
 msgid "Multi-select"
 msgstr ""
 
@@ -6296,14 +6426,14 @@ msgid "New Root"
 msgstr ""
 
 #: src/components/block/Block.jsx:260
-#: src/components/nfts/detail/NFTDetailV2.tsx:143
+#: src/components/nfts/detail/NFTDetailV2.tsx:141
 msgid "Next"
 msgstr "Următor"
 
 #: src/components/offers/NFTOfferEditor.tsx:212
-#: src/components/offers2/OfferBuilderNFTSection.tsx:44
+#: src/components/offers2/OfferBuilderNFTSection.tsx:46
 #: src/components/settings/Settings.tsx:38
-#: src/components/settings/SettingsNFT.tsx:72
+#: src/components/settings/SettingsNFT.tsx:90
 #: src/components/signVerify/SignMessage.tsx:164
 msgid "NFT"
 msgstr ""
@@ -6328,6 +6458,10 @@ msgstr ""
 
 #: src/components/offers/NFTOfferEditor.tsx:617
 msgid "NFT details not available"
+msgstr ""
+
+#: src/components/settings/SettingsNFT.tsx:170
+msgid "NFT files published with ipfs:// addresses will be downloaded through the public ipfs.io HTTPS gateway. The requested URL differs from the address recorded on chain, but downloaded content is still verified against the NFT's on-chain hash. When disabled, ipfs:// files are not fetched."
 msgstr ""
 
 #: src/components/offers2/OfferBuilderNFTRoyalties.tsx:172
@@ -6374,27 +6508,28 @@ msgstr ""
 msgid "NFT Purchase Price"
 msgstr ""
 
-#: src/components/nfts/NFTContextualActions.tsx:265
+#: src/components/nfts/NFTContextualActions.tsx:267
 msgid "NFT Status Update Failed"
 msgstr ""
 
-#: src/components/nfts/NFTContextualActions.tsx:255
+#: src/components/nfts/NFTContextualActions.tsx:257
 msgid "NFT Status Updated"
 msgstr ""
 
-#: src/components/nfts/NFTContextualActions.tsx:180
+#: src/components/nfts/NFTContextualActions.tsx:182
 msgid "NFT Transfer Failed"
 msgstr ""
 
-#: src/components/nfts/NFTContextualActions.tsx:174
+#: src/components/nfts/NFTContextualActions.tsx:176
 msgid "NFT Transfer Pending"
 msgstr ""
 
-#: src/components/dashboard/DashboardSideBar.tsx:54
+#: src/components/dashboard/DashboardOverview.tsx:64
+#: src/components/dashboard/DashboardSideBar.tsx:64
 msgid "NFTs"
 msgstr ""
 
-#: src/components/settings/SettingsNFT.tsx:97
+#: src/components/settings/SettingsNFT.tsx:115
 msgid "NFTs that have been categorized by the creator as objectionable content will be hidden by default."
 msgstr ""
 
@@ -6404,6 +6539,10 @@ msgstr ""
 
 #: src/components/notification/NotificationsMenu.tsx:53
 msgid "No activities yet"
+msgstr ""
+
+#: src/components/dashboard/DashboardOverview.tsx:349
+msgid "No attempts"
 msgstr ""
 
 #: src/components/farm/card/FarmCardLastHeightFarmed.tsx:15
@@ -6435,7 +6574,7 @@ msgstr ""
 #~ msgid "No Custom Permissions"
 #~ msgstr "No Custom Permissions"
 
-#: src/components/nfts/NFTPreview.tsx:391
+#: src/components/nfts/NFTPreview.tsx:565
 msgid "No file available"
 msgstr ""
 
@@ -6455,38 +6594,47 @@ msgstr ""
 msgid "No private keys for one or both addresses. Safe only if you are sending rewards to another wallet."
 msgstr "Nu există chei private pentru una sau ambele adrese. Fără riscuri doar atunci când direcționezi răsplata către alt portofel."
 
+#: src/components/dashboard/DashboardOverview.tsx:350
+msgid "No recent plot filter attempts found"
+msgstr ""
+
 #: src/util/offerBuilderDataToOffer.ts:165
 #: src/util/offerBuilderDataToOffer.ts:193
 #: src/util/offerBuilderDataToOffer.ts:303
 msgid "No standard wallet found"
 msgstr ""
 
+#: src/components/dashboard/DashboardOverview.tsx:214
+msgid "No wallet"
+msgstr ""
+
 #: src/components/farm/FarmFullNodeConnections.tsx:29
 #: src/components/farm/FarmYourHarvesterNetwork.tsx:29
 #: src/components/fullNode/FullNodeConnections.tsx:29
 msgid "Node ID"
-msgstr "ID-ul Nodului"
+msgstr ""
 
 #: src/constants/WalletConnectCommands.tsx:2312
 #~ msgid "Non Observer Derivation"
 #~ msgstr "Non Observer Derivation"
 
 #: src/components/did/DIDProfileDropdown.tsx:98
-#: src/components/farm/FarmHealth.tsx:362
-#: src/components/farm/FarmHealth.tsx:390
-#: src/components/farm/FarmHealth.tsx:408
-#: src/components/farm/PoolingHealth.tsx:87
-#: src/components/farm/PoolingHealth.tsx:125
-#: src/components/farm/PoolingHealth.tsx:162
-#: src/components/farm/PoolingHealth.tsx:199
-#: src/components/farm/PoolingHealth.tsx:236
+#: src/components/farm/FarmHealth.tsx:371
+#: src/components/farm/FarmHealth.tsx:399
+#: src/components/farm/FarmHealth.tsx:417
+#: src/components/farm/PoolingHealth.tsx:95
+#: src/components/farm/PoolingHealth.tsx:133
+#: src/components/farm/PoolingHealth.tsx:170
+#: src/components/farm/PoolingHealth.tsx:207
+#: src/components/farm/PoolingHealth.tsx:244
 #: src/components/nfts/NFTMoveToProfileDialog.tsx:104
 #: src/components/nfts/NFTMoveToProfileDialog.tsx:244
 #: src/components/plot/add/PlotAddNFT.tsx:96
 msgid "None"
 msgstr ""
 
-#: src/components/nfts/gallery/NFTGallery.tsx:396
+#: src/components/nfts/gallery/NFTGallery.tsx:448
+#: src/components/nfts/gallery/NFTGallery.tsx:514
 msgid "None (0)"
 msgstr ""
 
@@ -6498,9 +6646,9 @@ msgstr "Niciuna din parcelele tale nu a trecut încă filtrul."
 msgid "Normal (RAM required: 256G)"
 msgstr ""
 
-#: src/components/farm/FarmHealth.tsx:123
-#: src/components/farm/FarmHealth.tsx:170
-#: src/components/farm/FarmHealth.tsx:194
+#: src/components/farm/FarmHealth.tsx:132
+#: src/components/farm/FarmHealth.tsx:179
+#: src/components/farm/FarmHealth.tsx:203
 msgid "Not available"
 msgstr ""
 
@@ -6513,15 +6661,19 @@ msgstr ""
 msgid "Not Available"
 msgstr "Indisponibil"
 
-#: src/components/farm/FarmHealth.tsx:131
-#: src/components/farm/FarmHealth.tsx:178
+#: src/components/farm/FarmHealth.tsx:140
+#: src/components/farm/FarmHealth.tsx:187
 #: src/components/fullNode/card/FullNodeCardConnectionStatus.tsx:16
 msgid "Not connected"
 msgstr "Neconectat"
 
-#: src/components/farm/FarmHealth.tsx:139
-#: src/components/farm/FarmHealth.tsx:186
+#: src/components/farm/FarmHealth.tsx:148
+#: src/components/farm/FarmHealth.tsx:195
 msgid "Not running"
+msgstr ""
+
+#: src/components/dashboard/DashboardOverview.tsx:283
+msgid "Not synced"
 msgstr ""
 
 #: src/components/fullNode/card/FullNodeCardStatus.tsx:14
@@ -6618,11 +6770,11 @@ msgstr ""
 msgid "Number of threads for Phase 3"
 msgstr ""
 
-#: src/components/nfts/gallery/NFTGallery.tsx:366
+#: src/components/nfts/gallery/NFTGallery.tsx:418
 msgid "Objectionable Content"
 msgstr ""
 
-#: src/components/settings/SettingsNFT.tsx:140
+#: src/components/settings/SettingsNFT.tsx:219
 msgid "Occupied space"
 msgstr ""
 
@@ -6660,7 +6812,7 @@ msgstr ""
 msgid "Offer Expiration Time"
 msgstr ""
 
-#: src/components/offers2/OfferBuilderImport.tsx:58
+#: src/components/offers2/OfferBuilderImport.tsx:59
 msgid "Offer file is too large (> 1MB)"
 msgstr ""
 
@@ -6729,8 +6881,9 @@ msgstr ""
 msgid "Offerpool URL"
 msgstr ""
 
-#: src/components/dashboard/DashboardSideBar.tsx:68
-#: src/components/nfts/detail/NFTDetailV2.tsx:245
+#: src/components/dashboard/DashboardOverview.tsx:70
+#: src/components/dashboard/DashboardSideBar.tsx:78
+#: src/components/nfts/detail/NFTDetailV2.tsx:243
 msgid "Offers"
 msgstr ""
 
@@ -6750,7 +6903,7 @@ msgstr ""
 msgid "Offers you created"
 msgstr ""
 
-#: src/components/farm/FarmHealth.tsx:209
+#: src/components/farm/FarmHealth.tsx:218
 #: src/components/offers/OfferDataDialog.tsx:58
 #: src/components/plotNFT/PlotNFTGetPoolLoginLinkDialog.tsx:86
 msgid "OK"
@@ -6776,11 +6929,11 @@ msgstr ""
 msgid "One or more unknown tokens are being offered. Please verify that the asset IDs of the tokens listed below match the asset IDs of the tokens you expect to receive."
 msgstr ""
 
-#: src/components/offers2/OfferBuilderNFTSection.tsx:45
+#: src/components/offers2/OfferBuilderNFTSection.tsx:47
 msgid "One-of-a-kind Collectible assets"
 msgstr ""
 
-#: src/components/nfts/NFTContextualActions.tsx:317
+#: src/components/nfts/NFTContextualActions.tsx:319
 msgid "Open in Browser"
 msgstr ""
 
@@ -6804,8 +6957,8 @@ msgstr ""
 msgid "Options"
 msgstr ""
 
-#: src/components/offers2/OfferBuilderImport.tsx:132
-#: src/components/signVerify/VerifyMessageImport.tsx:136
+#: src/components/offers2/OfferBuilderImport.tsx:142
+#: src/components/signVerify/VerifyMessageImport.tsx:138
 msgid "or <0>browse</0> on your computer"
 msgstr ""
 
@@ -6835,6 +6988,10 @@ msgstr ""
 
 #: src/components/plot/add/PlotAddNumberOfPlots.tsx:310
 msgid "Override the thread count for Phase 3"
+msgstr ""
+
+#: src/components/dashboard/DashboardSideBar.tsx:50
+msgid "Overview"
 msgstr ""
 
 #: src/constants/WalletConnectCommands.tsx:1171
@@ -6883,11 +7040,11 @@ msgstr ""
 #~ msgid "Parent Coin Info"
 #~ msgstr "Parent Coin Info"
 
-#: src/components/farm/PoolingHealth.tsx:317
+#: src/components/farm/PoolingHealth.tsx:325
 msgid "Partials found but not sent to pools. This usually happens when a partial is found before connections to pools are established"
 msgstr ""
 
-#: src/components/farm/PoolingHealth.tsx:299
+#: src/components/farm/PoolingHealth.tsx:307
 msgid "Partials not good enough for difficulties for corresponding pools"
 msgstr ""
 
@@ -6895,15 +7052,15 @@ msgstr ""
 #~ msgid "Partials not good enough or rejected by pools"
 #~ msgstr ""
 
-#: src/components/farm/PoolingHealth.tsx:307
+#: src/components/farm/PoolingHealth.tsx:315
 msgid "Partials sent to pools but received error responses"
 msgstr ""
 
-#: src/components/farm/PoolingHealth.tsx:291
+#: src/components/farm/PoolingHealth.tsx:299
 msgid "Partials sent to pools but too late"
 msgstr ""
 
-#: src/components/farm/PoolingHealth.tsx:283
+#: src/components/farm/PoolingHealth.tsx:291
 msgid "Partials successfully sent and acknowledged by pools"
 msgstr ""
 
@@ -6944,7 +7101,7 @@ msgstr ""
 msgid "Passphrase support requires migrating your keys to a new keyring"
 msgstr ""
 
-#: src/components/walletConnect/WalletConnectAddConnectionDialog.tsx:106
+#: src/components/walletConnect/WalletConnectAddConnectionDialog.tsx:105
 msgid "Paste link"
 msgstr ""
 
@@ -6953,7 +7110,7 @@ msgstr ""
 msgid "Paste Offer Data"
 msgstr ""
 
-#: src/components/walletConnect/WalletConnectAddConnectionDialog.tsx:101
+#: src/components/walletConnect/WalletConnectAddConnectionDialog.tsx:100
 msgid "Paste the address from WalletConnect below."
 msgstr ""
 
@@ -6961,10 +7118,19 @@ msgstr ""
 msgid "Payout Address"
 msgstr ""
 
+#: src/components/dashboard/DashboardOverview.tsx:289
+msgid "Peak"
+msgstr ""
+
 #: src/components/fullNode/card/FullNodeCardPeakHeight.tsx:14
 msgid "Peak Height"
 msgstr "Înălțimea Vârfului"
 
+#: src/components/dashboard/DashboardOverview.tsx:279
+msgid "peers loading"
+msgstr ""
+
+#: src/components/dashboard/DashboardOverview.tsx:221
 #: src/components/plotNFT/PlotNFTState.tsx:41
 msgid "Pending"
 msgstr "În Așteptare"
@@ -7003,7 +7169,7 @@ msgstr ""
 msgid "Please enter a passphrase"
 msgstr ""
 
-#: src/components/walletConnect/WalletConnectAddConnectionDialog.tsx:46
+#: src/components/walletConnect/WalletConnectAddConnectionDialog.tsx:45
 msgid "Please enter a URI"
 msgstr ""
 
@@ -7108,7 +7274,11 @@ msgstr ""
 msgid "Plot Count"
 msgstr "Număr Parcele"
 
-#: src/components/harvest/HarvesterPlotDetails.tsx:159
+#: src/components/dashboard/DashboardOverview.tsx:55
+msgid "Plot count, size, and add flow"
+msgstr ""
+
+#: src/components/harvest/HarvesterPlotDetails.tsx:199
 msgid "Plot details"
 msgstr ""
 
@@ -7141,7 +7311,7 @@ msgstr ""
 msgid "Plot NFT with p2_singleton_puzzle_hash {plotNFTId} does not exists"
 msgstr ""
 
-#: src/components/farm/FarmHealth.tsx:246
+#: src/components/farm/FarmHealth.tsx:255
 msgid "Plot pass ratio"
 msgstr ""
 
@@ -7153,7 +7323,7 @@ msgstr "Cheie Publică Parcelă"
 #~ msgid "Plot Size"
 #~ msgstr "Plot Size"
 
-#: src/components/harvest/HarvesterPlotDetails.tsx:175
+#: src/components/harvest/HarvesterPlotDetails.tsx:215
 msgid "Plot Sizes"
 msgstr ""
 
@@ -7165,7 +7335,12 @@ msgstr ""
 msgid "PlotNFT is transitioning to (target state). This can take a while. Please do not close the application until this is finalized."
 msgstr ""
 
-#: src/components/dashboard/DashboardSideBar.tsx:100
+#: src/components/dashboard/DashboardOverview.tsx:316
+msgid "plots"
+msgstr ""
+
+#: src/components/dashboard/DashboardOverview.tsx:54
+#: src/components/dashboard/DashboardSideBar.tsx:109
 #: src/components/plot/PlotHarvester.tsx:97
 msgid "Plots"
 msgstr "Parcele"
@@ -7186,8 +7361,8 @@ msgstr ""
 msgid "Plots Passed Filter"
 msgstr "Parcele Filtrate"
 
-#: src/components/farm/FarmHealth.tsx:219
-#: src/components/farm/FarmHealth.tsx:299
+#: src/components/farm/FarmHealth.tsx:228
+#: src/components/farm/FarmHealth.tsx:308
 msgid "Plots passing filter"
 msgstr ""
 
@@ -7237,6 +7412,10 @@ msgstr ""
 #: src/components/plotNFT/PlotExternalNFTCard.tsx:172
 #: src/components/plotNFT/PlotNFTCard.tsx:206
 msgid "Points Successful in Last 24 Hours"
+msgstr ""
+
+#: src/components/dashboard/DashboardOverview.tsx:94
+msgid "Pool"
 msgstr ""
 
 #: src/components/plot/PlotHarvesterPlots.tsx:64
@@ -7306,14 +7485,18 @@ msgstr "Sumă Răsplată Asociație"
 msgid "Pool:"
 msgstr ""
 
-#: src/components/dashboard/DashboardSideBar.tsx:119
-#: src/components/farm/PoolingHealth.tsx:273
+#: src/components/dashboard/DashboardSideBar.tsx:128
+#: src/components/farm/PoolingHealth.tsx:281
 #: src/components/plotNFT/PlotNFTExternalState.tsx:25
 #: src/components/plotNFT/PlotNFTState.tsx:57
 msgid "Pooling"
 msgstr ""
 
-#: src/components/farm/PoolingHealth.tsx:278
+#: src/components/dashboard/DashboardOverview.tsx:94
+msgid "Pooling controls"
+msgstr ""
+
+#: src/components/farm/PoolingHealth.tsx:286
 msgid "Pooling Health"
 msgstr ""
 
@@ -7322,6 +7505,10 @@ msgstr ""
 #: src/components/fullNode/FullNodeAddConnection.tsx:95
 #: src/components/fullNode/FullNodeConnections.tsx:39
 msgid "Port"
+msgstr ""
+
+#: src/components/dashboard/DashboardOverview.tsx:103
+msgid "Preferences and services"
 msgstr ""
 
 #: src/components/plotNFT/PlotNFTAbsorbRewards.tsx:95
@@ -7333,9 +7520,17 @@ msgstr ""
 msgid "Preparing standard wallet"
 msgstr ""
 
-#: src/components/nfts/NFTPreview.tsx:231
+#: src/components/nfts/NFTPreview.tsx:287
 #: src/components/offers2/OfferBuilderNFT.tsx:75
 msgid "Preview"
+msgstr ""
+
+#: src/components/nfts/gallery/NFTGallery.tsx:532
+msgid "Preview available"
+msgstr ""
+
+#: src/components/nfts/gallery/NFTGallery.tsx:501
+msgid "Preview available  <0/>"
 msgstr ""
 
 #: src/components/nfts/NFTDetails.tsx:316
@@ -7344,6 +7539,18 @@ msgstr ""
 
 #: src/components/nfts/NFTDetails.tsx:310
 msgid "Preview image URL {index}"
+msgstr ""
+
+#: src/components/nfts/NFTPreview.tsx:577
+msgid "Preview is not available"
+msgstr ""
+
+#: src/components/nfts/gallery/NFTGallery.tsx:553
+msgid "Preview not available"
+msgstr ""
+
+#: src/components/nfts/gallery/NFTGallery.tsx:506
+msgid "Preview not available  <0/>"
 msgstr ""
 
 #: src/components/nfts/NFTPreview.tsx:621
@@ -7359,7 +7566,7 @@ msgid "Preview video URL {index}"
 msgstr ""
 
 #: src/components/block/Block.jsx:257
-#: src/components/nfts/detail/NFTDetailV2.tsx:133
+#: src/components/nfts/detail/NFTDetailV2.tsx:131
 msgid "Previous"
 msgstr "Anterior"
 
@@ -7387,6 +7594,10 @@ msgstr ""
 #: src/components/settings/Settings.tsx:37
 #: src/components/settings/SettingsProfiles.tsx:50
 msgid "Profiles (DIDs)"
+msgstr ""
+
+#: src/components/dashboard/DashboardOverview.tsx:355
+msgid "Proof found"
 msgstr ""
 
 #: src/components/block/Block.jsx:203
@@ -7474,6 +7685,22 @@ msgstr "Utilizarea maximă de RAM"
 msgid "Rankings"
 msgstr ""
 
+#: src/components/dashboard/DashboardOverview.tsx:256
+msgid "Reading full node status"
+msgstr ""
+
+#: src/components/dashboard/DashboardOverview.tsx:302
+msgid "Reading harvester summary"
+msgstr ""
+
+#: src/components/dashboard/DashboardOverview.tsx:334
+msgid "Reading recent farming attempts"
+msgstr ""
+
+#: src/components/dashboard/DashboardOverview.tsx:201
+msgid "Reading standard wallet balance"
+msgstr ""
+
 #: src/components/settings/SettingsNotifications.tsx:123
 msgid "Receive general announcement notifications from connected Dapps"
 msgstr ""
@@ -7506,8 +7733,12 @@ msgstr ""
 msgid "Refresh"
 msgstr ""
 
-#: src/components/nfts/NFTContextualActions.tsx:584
+#: src/components/nfts/NFTContextualActions.tsx:586
 msgid "Refresh NFT data"
+msgstr ""
+
+#: src/components/nfts/gallery/NFTGallery.tsx:333
+msgid "Refresh NFTs"
 msgstr ""
 
 #: src/components/plot/overview/PlotOverviewHero.tsx:46
@@ -7523,7 +7754,7 @@ msgstr "Re-scanează parcele"
 #~ msgid "Registers a list of remote coin IDs with a remote wallet."
 #~ msgstr "Registers a list of remote coin IDs with a remote wallet."
 
-#: src/components/walletConnect/WalletConnectAddConnectionDialog.tsx:125
+#: src/components/walletConnect/WalletConnectAddConnectionDialog.tsx:124
 msgid "Reject"
 msgstr ""
 
@@ -7543,7 +7774,7 @@ msgstr ""
 msgid "Remote"
 msgstr ""
 
-#: src/components/harvest/HarvesterDetail.tsx:47
+#: src/components/harvest/HarvesterDetail.tsx:49
 msgid "Remote Harvester"
 msgstr ""
 
@@ -7708,8 +7939,8 @@ msgstr ""
 msgid "Requires Proof From Store"
 msgstr ""
 
-#: src/components/farm/FarmHealth.tsx:286
-#: src/components/farm/FarmHealth.tsx:348
+#: src/components/farm/FarmHealth.tsx:295
+#: src/components/farm/FarmHealth.tsx:357
 #: src/components/offers/NFTOfferEditor.tsx:435
 #: src/components/offers/OfferEditor.tsx:153
 #: src/components/settings/SettingsIntegration.tsx:222
@@ -7848,7 +8079,7 @@ msgid "Search on Tail Database"
 msgstr ""
 
 #: src/components/addressbook/AddressBookSideBar.tsx:150
-#: src/components/nfts/gallery/NFTGallery.tsx:266
+#: src/components/nfts/gallery/NFTGallery.tsx:311
 msgid "Search..."
 msgstr ""
 
@@ -7875,7 +8106,7 @@ msgstr ""
 msgid "Select 2nd Temporary Directory"
 msgstr "Selectează al 2-lea director temporar"
 
-#: src/components/nfts/gallery/NFTGallery.tsx:320
+#: src/components/nfts/gallery/NFTGallery.tsx:372
 msgid "Select all"
 msgstr ""
 
@@ -8022,7 +8253,8 @@ msgstr ""
 msgid "Set up keys manually"
 msgstr ""
 
-#: src/components/dashboard/DashboardSideBar.tsx:137
+#: src/components/dashboard/DashboardOverview.tsx:102
+#: src/components/dashboard/DashboardSideBar.tsx:146
 #: src/components/settings/Settings.tsx:74
 msgid "Settings"
 msgstr ""
@@ -8072,7 +8304,7 @@ msgstr ""
 #~ msgid "Share Privately"
 #~ msgstr "Share Privately"
 
-#: src/components/nfts/NFTContextualActions.tsx:511
+#: src/components/nfts/NFTContextualActions.tsx:513
 msgid "Show"
 msgstr ""
 
@@ -8092,6 +8324,10 @@ msgstr ""
 #: src/components/nfts/NFTPreview.tsx:667
 #~ msgid "Show Preview"
 #~ msgstr "Show Preview"
+
+#: src/components/settings/SettingsNFT.tsx:182
+msgid "Show unverified previews"
+msgstr ""
 
 #: src/components/nfts/gallery/NFTGallery.tsx:541
 #~ msgid "Showing {0} of {1} items"
@@ -8145,7 +8381,7 @@ msgstr ""
 msgid "Signed Message"
 msgstr ""
 
-#: src/components/signVerify/VerifyMessageImport.tsx:84
+#: src/components/signVerify/VerifyMessageImport.tsx:86
 msgid "Signed message file is too large (> 10MB)"
 msgstr ""
 
@@ -8189,7 +8425,7 @@ msgstr ""
 msgid "Sorry, you can't switch to mainnet by clicking here..."
 msgstr ""
 
-#: src/components/harvest/HarvesterDetail.tsx:108
+#: src/components/harvest/HarvesterDetail.tsx:110
 #: src/components/harvest/HarvesterOverview.tsx:157
 msgid "Space"
 msgstr ""
@@ -8230,6 +8466,10 @@ msgstr ""
 #~ msgid "Spend Fee"
 #~ msgstr "Spend Fee"
 
+#: src/components/dashboard/DashboardOverview.tsx:232
+msgid "Spendable {spendable} {currencyCode}"
+msgstr ""
+
 #: src/components/offers2/OfferBuilderWalletBalance.tsx:44
 msgid "Spendable Balance: {0}"
 msgstr ""
@@ -8238,16 +8478,20 @@ msgstr ""
 msgid "Spendable Balance: {spendableBalance} {currencyCode}"
 msgstr ""
 
-#: src/components/farm/FarmHealth.tsx:438
+#: src/components/farm/FarmHealth.tsx:447
 msgid "Stale partials"
 msgstr ""
 
-#: src/components/farm/PoolingHealth.tsx:294
+#: src/components/farm/PoolingHealth.tsx:302
 msgid "Stale Partials"
 msgstr ""
 
 #: src/components/vcs/VCCard.tsx:176
 msgid "Standard Version Number"
+msgstr ""
+
+#: src/components/dashboard/DashboardOverview.tsx:215
+msgid "Standard wallet is not available"
 msgstr ""
 
 #: src/constants/WalletConnectCommands.tsx:556
@@ -8355,7 +8599,7 @@ msgstr ""
 msgid "Successfully restarted Harvester"
 msgstr ""
 
-#: src/components/settings/LimitCacheSize.tsx:54
+#: src/components/settings/LimitCacheSize.tsx:49
 msgid "Successfully updated cache size limit."
 msgstr ""
 
@@ -8363,17 +8607,23 @@ msgstr ""
 msgid "Successfully updated the derivation index. Your balances may take a while to update."
 msgstr ""
 
-#: src/components/farm/FarmHealth.tsx:430
+#: src/components/farm/FarmHealth.tsx:439
 msgid "Sync status"
 msgstr ""
 
-#: src/components/farm/FarmHealth.tsx:146
+#: src/components/dashboard/DashboardOverview.tsx:41
+msgid "Sync, peers, block inspection"
+msgstr ""
+
+#: src/components/dashboard/DashboardOverview.tsx:283
+#: src/components/farm/FarmHealth.tsx:155
 #: src/components/fullNode/card/FullNodeCardStatus.tsx:50
 msgid "Synced"
 msgstr "Sincronizat"
 
-#: src/components/farm/FarmHealth.tsx:115
-#: src/components/farm/FarmHealth.tsx:162
+#: src/components/dashboard/DashboardOverview.tsx:269
+#: src/components/farm/FarmHealth.tsx:124
+#: src/components/farm/FarmHealth.tsx:171
 #: src/components/plot/PlotStatus.tsx:19
 msgid "Syncing"
 msgstr "Se sincronizează"
@@ -8436,7 +8686,7 @@ msgstr ""
 msgid "The derivation index sets the range of wallet addresses that the wallet scans the blockchain for. This number is generally higher if you have a lot of transactions or canceled offers for XCH, CATs, or NFTs. If you believe your balance is incorrect because it’s missing coins, then increasing the derivation index could help the wallet include the missing coins in the balance total."
 msgstr ""
 
-#: src/components/nfts/NFTContextualActions.tsx:445
+#: src/components/nfts/NFTContextualActions.tsx:447
 msgid "The download failed: {0}"
 msgstr ""
 
@@ -8480,15 +8730,15 @@ msgstr ""
 msgid "The NFT move transaction has been successfully submitted to the blockchain."
 msgstr ""
 
-#: src/components/nfts/NFTContextualActions.tsx:256
+#: src/components/nfts/NFTContextualActions.tsx:258
 msgid "The NFT status has been updated. If the transaction was successfully sent to the mempool, it may still complete."
 msgstr ""
 
-#: src/components/nfts/NFTContextualActions.tsx:266
+#: src/components/nfts/NFTContextualActions.tsx:268
 msgid "The NFT status update failed: {err}"
 msgstr ""
 
-#: src/components/nfts/NFTContextualActions.tsx:181
+#: src/components/nfts/NFTContextualActions.tsx:183
 msgid "The NFT transfer failed: {0}"
 msgstr ""
 
@@ -8496,7 +8746,7 @@ msgstr ""
 #~ msgid "The NFT transfer failed: {error}"
 #~ msgstr "The NFT transfer failed: {error}"
 
-#: src/components/nfts/NFTContextualActions.tsx:175
+#: src/components/nfts/NFTContextualActions.tsx:177
 msgid "The NFT transfer transaction has been successfully submitted to the blockchain."
 msgstr ""
 
@@ -8569,7 +8819,7 @@ msgstr "Taxele totale pentru tranzacții din acest bloc. Câștigate de fermier.
 msgid "Theme"
 msgstr ""
 
-#: src/components/farm/FarmHealth.tsx:331
+#: src/components/farm/FarmHealth.tsx:340
 msgid "There was a network issue and your Full Node or Farmer could not receive SPs."
 msgstr ""
 
@@ -8606,7 +8856,7 @@ msgstr ""
 msgid "This feature is available only from the GUI."
 msgstr "Aceasta facilitate este disponibila doar din GUI."
 
-#: src/components/harvest/HarvesterDetail.tsx:67
+#: src/components/harvest/HarvesterDetail.tsx:69
 msgid "This harvester does not have any plots to harvest"
 msgstr ""
 
@@ -8614,7 +8864,7 @@ msgstr ""
 msgid "This is a sum of effective plot sizes currently farming. An effective plot size is a theoretical value which is derived only by kSize"
 msgstr ""
 
-#: src/components/harvest/HarvesterDetail.tsx:161
+#: src/components/harvest/HarvesterDetail.tsx:163
 msgid "This is a sum of effective plot sizes currently harvesting. An effective plot size is a theoretical value which is derived only by kSize."
 msgstr ""
 
@@ -8757,7 +9007,7 @@ msgstr ""
 msgid "Token Standard"
 msgstr ""
 
-#: src/components/dashboard/DashboardSideBar.tsx:48
+#: src/components/dashboard/DashboardSideBar.tsx:58
 #: src/components/offers2/OfferBuilderTokensSection.tsx:116
 msgid "Tokens"
 msgstr ""
@@ -8766,7 +9016,8 @@ msgstr ""
 msgid "Too Many Plot NFTs"
 msgstr ""
 
-#: src/components/dashboard/DashboardSideBar.tsx:130
+#: src/components/dashboard/DashboardOverview.tsx:96
+#: src/components/dashboard/DashboardSideBar.tsx:139
 msgid "Tools"
 msgstr ""
 
@@ -8824,19 +9075,19 @@ msgstr ""
 #~ msgid "Total Network Space"
 #~ msgstr "Total Network Space"
 
-#: src/components/harvest/HarvesterPlotDetails.tsx:166
+#: src/components/harvest/HarvesterPlotDetails.tsx:206
 msgid "Total OG"
 msgstr ""
 
-#: src/components/farm/FarmHealth.tsx:234
+#: src/components/farm/FarmHealth.tsx:243
 msgid "Total plot filter challenges"
 msgstr ""
 
-#: src/components/harvest/HarvesterPlotDetails.tsx:169
+#: src/components/harvest/HarvesterPlotDetails.tsx:209
 msgid "Total plotNFT"
 msgstr ""
 
-#: src/components/harvest/HarvesterPlotDetails.tsx:163
+#: src/components/harvest/HarvesterPlotDetails.tsx:203
 msgid "Total plots"
 msgstr ""
 
@@ -8844,7 +9095,7 @@ msgstr ""
 msgid "Total Plots"
 msgstr ""
 
-#: src/components/farm/FarmHealth.tsx:240
+#: src/components/farm/FarmHealth.tsx:249
 msgid "Total plots passing filter"
 msgstr ""
 
@@ -8860,7 +9111,7 @@ msgstr ""
 #~ msgid "Total Size of Plots"
 #~ msgstr "Total Size of Plots"
 
-#: src/components/harvest/HarvesterDetail.tsx:115
+#: src/components/harvest/HarvesterDetail.tsx:117
 msgid "Total Space"
 msgstr ""
 
@@ -8930,7 +9181,7 @@ msgstr ""
 #~ msgid "Transfer DID"
 #~ msgstr "Transfer DID"
 
-#: src/components/nfts/NFTContextualActions.tsx:198
+#: src/components/nfts/NFTContextualActions.tsx:200
 #: src/components/nfts/NFTTransferAction.tsx:201
 msgid "Transfer NFT"
 msgstr ""
@@ -8971,7 +9222,7 @@ msgstr ""
 #~ msgid "Types ({0}/{1})"
 #~ msgstr ""
 
-#: src/components/nfts/gallery/NFTGallery.tsx:329
+#: src/components/nfts/gallery/NFTGallery.tsx:381
 msgid "Types{0}"
 msgstr ""
 
@@ -9012,6 +9263,13 @@ msgstr ""
 #: src/components/nfts/NFTProfileDropdown.tsx:87
 #: src/components/nfts/NFTProfileDropdown.tsx:122
 msgid "Unassigned NFTs"
+msgstr ""
+
+#: src/components/dashboard/DashboardOverview.tsx:207
+#: src/components/dashboard/DashboardOverview.tsx:262
+#: src/components/dashboard/DashboardOverview.tsx:308
+#: src/components/dashboard/DashboardOverview.tsx:340
+msgid "Unavailable"
 msgstr ""
 
 #: src/components/plotNFT/PlotNFTCard.tsx:135
@@ -9072,7 +9330,7 @@ msgstr ""
 #~ msgid "Unsupported commands"
 #~ msgstr "Unsupported commands"
 
-#: src/components/settings/LimitCacheSize.tsx:82
+#: src/components/settings/LimitCacheSize.tsx:77
 msgid "Update"
 msgstr ""
 
@@ -9084,7 +9342,7 @@ msgstr ""
 #~ msgid "Update DID Recovery Ids"
 #~ msgstr "Update DID Recovery Ids"
 
-#: src/components/nfts/NFTHashStatus.tsx:69
+#: src/components/nfts/NFTHashStatus.tsx:76
 msgid "Update Pending"
 msgstr ""
 
@@ -9098,7 +9356,7 @@ msgstr ""
 msgid "URL"
 msgstr ""
 
-#: src/components/nfts/NFTHashStatus.tsx:77
+#: src/components/nfts/NFTHashStatus.tsx:84
 msgid "URL is not valid"
 msgstr ""
 
@@ -9112,7 +9370,7 @@ msgstr ""
 msgid "Use blockchain peak height for height info"
 msgstr ""
 
-#: src/components/nfts/detail/NFTDetailV2.tsx:138
+#: src/components/nfts/detail/NFTDetailV2.tsx:136
 msgid "Use left and right arrow keys to navigate"
 msgstr ""
 
@@ -9133,7 +9391,7 @@ msgstr ""
 msgid "Valid"
 msgstr ""
 
-#: src/components/farm/PoolingHealth.tsx:286
+#: src/components/farm/PoolingHealth.tsx:294
 msgid "Valid Partials"
 msgstr ""
 
@@ -9169,7 +9427,7 @@ msgstr "Iteratii sub slot VDF"
 msgid "Verifiable Credential"
 msgstr ""
 
-#: src/components/vcs/VCList.tsx:199
+#: src/components/vcs/VCList.tsx:245
 msgid "Verifiable Credential already exists."
 msgstr ""
 
@@ -9185,17 +9443,21 @@ msgstr ""
 msgid "Verifiable Credential Revoked."
 msgstr ""
 
-#: src/components/vcs/VCList.tsx:207
+#: src/components/vcs/VCList.tsx:253
 msgid "Verifiable Credential successfully added."
 msgstr ""
 
+#: src/components/dashboard/DashboardOverview.tsx:77
+msgid "Verifiable credentials"
+msgstr ""
+
 #: src/components/settings/SettingsVerifiableCredentials.tsx:17
-#: src/components/vcs/VCList.tsx:267
-#: src/components/vcs/VCList.tsx:328
+#: src/components/vcs/VCList.tsx:313
+#: src/components/vcs/VCList.tsx:438
 msgid "Verifiable Credentials"
 msgstr ""
 
-#: src/components/vcs/VCList.tsx:270
+#: src/components/vcs/VCList.tsx:316
 msgid "Verifiable Credentials are like digital ID cards that can prove certain information about you without giving away your private details."
 msgstr ""
 
@@ -9223,7 +9485,7 @@ msgstr ""
 msgid "Verify Signature"
 msgstr ""
 
-#: src/components/nfts/NFTHashStatus.tsx:65
+#: src/components/nfts/NFTHashStatus.tsx:72
 msgid "Verifying hash..."
 msgstr ""
 
@@ -9260,7 +9522,7 @@ msgstr ""
 #~ msgid "View on Hashgreen DEX"
 #~ msgstr "View on Hashgreen DEX"
 
-#: src/components/nfts/NFTContextualActions.tsx:661
+#: src/components/nfts/NFTContextualActions.tsx:663
 #: src/components/offers/OfferShareDialog.tsx:384
 msgid "View on MintGarden"
 msgstr ""
@@ -9273,7 +9535,7 @@ msgstr ""
 msgid "View on Offerpool"
 msgstr ""
 
-#: src/components/nfts/NFTContextualActions.tsx:669
+#: src/components/nfts/NFTContextualActions.tsx:671
 #: src/components/offers/OfferShareDialog.tsx:481
 msgid "View on Spacescan.io"
 msgstr ""
@@ -9286,11 +9548,11 @@ msgstr ""
 msgid "Viewing offer"
 msgstr ""
 
-#: src/components/nfts/gallery/NFTGallery.tsx:412
+#: src/components/nfts/gallery/NFTGallery.tsx:464
 msgid "Visible"
 msgstr ""
 
-#: src/components/nfts/gallery/NFTGallery.tsx:386
+#: src/components/nfts/gallery/NFTGallery.tsx:438
 msgid "Visible  <0/>"
 msgstr ""
 
@@ -9298,7 +9560,7 @@ msgstr ""
 #~ msgid "Visible ({0})"
 #~ msgstr ""
 
-#: src/components/nfts/gallery/NFTGallery.tsx:381
+#: src/components/nfts/gallery/NFTGallery.tsx:433
 msgid "Visible and Hidden  <0/>"
 msgstr ""
 
@@ -9317,6 +9579,10 @@ msgstr ""
 msgid "Wait for synchronization"
 msgstr "Asteapta sincronizarea"
 
+#: src/components/dashboard/DashboardOverview.tsx:222
+msgid "Waiting for balance data"
+msgstr ""
+
 #: src/components/plotNFT/PlotNFTUnconfirmedCard.tsx:80
 msgid "Waiting for the transaction to be confirmed"
 msgstr ""
@@ -9331,6 +9597,10 @@ msgstr ""
 
 #: src/components/signVerify/SignMessage.tsx:163
 msgid "Wallet Address"
+msgstr ""
+
+#: src/components/dashboard/DashboardOverview.tsx:208
+msgid "Wallet balance service did not respond"
 msgstr ""
 
 #: src/constants/WalletConnectCommands.tsx:80
@@ -9391,7 +9661,7 @@ msgid "Wallet sync RPC"
 msgstr ""
 
 #: src/components/settings/SettingsIntegration.tsx:85
-#: src/components/walletConnect/WalletConnectAddConnectionDialog.tsx:75
+#: src/components/walletConnect/WalletConnectAddConnectionDialog.tsx:74
 #: src/components/walletConnect/WalletConnectDropdown.tsx:26
 msgid "WalletConnect"
 msgstr ""
@@ -9400,8 +9670,12 @@ msgstr ""
 msgid "WalletConnect enables a decentralized app on the Chia blockchain to communicate and make requests directly to a Chia wallet."
 msgstr ""
 
-#: src/components/walletConnect/WalletConnectAddConnectionDialog.tsx:98
+#: src/components/walletConnect/WalletConnectAddConnectionDialog.tsx:97
 msgid "WalletConnect Integration"
+msgstr ""
+
+#: src/components/dashboard/DashboardOverview.tsx:32
+msgid "Wallets"
 msgstr ""
 
 #: src/components/plot/add/PlotAddNumberOfPlots.tsx:83
@@ -9416,13 +9690,13 @@ msgstr ""
 msgid "Warm start"
 msgstr ""
 
-#: src/components/farm/FarmHealth.tsx:202
+#: src/components/farm/FarmHealth.tsx:211
 #: src/components/offers/OfferAcceptConfirmationDialog.tsx:32
 #: src/components/plot/add/PlotAddSelectHybridDiskMode.tsx:73
 msgid "Warning"
 msgstr ""
 
-#: src/components/farm/FarmHealth.tsx:266
+#: src/components/farm/FarmHealth.tsx:275
 msgid "Warning Threshold"
 msgstr ""
 
@@ -9461,6 +9735,10 @@ msgstr "Greutate"
 
 #: src/components/block/Block.jsx:175
 msgid "Weight is the total added difficulty of all blocks up to and including this one"
+msgstr ""
+
+#: src/components/settings/SettingsNFT.tsx:192
+msgid "When an NFT image is too large to verify against its on-chain hash, load the transaction confirmation preview directly from its source URL without verification. When disabled, no preview is shown for these NFTs."
 msgstr ""
 
 #: src/components/offers/OfferEditorConfirmationDialog.tsx:22
@@ -9532,7 +9810,7 @@ msgstr ""
 msgid "Yes, Accept Offer"
 msgstr ""
 
-#: src/components/settings/SettingsNFT.tsx:52
+#: src/components/settings/SettingsNFT.tsx:70
 msgid "Yes, delete"
 msgstr ""
 

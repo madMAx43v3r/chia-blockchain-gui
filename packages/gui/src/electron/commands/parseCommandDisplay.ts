@@ -7,12 +7,21 @@ import WalletType from '../constants/WalletType';
 import type { DisplayWalletDelta, DisplayWalletDeltaItem } from '../dialogs/Confirm/Confirm';
 import { isNumericKey } from '../utils/isNumericKey';
 import { isPlainObject } from '../utils/isPlainObject';
-import isValidURL from '../utils/isValidURL';
 import mojoToCATLocaleString from '../utils/mojoToCATLocaleString';
 import mojoToChiaLocaleString from '../utils/mojoToChiaLocaleString';
 import { parseMojos } from '../utils/parseMojos';
 import toBech32m from '../utils/toBech32m';
 import { type WalletDelta, offerSummaryToWalletDelta, createOfferToWalletDelta } from '../utils/walletDelta';
+
+import { resolveNftPreviewUrl } from './resolveNftPreviewUrl';
+
+// Preserve the existing test/caller interface after isolating preview work.
+export {
+  resolveNftPreviewUrl,
+  MAX_NFT_PREVIEW_URI_ATTEMPTS,
+  MAX_NFT_PREVIEW_URI_INSPECTIONS,
+  MAX_NFT_PREVIEW_URI_LENGTH,
+} from './resolveNftPreviewUrl';
 
 type AssetDisplayKind = 'chia' | 'wallet' | 'cat' | 'nft' | 'unknown';
 
@@ -315,8 +324,13 @@ async function parseWalletDeltaItem(
 
     try {
       const nftInfo = await nftGetInfo(key);
-      if (nftInfo && nftInfo.success && nftInfo.nft_info && nftInfo.nft_info.data_uris) {
-        const previewUrl = nftInfo.nft_info.data_uris.find((u) => isValidURL(u));
+      if (nftInfo && nftInfo.success && nftInfo.nft_info) {
+        const previewUrl = await resolveNftPreviewUrl(
+          nftInfo.nft_info.data_uris ?? [],
+          nftInfo.nft_info.data_hash,
+          nftInfo.nft_info.metadata_uris ?? [],
+          nftInfo.nft_info.metadata_hash,
+        );
 
         if (previewUrl) {
           result.previewUrl = previewUrl;

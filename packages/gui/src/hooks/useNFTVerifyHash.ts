@@ -1,165 +1,290 @@
 import type { NFTInfo } from '@chia-network/api';
-import debug from 'debug';
-import { useEffect, useState, useCallback, useMemo } from 'react';
+import { useEffect, useState, useCallback, useMemo, useRef } from 'react';
 
 import type Metadata from '../@types/Metadata';
-import compareChecksums from '../util/compareChecksums';
+import createNFTUriVerifier from '../util/createNFTUriVerifier';
+import { MAX_URIS_PER_CANDIDATE } from '../util/getNFTPreviewStatusFromCache';
 
+import selectNFTPreviewState, { type NFTPreviewState } from './selectNFTPreviewState';
 import useCache from './useCache';
+import useIpfsGateway from './useIpfsGateway';
+import { useIpfsGatewayBase } from './useIpfsGatewayUrl';
 import useNFT from './useNFT';
 import useNFTMetadata from './useNFTMetadata';
-
-const log = debug('chia-gui:useNFTVerifyHash');
-
-type PreviewState = {
-  isVerified: boolean;
-  uri: string;
-  error?: Error;
-};
+import useNFTProvider from './useNFTProvider';
 
 export type UseNFTVerifyHashOptions = {
   preview?: boolean;
   ignoreSizeLimit?: boolean;
+  // Preview URIs to pass over — files that verified but that Chromium turned
+  // out not to decode. Verification then moves on to the next source in
+  // priority order (preview image, data file) instead of settling on a file
+  // that cannot be shown. Only preview candidates are affected: the data
+  // file is what isVerified is derived from and is never skipped.
+  excludedPreviewUris?: string[];
 };
 
+// This runs while rendering; a uri list that is not one (metadata is
+// minter-authored, and normalized on parse, but not every caller's copy has
+// been) is treated as none rather than allowed to throw here.
+function withoutExcluded(uris: string[] | undefined, excluded: Set<string>): string[] | undefined {
+  if (!Array.isArray(uris)) {
+    return undefined;
+  }
+  if (excluded.size === 0) {
+    return uris.slice(0, MAX_URIS_PER_CANDIDATE);
+  }
+
+  return uris.slice(0, MAX_URIS_PER_CANDIDATE).filter((uri) => !excluded.has(uri));
+}
+
 export default function useNFTVerifyHash(nftId?: string, options: UseNFTVerifyHashOptions = {}) {
-  const { preview = false, ignoreSizeLimit = false } = options;
+  const { preview = false, ignoreSizeLimit = false, excludedPreviewUris } = options;
+
+  // a stable key so a caller passing a fresh array each render does not
+  // restart preview verification
+  const excludedPreviewKey = JSON.stringify(excludedPreviewUris?.slice(0, MAX_URIS_PER_CANDIDATE * 3) ?? []);
+  const excludedPreview = useMemo(() => new Set<string>(JSON.parse(excludedPreviewKey)), [excludedPreviewKey]);
 
   const { getChecksum } = useCache();
+  // Not read directly: these change which URLs the main process will fetch
+  // (whether ipfs URIs are fetched at all, and through which gateway), so
+  // both verification effects list them as dependencies and re-run when the
+  // user flips the option or picks another gateway — without this, NFTs
+  // already on screen would keep their failed state until a remount.
+  const [ipfsGateway] = useIpfsGateway();
+  const ipfsGatewayBase = useIpfsGatewayBase();
+  // a gateway that came back after being unreachable re-runs verification the
+  // way a gateway change does: the failures remembered meanwhile were the host's
+  const { ipfsGatewayRecoveries } = useNFTProvider();
 
   const { nft, isLoading: isLoadingNFT, error: errorNFT } = useNFT(nftId);
   const { isLoading: isLoadingMetadata, metadata, error: errorMetadata } = useNFTMetadata(nftId);
 
   const [errorVerify, setErrorVerify] = useState<Error | undefined>();
-  const [isVerifying, setIsVerifying] = useState<boolean>(false);
+  const [isVerifyingData, setIsVerifyingData] = useState<boolean>(false);
+  const [isVerifyingPreview, setIsVerifyingPreview] = useState<boolean>(false);
 
-  const [data, setData] = useState<PreviewState | undefined>();
-  const [previewVideo, setPreviewVideo] = useState<PreviewState | undefined>();
-  const [previewImage, setPreviewImage] = useState<PreviewState | undefined>();
+  const [data, setData] = useState<NFTPreviewState | undefined>();
+  const [previewVideo, setPreviewVideo] = useState<NFTPreviewState | undefined>();
+  const [previewImage, setPreviewImage] = useState<NFTPreviewState | undefined>();
+  const dataGeneration = useRef(0);
+  const previewGeneration = useRef(0);
 
-  const isLoading = isLoadingNFT || isLoadingMetadata || isVerifying;
-  const error = errorNFT || errorMetadata || errorVerify;
+  // The inputs each verification effect last picked up. The effects run only
+  // after the render has painted, which leaves two gaps these refs close
+  // synchronously:
+  // - a "pass pending" flag: on the frame where an input first arrives the
+  //   effect-set isVerifying flags still read false, and an already-verified
+  //   lower-priority source would win the preview slot for that one frame;
+  // - staleness: on the frame where nftId switches, the stored states still
+  //   hold the previous NFT's results, and surfacing them would flash the
+  //   previous NFT's media (and hash verdict) until the effects reset them.
+  const dataInputs = useRef<{ nft?: NFTInfo }>({});
+  const previewInputs = useRef<{ nft?: NFTInfo; metadata?: Metadata; excludedKey?: string }>({});
 
-  const findValidUri = useCallback(
-    async (
-      uris: string[] | undefined,
-      hash: string | undefined,
-      onlyFirst: boolean = false,
-    ): Promise<PreviewState | undefined> => {
-      if (!uris || !uris.length || !hash) {
-        return undefined;
-      }
+  const settledNft = !isLoadingNFT ? nft : undefined;
+  const settledMetadata = isLoadingMetadata ? undefined : metadata;
 
-      // use only first uri when onlyFirst is true
-      const urisToCheck = onlyFirst ? [uris[0]] : uris;
-      let first: PreviewState | undefined;
+  const isDataStale = dataInputs.current.nft !== settledNft;
+  const isPreviewStale = previewInputs.current.nft !== settledNft;
 
-      for (const uri of urisToCheck) {
-        try {
-          // eslint-disable-next-line no-await-in-loop -- we need sync version
-          const checksum = await getChecksum(uri, {
-            maxSize: ignoreSizeLimit ? -1 : undefined,
-          });
+  // An excluded uri is masked out of the stored states as well as the
+  // candidates: on the frame a caller excludes the uri it is currently
+  // showing, the stored state still holds that verified file, and surfacing
+  // it would let the caller settle on "unplayable" (and report the NFT as
+  // unavailable) before the pass below has had a chance to move on.
+  const isExcluded = (state: NFTPreviewState | undefined) => !!state && excludedPreview.has(state.uri);
 
-          const isValid = compareChecksums(checksum, hash);
-          if (isValid) {
-            return {
-              isVerified: true,
-              uri,
-            };
-          }
+  const currentData = isDataStale ? undefined : data;
+  const currentPreviewVideo = isPreviewStale || isExcluded(previewVideo) ? undefined : previewVideo;
+  const currentPreviewImage = isPreviewStale || isExcluded(previewImage) ? undefined : previewImage;
 
-          throw new Error('Invalid hash checksum');
-        } catch (e) {
-          log(`Failed to fetch ${uri}: ${(e as Error).message}`);
-          if (!first) {
-            first = {
-              isVerified: false,
-              uri,
-              error: e as Error,
-            };
-          }
-        }
-      }
+  const isDataPassPending = !!settledNft && isDataStale;
+  const isPreviewPassPending =
+    preview &&
+    !!settledNft &&
+    !!settledMetadata &&
+    (previewInputs.current.nft !== settledNft ||
+      previewInputs.current.metadata !== settledMetadata ||
+      previewInputs.current.excludedKey !== excludedPreviewKey);
 
-      return first;
-    },
-    [getChecksum, ignoreSizeLimit],
+  const isVerifying = isVerifyingData || isVerifyingPreview || isDataPassPending || isPreviewPassPending;
+
+  // A pending metadata download only blocks the result while there is no
+  // data verification outcome yet: `isVerified` is derived from the data
+  // file alone, so once it settles a slow or dead metadata host must not
+  // keep consumers (gallery tiles, hash status badges) in a loading state.
+  const isLoading = isLoadingNFT || isVerifying || (isLoadingMetadata && !currentData);
+  // errorVerify is cleared by the data effect, so it is stale on the same
+  // frames the stored states are
+  const error = errorNFT || errorMetadata || (isDataStale ? undefined : errorVerify);
+
+  const findValidUri = useMemo(
+    () => createNFTUriVerifier(getChecksum, ignoreSizeLimit ? -1 : undefined),
+    // A refresh or gateway/size-policy change must discard remembered failures.
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- Input identity deliberately defines memo lifetime.
+    [getChecksum, ignoreSizeLimit, nft, ipfsGateway, ipfsGatewayBase, ipfsGatewayRecoveries],
+  );
+  const findPreviewUri = useMemo(
+    () => createNFTUriVerifier(getChecksum, ignoreSizeLimit ? -1 : undefined),
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- Metadata refresh resets preview decisions only.
+    [getChecksum, ignoreSizeLimit, nft, metadata, ipfsGateway, ipfsGatewayBase, ipfsGatewayRecoveries],
   );
 
-  const verifyNFT = useCallback(
-    async ({ dataHash, dataUris }: NFTInfo, nftMetadata?: Metadata) => {
-      setIsVerifying(true);
-      setErrorVerify(undefined);
-
-      setData(undefined);
-      setPreviewVideo(undefined);
-      setPreviewImage(undefined);
-
-      async function validateData() {
+  const validateData = useCallback(
+    async ({ dataHash, dataUris }: NFTInfo, generation: number, generationRef: { current: number }) => {
+      try {
         const dataState = await findValidUri(dataUris, dataHash);
-        setData(dataState);
-      }
-
-      async function validatePreview() {
-        if (!preview || !nftMetadata) {
-          return;
+        if (generationRef.current === generation) {
+          setData(dataState);
         }
+      } catch (e) {
+        if (generationRef.current === generation) {
+          setErrorVerify(e as Error);
+        }
+      } finally {
+        if (generationRef.current === generation) {
+          setIsVerifyingData(false);
+        }
+      }
+    },
+    [findValidUri],
+  );
 
+  const validatePreview = useCallback(
+    async (nftMetadata: Metadata, generation: number, generationRef: { current: number }) => {
+      try {
         const { preview_video_uris: previewVideoUris, preview_video_hash: previewVideoHash } = nftMetadata;
 
-        const videoState = await findValidUri(previewVideoUris, previewVideoHash);
-        setPreviewVideo(videoState);
+        const videoState = await findPreviewUri(previewVideoUris, previewVideoHash, excludedPreview);
+        if (generationRef.current === generation) {
+          setPreviewVideo(videoState);
+        }
 
         if (!videoState?.isVerified) {
           const { preview_image_uris: previewImageUris, preview_image_hash: previewImageHash } = nftMetadata;
-          const imageState = await findValidUri(previewImageUris, previewImageHash);
-          setPreviewImage(imageState);
+          const imageState = await findPreviewUri(previewImageUris, previewImageHash, excludedPreview);
+          if (generationRef.current === generation) {
+            setPreviewImage(imageState);
+          }
+        }
+      } catch (e) {
+        if (generationRef.current === generation) {
+          setErrorVerify(e as Error);
+        }
+      } finally {
+        if (generationRef.current === generation) {
+          setIsVerifyingPreview(false);
         }
       }
-
-      try {
-        // parallelize validation
-        await Promise.all([validateData(), validatePreview()]);
-      } catch (e) {
-        setErrorVerify(e as Error);
-      } finally {
-        setIsVerifying(false);
-      }
     },
-    [preview, findValidUri],
+    [findPreviewUri, excludedPreview],
   );
 
+  // Data and preview verification run as independent effects: the data file
+  // depends only on the NFT record, so a metadata fetch that settles later
+  // must re-run only the preview half. A single combined effect used to reset
+  // an already-verified data state whenever the metadata arrived, which threw
+  // tiles that were already showing the data file back into a loading state.
   useEffect(() => {
-    if (nft) {
-      verifyNFT(nft, metadata);
-    }
-  }, [nft, metadata, verifyNFT]);
+    const generation = dataGeneration.current + 1;
+    dataGeneration.current = generation;
 
-  const previewState = useMemo(() => {
-    if (previewVideo?.isVerified) {
-      return previewVideo;
-    }
+    setErrorVerify(undefined);
+    setData(undefined);
 
-    if (previewImage?.isVerified) {
-      return previewImage;
-    }
-
-    if (data?.isVerified) {
-      return data;
+    dataInputs.current = { nft: !isLoadingNFT ? nft : undefined };
+    if (!nft || isLoadingNFT) {
+      setIsVerifyingData(false);
+    } else {
+      setIsVerifyingData(true);
+      validateData(nft, generation, dataGeneration);
     }
 
-    return previewVideo || previewImage || data;
-  }, [previewVideo, previewImage, data]);
+    return () => {
+      if (dataGeneration.current === generation) {
+        dataGeneration.current += 1;
+      }
+    };
+  }, [nft, isLoadingNFT, validateData, ipfsGateway, ipfsGatewayBase, ipfsGatewayRecoveries]);
+
+  useEffect(() => {
+    const generation = previewGeneration.current + 1;
+    previewGeneration.current = generation;
+
+    setPreviewVideo(undefined);
+    setPreviewImage(undefined);
+
+    // Metadata downloads can be slow or fail entirely — the data effect above
+    // verifies the data file right away, and this effect picks up the preview
+    // URIs once the metadata fetch settles, instead of blocking on it.
+    const nftMetadata = isLoadingMetadata ? undefined : metadata;
+    previewInputs.current = {
+      nft: !isLoadingNFT ? nft : undefined,
+      metadata: nftMetadata,
+      excludedKey: excludedPreviewKey,
+    };
+    if (!preview || !nft || isLoadingNFT || !nftMetadata) {
+      setIsVerifyingPreview(false);
+    } else {
+      setIsVerifyingPreview(true);
+      validatePreview(nftMetadata, generation, previewGeneration);
+    }
+
+    return () => {
+      if (previewGeneration.current === generation) {
+        previewGeneration.current += 1;
+      }
+    };
+  }, [
+    preview,
+    nft,
+    metadata,
+    isLoadingNFT,
+    isLoadingMetadata,
+    validatePreview,
+    ipfsGateway,
+    ipfsGatewayBase,
+    ipfsGatewayRecoveries,
+    excludedPreviewKey,
+  ]);
+
+  const previewState = useMemo(
+    () =>
+      selectNFTPreviewState({
+        isVerifying,
+        previewVideo: currentPreviewVideo,
+        previewImage: currentPreviewImage,
+        data: currentData,
+        previewVideoCandidate: preview
+          ? {
+              uris: withoutExcluded(metadata?.preview_video_uris, excludedPreview),
+              hash: metadata?.preview_video_hash,
+            }
+          : undefined,
+        previewImageCandidate: preview
+          ? {
+              uris: withoutExcluded(metadata?.preview_image_uris, excludedPreview),
+              hash: metadata?.preview_image_hash,
+            }
+          : undefined,
+        dataCandidate: {
+          uris: nft?.dataUris,
+          hash: nft?.dataHash,
+        },
+      }),
+    [currentPreviewVideo, currentPreviewImage, currentData, nft, metadata, preview, isVerifying, excludedPreview],
+  );
 
   return {
-    isVerified: data?.isVerified, // main data is the only one that matters
+    isVerified: currentData?.isVerified, // main data is the only one that matters
     isLoading,
     error,
 
-    data,
-    previewImage,
-    previewVideo,
+    data: currentData,
+    previewImage: currentPreviewImage,
+    previewVideo: currentPreviewVideo,
 
     // preview is the first valid preview found or data
     preview: previewState,
